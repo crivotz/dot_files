@@ -1,0 +1,4 @@
+!Turn Caps Lock into another Control key
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L

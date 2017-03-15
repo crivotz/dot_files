@@ -1,0 +1,17 @@
+# ~/.tmuxinator/development.yml
+
+name: dev
+root: ~/Dev/<%= @args[0] %>
+windows:
+  - zshguard:
+      layout: main-vertical
+      panes:
+        - # plain zsh
+        - guard
+  - editor: $EDITOR
+  - rails:
+      layout: main-vertical
+      panes:
+        - rails s
+        - rails c
+  - logs: tail -f log/development.log

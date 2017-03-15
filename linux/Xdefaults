@@ -1,0 +1,43 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+!-------------------------------------------------------------------------------
+URxvt.termName:             screen-256color
+URxvt.depth:                32
+URxvt.geometry:             181x75
+URxvt.transparent:          false
+URxvt.fading:               20
+URxvt.loginShell:           true
+URxvt.externalBorder:       0
+
+! Fonts
+URxvt.allow_bold:           false
+URxvt*font:                 xft:Hack-8
+URxvt*boldFont:             xft:Hack-8:weight=bold
+
+! Fix font space
+URxvt*letterSpace:          -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          chromium
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
