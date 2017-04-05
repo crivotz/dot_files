@@ -10,7 +10,7 @@ Xft.hintstyle:              hintslight
 !-------------------------------------------------------------------------------
 ! URxvt settings
 !-------------------------------------------------------------------------------
-URxvt.termName:             screen-256color
+URxvt.termName:             xterm-256color
 URxvt.depth:                32
 URxvt.geometry:             181x75
 URxvt.transparent:          false

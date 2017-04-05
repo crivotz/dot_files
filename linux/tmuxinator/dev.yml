@@ -8,7 +8,7 @@ windows:
       panes:
         - # plain zsh
         - guard
-  - editor: $EDITOR
+  - vim: $EDITOR
   - rails:
       layout: main-vertical
       panes:
