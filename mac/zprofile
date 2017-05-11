@@ -17,7 +17,7 @@ fi
 # Editors
 #
 
-export EDITOR='gvim -f %F'
+export EDITOR='vim'
 export VISUAL=$EDITOR
 #
 # Language

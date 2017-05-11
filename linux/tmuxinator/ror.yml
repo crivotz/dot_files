@@ -1,6 +1,6 @@
 # ~/.tmuxinator/development.yml
 
-name: dev
+name: ROR
 root: ~/Dev/<%= @args[0] %>
 windows:
   - zshguard:

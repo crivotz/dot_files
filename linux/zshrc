@@ -25,3 +25,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # TMUXINATOR COMPLETION
 source ~/bin/various/tmuxinator.zsh
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

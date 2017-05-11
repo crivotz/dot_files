@@ -145,7 +145,7 @@ zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 #
 # Tmux
 #
-
+#
 # Auto start a session when Zsh is launched in a local terminal.
 zstyle ':prezto:module:tmux:auto-start' local 'yes'
 
@@ -154,3 +154,6 @@ zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+# Session name
+zstyle ':prezto:module:tmux:session' name 'ZSH'

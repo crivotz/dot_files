@@ -110,3 +110,5 @@ echo -e "${rosso}Debian GNU/Linux ${NC}" `cat /etc/debian_version`
 [[ $- = *i* ]] && source ~/Dropbox/Configurazioni/linux/liquidprompt/liquidprompt
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
