@@ -3,15 +3,15 @@
 name: ROR
 root: ~/Dev/<%= @args[0] %>
 windows:
-  - zshguard:
-      layout: main-vertical
-      panes:
-        - # plain zsh
-        - guard
+  - zsh:
   - vim: $EDITOR
   - rails:
       layout: main-vertical
       panes:
         - rails s
         - rails c
-  - logs: tail -f log/development.log
+  - logguard:
+      layout: main-vertical
+      panes:
+        - tail -f log/development.log
+        - guard
