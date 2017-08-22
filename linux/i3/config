@@ -175,7 +175,7 @@ set $base0F #a16946
 # finds out, if available)
 bar {
   id bar_1
-  output eDP1
+  output eDP-1
   tray_output primary
   status_command i3status
   font pango:Hack, FontAwesome 10px
@@ -216,6 +216,7 @@ for_window [class="(?i)gvim"] move container to workspace 3
 exec --no-startup-id dropbox start -i
 exec --no-startup-id nm-applet 
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id ~/.screenlayout/3monitor.sh
 #exec --no-startup-id mate-power-manager
 
 # Shortcut
