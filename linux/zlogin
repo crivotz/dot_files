@@ -15,3 +15,5 @@ rosso='\e[1;31m'
 NC='\e[0m'
 
 echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
