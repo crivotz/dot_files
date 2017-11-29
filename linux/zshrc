@@ -27,3 +27,15 @@ source ~/bin/various/tmuxinator.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Colorls
+# source $(dirname $(gem which colorls))/tab_complete.sh
+
+# Lean
+lean_right() {
+  if [[ ! -z $RUBY_VERSION ]]; then
+    echo " %F{red}[$RUBY_VERSION]%f"
+  fi
+}
+PROMPT_LEAN_RIGHT=lean_right
+
