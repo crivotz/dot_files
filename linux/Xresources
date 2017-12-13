@@ -1,25 +1,3 @@
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: #303030, #303030, #94a57b
-rofi.color-normal: #303030, #ffffff, #303030, #94a57b, #ffffff
-rofi.color-active: #303030, #94a57b, #303030, #94a57b, #455439
-rofi.color-urgent: #303030, #f3843d, #303030, #94a57b, #ffc39c
-rofi.padding: 1
-rofi.lines: 10
-rofi.borderwidth: 1
-rofi.opacity: 100
-rofi.font: Hacked 9
-rofi.location: 7
-rofi.yoffset: 0
-rofi.xoffset: 0
-rofi.width: 100
-rofi.fixed_num_lines: 1
-rofi.hmode: false
-rofi.terminal: st
-rofi.ssh-set-title: false
-
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
@@ -39,6 +17,30 @@ rofi.ssh-set-title: false
 #define base0D #7cafc2
 #define base0E #ba8baf
 #define base0F #a16946
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: base02, base02, base0D
+rofi.color-normal: base02, base07, base02, base0D, base07
+rofi.color-active: base02, base0D, base02, base0D, base03
+rofi.color-urgent: base02, base09, base02, base0D, base0F
+rofi.padding: 1
+rofi.lines: 10
+rofi.borderwidth: 1
+rofi.opacity: 80
+rofi.font: Hacked 9
+rofi.location: 7
+rofi.yoffset: 0
+rofi.xoffset: 0
+rofi.width: 100
+rofi.fixed_num_lines: 1
+rofi.hmode: false
+rofi.terminal: urxvt
+rofi.ssh-set-title: false
+
+! ------------------------------------------------------------------------------
 
 *.foreground:   base05
 #ifdef background_opacity
