@@ -30,7 +30,7 @@ rofi.padding: 1
 rofi.lines: 10
 rofi.borderwidth: 1
 rofi.opacity: 80
-rofi.font: Hacked 9
+rofi.font: Knack Nerd Font 8
 rofi.location: 7
 rofi.yoffset: 0
 rofi.xoffset: 0
