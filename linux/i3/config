@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Hack 8
+font pango:Knack Nerd Font 8
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -171,24 +171,29 @@ set $base0D #7cafc2
 set $base0E #ba8baf
 set $base0F #a16946
 
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Compton
+exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  id bar_1
-  output eDP-1
-  tray_output primary
-  status_command i3status
-  font pango:Hack, FontAwesome 10px
-  colors {
-    background $base00
-    separator  $base01
-    statusline $base04
-    focused_workspace   $base05 $base0D $base00
-    active_workspace    $base05 $base03 $base00
-    inactive_workspace  $base03 $base01 $base05
-    urgent_workspace    $base08 $base08 $base00
-  }
-}
+# bar {
+#   id bar_1
+#   output eDP-1
+#   tray_output primary
+#   status_command i3status
+#   font pango:Hack, FontAwesome 10px
+#   colors {
+#     background $base00
+#     separator  $base01
+#     statusline $base04
+#     focused_workspace   $base05 $base0D $base00
+#     active_workspace    $base05 $base03 $base00
+#     inactive_workspace  $base03 $base01 $base05
+#     urgent_workspace    $base08 $base08 $base00
+#   }
+# }
 
 # Client color
 # class                 border  backgr. text    indicator

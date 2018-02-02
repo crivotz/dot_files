@@ -1,0 +1,292 @@
+[colors]
+my_background 	= #181818
+my_foreground 	= #b8b8b8
+base00 = #181818
+base01 = #282828
+base02 = #383838
+base03 = #585858
+base04 = #b8b8b8
+base05 = #d8d8d8
+base06 = #e8e8e8
+base07 = #f8f8f8
+base08 = #ab4642
+base09 = #dc9656
+base0A = #f7ca88
+base0B = #a1b56c
+base0C = #86c1b9
+base0D = #7cafc2
+base0E = #ba8baf
+base0F = #a16946
+
+[bar/bottom]
+monitor = ${env:MONITOR:eDP-1}
+bottom = false
+width = 90%
+height = 20
+offset-x = 5%
+offset-y = 1%
+radius = 0.0
+fixed-center = true
+
+background = ${colors.my_background}
+foreground =  ${colors.my_foreground}
+
+line-size = 3
+line-color = ${colors.base08}
+
+border-size = 0
+border-color = ${colors.base07}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Knack Nerd Font:antialias=true:size=8;1
+font-1 = Hack:antialias=true:size=8;1
+font-2 = FontAwesome:antialias=true:size=8;1
+
+modules-left = distro-logo i3 wlan eth 
+modules-center =
+modules-right = filesystem cpu temperature battery volume date
+
+tray-position = right
+tray-padding = 9
+tray-transparent = false
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.my_background}
+
+wm-restack = i3
+
+override-redirect = true
+
+[module/i3]
+type = internal/i3
+
+label-unfocused-background = ${colors.my_background}
+label-unfocused-foreground = ${colors.my_foreground}
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.base0D}
+
+label-focused = %index%
+label-focused-foreground = ${colors.my_foreground}
+label-focused-background = ${colors.my_background}
+label-focused-underline = ${colors.base0D}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-underline = ${colors.my_background}
+label-visible-padding = 4
+
+label-urgent = %index%
+label-urgent-foreground = ${colors.my_foreground}
+label-urgent-background = ${colors.my_background}
+label-urgent-underline = ${colors.base08}
+label-urgent-padding = 2
+
+[module/distro-logo]
+type = custom/text
+content-foreground = ${colors.base08}
+content-padding = 1
+content =  
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d %b"
+date-alt = "%d-%m-%Y"
+
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+
+format-prefix-foreground = ${colors.my_foreground}
+
+label = %date% %time%
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+full-at = 99
+
+format-full-background = ${colors.my_background}
+format-charging-background = ${colors.my_background}
+format-charging = <label-charging> <animation-charging>
+label-full =  %percentage%%
+
+format-discharging-background = ${colors.my_background}
+format-discharging =  <label-discharging> <ramp-capacity>
+format-discharging-underline = ${colors.base08}
+
+format-full-prefix-foreground = ${colors.my_background}
+format-full-underline = ${self.format-charging-underline}
+
+format-charing-background = ${colors.my_background}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.my_foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.my_foreground}
+animation-charging-framerate = 750
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = 
+format-muted-foreground = ${colors.my_foreground}
+label-muted = 
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.base08}
+bar-volume-foreground-1 = ${colors.base08}
+bar-volume-foreground-2 = ${colors.base08}
+bar-volume-foreground-3 = ${colors.base09}
+bar-volume-foreground-4 = ${colors.base09}
+bar-volume-foreground-5 = ${colors.base0A}
+bar-volume-foreground-6 = ${colors.base0A}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.base03}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = 
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.base08}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.base06}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted-margin = 1
+label-mounted =   %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.base06}
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label =  %percentage%% 
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.base0B}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.base0B}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.base0A}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.base0A}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.base09}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.base09}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.base08}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.base08}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = 
+format-prefix-foreground = ${colors.base06}
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% %local_ip%
+
+format-disconnected =""
+format-disconnected-foreground = ${colors.base08}
+
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.base07}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.base08}
+ramp-signal-2 = 
+ramp-signal-2-foreground = ${colors.base09}
+ramp-signal-3 = 
+ramp-signal-3-foreground = ${colors.base0A}
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.base0B}
+
+[module/eth]
+type = internal/network
+interface = eth0
+interval = 3.0
+
+; format-connected-underline = ${colors.base0B}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.my_foreground}
+label-connected = %local_ip%
+
+format-disconnected =""
+format-disconnected-foreground = ${colors.base08}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+label-padding = 10
+;label-underline = ${colors.base07}
+label-foreground = ${colors.base07}
+;label-foreground = ${colors.base07}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
