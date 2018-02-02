@@ -1,3 +1,12 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
 [colors]
 my_background 	= #181818
 my_foreground 	= #b8b8b8
