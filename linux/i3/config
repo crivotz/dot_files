@@ -42,7 +42,7 @@ bindsym $mod+z exec "i3lock -n -t -i ~/Immagini/lock.png"
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # Rofi instead of dmenu
-bindsym $mod+d exec "rofi -show run"
+bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+x exec "rofi -show ssh"
 bindsym $mod+Tab exec "rofi -show window"
 bindsym $mod+Shift+Tab exec "~/.i3/i3_switch_workspace.sh"
@@ -174,7 +174,7 @@ set $base0F #a16946
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Compton
-# exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
+exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -206,7 +206,7 @@ client.background       $base07
 gaps inner 5
 gaps outer 5
 workspace 1 gaps outer 10
-workspace 1 gaps inner 25
+workspace 1 gaps inner 27
 smart_borders no_gaps
 
 for_window [class="^.*"] border pixel 3

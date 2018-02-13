@@ -75,6 +75,8 @@ override-redirect = true
 [module/i3]
 type = internal/i3
 
+index-sort = true
+
 label-unfocused-background = ${colors.my_background}
 label-unfocused-foreground = ${colors.my_foreground}
 
