@@ -1,14 +1,22 @@
 #
 # Sets Prezto options.
 #
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
+#
 # General
+#
 
 # Set case-sensitivity for completion, history lookup, etc.
 # zstyle ':prezto:*:*' case-sensitive 'yes'
 
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
+
+# Add additional directories to load prezto modules from
+zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
@@ -27,14 +35,17 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'ssh' \
-  'completion' \
   'tmux' \
   'rails' \
+  'node' \
   'git' \
+  'completion' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
-  'prompt'
+  'contrib-prompt' \
+  'prompt' \
+  'ruby'
 
 #
 # Autosuggestions
@@ -42,6 +53,14 @@ zstyle ':prezto:load' pmodule \
 
 # Set the query found color.
 # zstyle ':prezto:module:autosuggestions:color' found ''
+
+#
+# Completions
+#
+
+# Set the entries to ignore in static */etc/hosts* for host completion.
+# zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
+#   '0.0.0.0' '127.0.0.1'
 
 #
 # Editor
@@ -53,7 +72,9 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
 
-#
+# Allow the zsh prompt context to be shown.
+zstyle ':prezto:module:editor' ps-context 'yes'
+
 # Git
 #
 
@@ -70,6 +91,8 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 #
 # History Substring Search
 #
+
+zstyle ':prezto:module:history-substring-search' color 'yes'
 
 # Set the query found color.
 # zstyle ':prezto:module:history-substring-search:color' found ''
@@ -94,7 +117,7 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'spaceship'
 
 #
 # Ruby
@@ -168,3 +191,12 @@ zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Session name
 zstyle ':prezto:module:tmux:session' name 'ZSH'
+
+#
+# Utility
+#
+
+# Enabled safe options. This aliases cp, ln, mv and rm so that they prompt
+# before deleting or overwriting files. Set to 'no' to disable this safer
+# behavior.
+zstyle ':prezto:module:utility' safe-ops 'yes'

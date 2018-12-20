@@ -154,23 +154,41 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $base00 #181818
-set $base01 #282828
-set $base02 #383838
-set $base03 #585858
-set $base04 #b8b8b8
-set $base05 #d8d8d8
-set $base06 #e8e8e8
-set $base07 #f8f8f8
-set $base08 #ab4642
-set $base09 #dc9656
-set $base0A #f7ca88
-set $base0B #a1b56c
-set $base0C #86c1b9
-set $base0D #7cafc2
-set $base0E #ba8baf
-set $base0F #a16946
+# Base16-default
+# set $base00 #181818
+# set $base01 #282828
+# set $base02 #383838
+# set $base03 #585858
+# set $base04 #b8b8b8
+# set $base05 #d8d8d8
+# set $base06 #e8e8e8
+# set $base07 #f8f8f8
+# set $base08 #ab4642
+# set $base09 #dc9656
+# set $base0A #f7ca88
+# set $base0B #a1b56c
+# set $base0C #86c1b9
+# set $base0D #7cafc2
+# set $base0E #ba8baf
+# set $base0F #a16946
 
+# Base16-material-darker
+set $base00 #212121
+set $base01 #303030
+set $base02 #353535
+set $base03 #4a4a4a
+set $base04 #b2ccd6
+set $base05 #eeffff
+set $base06 #eeffff
+set $base07 #ffffff
+set $base08 #f07178
+set $base09 #f78c6c
+set $base0A #ffcb6b
+set $base0B #c3e88d
+set $base0C #89ddff
+set $base0D #82aaff
+set $base0E #c792ea
+set $base0F #ff5370
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Compton
@@ -213,8 +231,9 @@ for_window [class="^.*"] border pixel 3
 # open certain windows in floating mode
 for_window [class="(?i)gnome-calculator"] floating enable
 for_window [window_role="(?i)pop-up"] floating enable
-for_window [class="(?i)google-chrome" title="Developer Tools -"] floating disable, move container to workspace 1
-for_window [class="(?i)chromium" title="Developer Tools -"] floating disable, move container to workspace 1
+for_window [class="(?i)Google-chrome" title="DevTools -"] floating disable, move container to workspace 1
+for_window [class="(?i)chromium" title="DevTools -"] floating disable, move container to workspace 1
+for_window [class="(?i)firefox" title="Strumenti di sviluppo -"] floating disable, move container to workspace 1
 for_window [class="(?i)virtualbox" title="Oracle VM VirtualBox Gestore"] floating enable, move container to workspace 2
 for_window [class="(?i)virtualbox"] move container to workspace 2
 for_window [class="(?i)gvim"] move container to workspace 3
@@ -230,7 +249,7 @@ exec --no-startup-id ~/.screenlayout/3monitor.sh
 bindsym $mod+n exec nautilus
 bindsym $mod+g exec gvim -f
 bindsym $mod+o exec virtualbox
-bindsym $mod+c exec chromium
+bindsym $mod+c exec google-chrome
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -238,8 +257,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 #bindsym XF86AudioRaiseVolume exec amixer sset Master,0 1+
 #bindsym XF86AudioLowerVolume exec amixer sset Master,0 1-
 bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#Screen brightness controls with notification
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#increase screen brightness with notification
+bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"
+#decrease screen brightness with notification
+bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
 bindsym XF86HomePage exec google-chrome
 bindsym XF86Explorer exec nautilus
 bindsym XF86Calculator exec gnome-calculator

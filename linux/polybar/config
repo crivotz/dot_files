@@ -8,24 +8,44 @@
 ;=====================================================
 
 [colors]
-my_background 	= #181818
-my_foreground 	= #b8b8b8
-base00 = #181818
-base01 = #282828
-base02 = #383838
-base03 = #585858
-base04 = #b8b8b8
-base05 = #d8d8d8
-base06 = #e8e8e8
-base07 = #f8f8f8
-base08 = #ab4642
-base09 = #dc9656
-base0A = #f7ca88
-base0B = #a1b56c
-base0C = #86c1b9
-base0D = #7cafc2
-base0E = #ba8baf
-base0F = #a16946
+; base16-default-dark
+; my_background	= #181818
+; my_foreground	= #b8b8b8
+; base00 = #181818
+; base01 = #282828
+; base02 = #383838
+; base03 = #585858
+; base04 = #b8b8b8
+; base05 = #d8d8d8
+; base06 = #e8e8e8
+; base07 = #f8f8f8
+; base08 = #ab4642
+; base09 = #dc9656
+; base0A = #f7ca88
+; base0B = #a1b56c
+; base0C = #86c1b9
+; base0D = #7cafc2
+; base0E = #ba8baf
+; base0F = #a16946
+; base16-material-darker
+my_background	= #212121
+my_foreground	= #b2ccd6
+base00 = #212121
+base01 = #303030
+base02 = #353535
+base03 = #4a4a4a
+base04 = #b2ccd6
+base05 = #eeffff
+base06 = #eeffff
+base07 = #ffffff
+base08 = #f07178
+base09 = #f78c6c
+base0A = #ffcb6b
+base0B = #c3e88d
+base0C = #89ddff
+base0D = #82aaff
+base0E = #c792ea
+base0F = #ff5370
 
 [bar/bottom]
 monitor = ${env:MONITOR:eDP-1}
@@ -255,7 +275,7 @@ label = %gb_used%
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp9s0f0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -277,7 +297,7 @@ ramp-signal-4-foreground = ${colors.base0B}
 
 [module/eth]
 type = internal/network
-interface = eth0
+interface = enp8s0
 interval = 3.0
 
 ; format-connected-underline = ${colors.base0B}

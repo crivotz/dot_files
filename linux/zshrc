@@ -46,7 +46,6 @@ PROMPT_LEAN_RIGHT=lean_right
 # julia         # Julia section
 # docker        # Docker section
 # package       # Package version
-# node          # Node.js section
 # xcode         # Xcode section
 # swift         # Swift section
 # golang        # Go section
@@ -79,7 +78,12 @@ aws           # Amazon Web Services section
 ruby          # Ruby section
 haskell       # Haskell Stack section
 php           # PHP section
+node          # Node.js section
 )
 
 export SPACESHIP_PHP_SYMBOL=' '
 export SPACESHIP_RUBY_SYMBOL=' '
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
