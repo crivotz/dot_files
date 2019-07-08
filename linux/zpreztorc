@@ -40,6 +40,8 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'git' \
   'completion' \
+  'alias-tips' \
+  'enhancd' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
@@ -234,3 +236,6 @@ zstyle ':prezto:module:tmux:session' name 'ZSH'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ":prezto:module:enhancd" command "fzf:fzy:peco"
+zstyle ":prezto:module:enhancd" command "cd"
+zstyle ":prezto:module:alias-tips" text "Alias tip: "

@@ -82,7 +82,6 @@ modules-right = filesystem memory cpu temperature battery volume date
 
 tray-position = right
 tray-padding = 9
-tray-transparent = false
 tray-offset-y = 0%
 tray-offset-x = 0%
 tray-maxsize = 18
@@ -187,7 +186,7 @@ animation-charging-foreground = ${colors.my_foreground}
 animation-charging-framerate = 750
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = 
@@ -224,8 +223,8 @@ format-underline =
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.base08}
 
 ramp-0 = 
