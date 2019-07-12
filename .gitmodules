@@ -2,3 +2,7 @@
 	path = extras/git-summary
 	url = git@github.com:crivotz/git-summary.git
   ignore = untracked
+[submodule "extras/fzf"]
+	path = extras/fzf
+	url = https://github.com/junegunn/fzf.git
+  ignore = untracked
