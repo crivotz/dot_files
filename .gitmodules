@@ -6,3 +6,7 @@
 	path = extras/fzf
 	url = https://github.com/junegunn/fzf.git
   ignore = untracked
+[submodule "extras/base16-shell"]
+	path = extras/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
+  ignore = untracked
