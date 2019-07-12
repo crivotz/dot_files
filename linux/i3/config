@@ -154,24 +154,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Base16-default
-# set $base00 #181818
-# set $base01 #282828
-# set $base02 #383838
-# set $base03 #585858
-# set $base04 #b8b8b8
-# set $base05 #d8d8d8
-# set $base06 #e8e8e8
-# set $base07 #f8f8f8
-# set $base08 #ab4642
-# set $base09 #dc9656
-# set $base0A #f7ca88
-# set $base0B #a1b56c
-# set $base0C #86c1b9
-# set $base0D #7cafc2
-# set $base0E #ba8baf
-# set $base0F #a16946
-
 # Base16-material-darker
 set $base00 #212121
 set $base01 #303030
@@ -189,29 +171,6 @@ set $base0C #89ddff
 set $base0D #82aaff
 set $base0E #c792ea
 set $base0F #ff5370
-# Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# Compton
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#   id bar_1
-#   output eDP-1
-#   tray_output primary
-#   status_command i3status
-#   font pango:Hack, FontAwesome 10px
-#   colors {
-#     background $base00
-#     separator  $base01
-#     statusline $base04
-#     focused_workspace   $base05 $base0D $base00
-#     active_workspace    $base05 $base03 $base00
-#     inactive_workspace  $base03 $base01 $base05
-#     urgent_workspace    $base08 $base08 $base00
-#   }
-# }
 
 # Client color
 # class                 border  backgr. text    indicator
@@ -239,16 +198,14 @@ for_window [class="(?i)virtualbox"] move container to workspace 2
 for_window [class="(?i)gvim"] move container to workspace 3
 
 # Auto start
-exec --no-startup-id dropbox start -i
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
 exec --no-startup-id nm-applet 
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id ~/.screenlayout/3monitor.sh
-#exec --no-startup-id mate-power-manager
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id ~/.screenlayout/3monitor.sh
 
 # Shortcut
 bindsym $mod+n exec nautilus
-bindsym $mod+g exec gvim -f
-bindsym $mod+o exec virtualbox
 bindsym $mod+c exec google-chrome
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
