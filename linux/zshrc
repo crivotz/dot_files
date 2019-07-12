@@ -13,7 +13,7 @@ fi
 # Customize to your needs...
 
 # ALIASES
-source $HOME/.bash_aliases
+source $HOME/.zsh_aliases
 
 # BASE 16 https://github.com/chriskempson/base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/
@@ -87,3 +87,16 @@ export SPACESHIP_RUBY_SYMBOL=' '
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# GO
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Dev/go
+
+# FLUTTER
+export PATH="$PATH:$HOME/Dev/flutter/bin"
+
+# ANDROID STUDIO
+export PATH="$PATH:/opt/android-studio/bin"
