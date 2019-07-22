@@ -24,20 +24,11 @@ source ~/.tmuxinator.zsh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
-
-# Lean
-lean_right() {
-  if [[ ! -z $RUBY_VERSION ]]; then
-    echo " %F{red}[$RUBY_VERSION]%f"
-  fi
-}
-PROMPT_LEAN_RIGHT=lean_right
 
 # Spaceship
 
@@ -100,3 +91,7 @@ export PATH="$PATH:$HOME/Dev/flutter/bin"
 
 # ANDROID STUDIO
 export PATH="$PATH:/opt/android-studio/bin"
+#
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
