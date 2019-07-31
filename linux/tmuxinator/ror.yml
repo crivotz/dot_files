@@ -1,7 +1,7 @@
 # ~/.tmuxinator/development.yml
 
 name: ROR
-root: ~/Dev/<%= @args[0] %>
+root: ~/DevWeb/<%= @args[0] %>
 windows:
   - zsh:
   - vim: $EDITOR
@@ -9,9 +9,9 @@ windows:
       layout: main-vertical
       panes:
         - rails s
-        - rails c
+        - bin/webpack-dev-server
   - logguard:
       layout: main-vertical
       panes:
-        - tail -f log/development.log
+        - rails c
         - guard

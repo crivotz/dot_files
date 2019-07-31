@@ -1,5 +1,5 @@
 [options]
-font = Knack Nerd Font 8
+font = FuraMono Nerd Font 8
 allow_bold = true
 browser = xdg-open
 clickable_url = true

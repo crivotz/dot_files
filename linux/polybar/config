@@ -53,7 +53,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Knack Nerd Font:antialias=true:size=8;1
-font-1 = Hack:antialias=true:size=8;1
+font-1 = FuraCode Nerd Font Mono:antialias=true:size=8;1
 font-2 = FontAwesome:antialias=true:size=8;1
 
 modules-left = distro-logo i3 wlan eth vpnc
