@@ -27,30 +27,7 @@ source ~/.tmuxinator.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-
 # Spaceship
-
-# Disabled
-# exit_code     # Exit code section
-# julia         # Julia section
-# docker        # Docker section
-# package       # Package version
-# xcode         # Xcode section
-# swift         # Swift section
-# golang        # Go section
-# hg            # Mercurial section (hg_branch  + hg_status)
-# venv          # virtualenv section
-# conda         # conda virtualenv section
-# pyenv         # Pyenv section
-# dotnet        # .NET section
-# ember         # Ember.js section
-# kubecontext   # Kubectl context section
-# elixir        # Elixir section
-# rust          # Rust section
-# line_sep      # Line break
-
 SPACESHIP_PROMPT_ORDER=(
 time          # Time stampts section
 user          # Username section
@@ -79,9 +56,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # GO
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Dev/go
@@ -91,7 +65,12 @@ export PATH="$PATH:$HOME/Dev/flutter/bin"
 
 # ANDROID STUDIO
 export PATH="$PATH:/opt/android-studio/bin"
-#
+
+# KITTY
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
