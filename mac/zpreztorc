@@ -16,7 +16,7 @@
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
-zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
@@ -40,6 +40,8 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'git' \
   'completion' \
+  'alias-tips' \
+  'enhancd' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
@@ -117,7 +119,7 @@ zstyle ':prezto:module:history-substring-search' color 'yes'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'spaceship'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 
 #
 # Ruby
@@ -190,7 +192,7 @@ zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 #zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Session name
-zstyle ':prezto:module:tmux:session' name 'ZSH'
+zstyle ':prezto:module:tmux:session' name 'λ'
 
 #
 # Utility
@@ -200,3 +202,6 @@ zstyle ':prezto:module:tmux:session' name 'ZSH'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ":prezto:module:enhancd" command "fzf:fzy:peco"
+zstyle ":prezto:module:enhancd" command "cd"
+zstyle ":prezto:module:alias-tips" text "Alias tip: "

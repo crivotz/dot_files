@@ -11,91 +11,35 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 
 # ALIASES
-alias grep='grep --color=auto'
-alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-alias ftb_backup='heroku pg:pull HEROKU_POSTGRESQL_JADE_URL ftbbck --app ftbmanager'
-alias ftb_dev='heroku pg:pull HEROKU_POSTGRESQL_JADE_URL ftbdev --app ftbmanager'
-alias tdl="base16_default-light"
-alias tdd="base16_default-dark"
-alias tmo="base16_mocha"
-alias tma="base16_material"
-alias tma1="base16_material-darker"
-alias tma2="base16_material-palenight"
-alias tn="base16_nord"
+source $HOME/.zsh_aliases
 
 # BASE 16 https://github.com/chriskempson/base16-shell
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # TMUXINATOR COMPLETION
-source ~/bin/various/tmuxinator.zsh
-
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source ~/.tmuxinator.zsh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Lean
-lean_right() {
-  if [[ ! -z $RUBY_VERSION ]]; then
-    echo " %F{red}[$RUBY_VERSION]%f"
-  fi
-}
-PROMPT_LEAN_RIGHT=lean_right
-
-# Spaceship
-
-# Disabled
-# exit_code     # Exit code section
-# julia         # Julia section
-# docker        # Docker section
-# package       # Package version
-# xcode         # Xcode section
-# swift         # Swift section
-# golang        # Go section
-# hg            # Mercurial section (hg_branch  + hg_status)
-# venv          # virtualenv section
-# conda         # conda virtualenv section
-# pyenv         # Pyenv section
-# dotnet        # .NET section
-# ember         # Ember.js section
-# kubecontext   # Kubectl context section
-# elixir        # Elixir section
-# rust          # Rust section
-# line_sep      # Line break
-
-SPACESHIP_PROMPT_ORDER=(
-time          # Time stampts section
-user          # Username section
-host          # Hostname section
-git           # Git section (git_branch + git_status)
-battery       # Battery level and status
-vi_mode       # Vi-mode indicator
-jobs          # Backgound jobs indicator
-char          # Prompt character
-)
-
-SPACESHIP_RPROMPT_ORDER=(
-exec_time     # Execution time
-dir           # Current directory section
-aws           # Amazon Web Services section
-ruby          # Ruby section
-haskell       # Haskell Stack section
-php           # PHP section
-node          # Node.js section
-)
-
-export SPACESHIP_PHP_SYMBOL=' '
-export SPACESHIP_RUBY_SYMBOL=' '
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # heroku autocomplete setup
+export PATH="/usr/local/heroku/bin:$PATH"
 HEROKU_AC_ZSH_SETUP_PATH=/Users/mauro/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# KITTY
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
