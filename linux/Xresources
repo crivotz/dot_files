@@ -1,30 +1,29 @@
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)
 
-#define base00 #2d2d2d
-#define base01 #393939
-#define base02 #515151
-#define base03 #747369
-#define base04 #a09f93
-#define base05 #d3d0c8
-#define base06 #e8e6df
-#define base07 #f2f0ec
-#define base08 #f2777a
-#define base09 #f99157
-#define base0A #ffcc66
-#define base0B #99cc99
-#define base0C #66cccc
-#define base0D #6699cc
-#define base0E #cc99cc
-#define base0F #d27b53
-#define base0G #fbc300
+#define base00 #2E3440
+#define base01 #3B4252
+#define base02 #434C5E
+#define base03 #4C566A
+#define base04 #D8DEE9
+#define base05 #E5E9F0
+#define base06 #ECEFF4
+#define base07 #8FBCBB
+#define base08 #BF616A
+#define base09 #D08770
+#define base0A #EBCB8B
+#define base0B #A3BE8C
+#define base0C #88C0D0
+#define base0D #81A1C1
+#define base0E #B48EAD
+#define base0F #5E81AC
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: base02, base02, base0G
-rofi.color-normal: base02, base07, base02, base0G, base00
+rofi.color-window: base02, base02, base04
+rofi.color-normal: base02, base07, base02, base0F, base04
 rofi.color-active: base02, base0D, base02, base0D, base03
 rofi.color-urgent: base02, base09, base02, base0D, base0F
 rofi.padding: 1

@@ -8,31 +8,30 @@
 ;=====================================================
 
 [colors]
-my_background	= #fbc300
-my_foreground	= #2d2d2d
-base00 = #2d2d2d
-base01 = #393939
-base02 = #515151
-base03 = #747369
-base04 = #a09f93
-base05 = #d3d0c8
-base06 = #e8e6df
-base07 = #f2f0ec
-base08 = #f2777a
-base09 = #f99157
-base0A = #ffcc66
-base0B = #99cc99
-base0C = #66cccc
-base0D = #6699cc
-base0E = #cc99cc
-base0F = #d27b53
-base0G = #fbc300
+my_background	= #2e3440
+my_foreground	= #eceff4
+base00 = #2E3440
+base01 = #3B4252
+base02 = #434C5E
+base03 = #4C566A
+base04 = #D8DEE9
+base05 = #E5E9F0
+base06 = #ECEFF4
+base07 = #8FBCBB
+base08 = #BF616A
+base09 = #D08770
+base0A = #EBCB8B
+base0B = #A3BE8C
+base0C = #88C0D0
+base0D = #81A1C1
+base0E = #B48EAD
+base0F = #5E81AC
 
 [bar/bottom]
 monitor = ${env:MONITOR:eDP-1}
 bottom = false
 width = 90%
-height = 20
+height = 25
 offset-x = 5%
 offset-y = 10
 radius = 0
@@ -44,8 +43,8 @@ foreground =  ${colors.my_foreground}
 line-size = 3
 line-color = ${colors.base08}
 
-border-size = 4
-border-color = ${colors.base00}
+border-size = 0
+border-color = ${colors.base0D}
 
 padding-left = 0
 padding-right = 0
@@ -86,8 +85,8 @@ label-mode-background = ${colors.base0D}
 
 label-focused = %index%
 label-focused-foreground = ${colors.my_foreground}
-label-focused-background = ${colors.base0G}
-label-focused-underline = ${colors.base00}
+label-focused-background = ${colors.base0D}
+label-focused-underline = ${colors.my_foreground}
 label-focused-padding = 2
 
 label-unfocused = %index%
@@ -105,7 +104,7 @@ label-urgent-padding = 2
 
 [module/distro-logo]
 type = custom/text
-content-foreground = ${colors.base00}
+content-foreground = ${colors.my_foreground}
 content-padding = 1
 content =  
 
@@ -114,7 +113,7 @@ type = custom/script
 exec = echo 
 exec-if = ls /proc/sys/net/ipv4/conf/tun0
 interval = 5
-format-foreground = ${colors.base00}
+format-foreground = ${colors.my_foreground}
 
 [module/date]
 type = internal/date
@@ -230,17 +229,17 @@ interval = 0.5
 format = <label> <ramp-coreload>
 label =  %percentage%% 
 ramp-coreload-0 = ▁
-ramp-coreload-0-foreground = ${colors.base00}
+ramp-coreload-0-foreground = ${colors.my_foreground}
 ramp-coreload-1 = ▂
-ramp-coreload-1-foreground = ${colors.base00}
+ramp-coreload-1-foreground = ${colors.my_foreground}
 ramp-coreload-2 = ▃
-ramp-coreload-2-foreground = ${colors.base00}
+ramp-coreload-2-foreground = ${colors.my_foreground}
 ramp-coreload-3 = ▄
-ramp-coreload-3-foreground = ${colors.base00}
+ramp-coreload-3-foreground = ${colors.my_foreground}
 ramp-coreload-4 = ▅
-ramp-coreload-4-foreground = ${colors.base00}
+ramp-coreload-4-foreground = ${colors.my_foreground}
 ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = ${colors.base00}
+ramp-coreload-5-foreground = ${colors.my_foreground}
 ramp-coreload-6 = ▇
 ramp-coreload-6-foreground = ${colors.base08}
 ramp-coreload-7 = █
@@ -250,7 +249,7 @@ ramp-coreload-7-foreground = ${colors.base08}
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.base00}
+format-prefix-foreground = ${colors.my_foreground}
 label = %gb_used%
 
 [module/wlan]
@@ -269,11 +268,11 @@ ramp-signal-0-foreground = ${colors.base08}
 ramp-signal-1 = 
 ramp-signal-1-foreground = ${colors.base08}
 ramp-signal-2 = 
-ramp-signal-2-foreground = ${colors.base00}
+ramp-signal-2-foreground = ${colors.my_foreground}
 ramp-signal-3 = 
-ramp-signal-3-foreground = ${colors.base00}
+ramp-signal-3-foreground = ${colors.my_foreground}
 ramp-signal-4 = 
-ramp-signal-4-foreground = ${colors.base00}
+ramp-signal-4-foreground = ${colors.my_foreground}
 
 [module/eth]
 type = internal/network
