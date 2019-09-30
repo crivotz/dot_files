@@ -27,7 +27,7 @@ font pango:FuraCode Nerd Font Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec "~/.local/kitty.app/bin/kitty"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -158,7 +158,7 @@ workspace 1 gaps outer 10
 workspace 1 gaps inner 27
 smart_borders no_gaps
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 5
 # open certain windows in floating mode
 for_window [class="(?i)gnome-calculator"] floating enable
 for_window [window_role="(?i)pop-up"] floating enable

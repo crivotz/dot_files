@@ -17,13 +17,14 @@
 #define base0D #6699cc
 #define base0E #cc99cc
 #define base0F #d27b53
+#define base0G #fbc300
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: base02, base02, base0D
-rofi.color-normal: base02, base07, base02, base0D, base07
+rofi.color-window: base02, base02, base0G
+rofi.color-normal: base02, base07, base02, base0G, base00
 rofi.color-active: base02, base0D, base02, base0D, base03
 rofi.color-urgent: base02, base09, base02, base0D, base0F
 rofi.padding: 1

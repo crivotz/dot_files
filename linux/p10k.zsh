@@ -652,7 +652,7 @@ fi
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
-  typeset -g POWERLEVEL9K_DEBIAN_FOREGROUND=
+  typeset -g POWERLEVEL9K_DEBIAN_FOREGROUND=220
   typeset -g POWERLEVEL9K_DEBIAN_VISUAL_IDENTIFIER_EXPANSION='${P9K_VISUAL_IDENTIFIER}'
 }
 

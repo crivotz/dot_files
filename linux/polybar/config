@@ -8,8 +8,8 @@
 ;=====================================================
 
 [colors]
-my_background	= #2d2d2d
-my_foreground	= #a09f93
+my_background	= #fbc300
+my_foreground	= #2d2d2d
 base00 = #2d2d2d
 base01 = #393939
 base02 = #515151
@@ -26,6 +26,7 @@ base0C = #66cccc
 base0D = #6699cc
 base0E = #cc99cc
 base0F = #d27b53
+base0G = #fbc300
 
 [bar/bottom]
 monitor = ${env:MONITOR:eDP-1}
@@ -43,8 +44,8 @@ foreground =  ${colors.my_foreground}
 line-size = 3
 line-color = ${colors.base08}
 
-border-size = 0
-border-color = ${colors.base07}
+border-size = 4
+border-color = ${colors.base00}
 
 padding-left = 0
 padding-right = 0
@@ -85,8 +86,8 @@ label-mode-background = ${colors.base0D}
 
 label-focused = %index%
 label-focused-foreground = ${colors.my_foreground}
-label-focused-background = ${colors.base01}
-label-focused-underline = ${colors.base0D}
+label-focused-background = ${colors.base0G}
+label-focused-underline = ${colors.base00}
 label-focused-padding = 2
 
 label-unfocused = %index%
@@ -104,7 +105,7 @@ label-urgent-padding = 2
 
 [module/distro-logo]
 type = custom/text
-content-foreground = ${colors.base08}
+content-foreground = ${colors.base00}
 content-padding = 1
 content =  
 
@@ -113,7 +114,7 @@ type = custom/script
 exec = echo 
 exec-if = ls /proc/sys/net/ipv4/conf/tun0
 interval = 5
-format-foreground = ${colors.base0B}
+format-foreground = ${colors.base00}
 
 [module/date]
 type = internal/date
@@ -177,21 +178,21 @@ format-muted-foreground = ${colors.my_foreground}
 label-muted = 
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.base08}
-bar-volume-foreground-1 = ${colors.base08}
-bar-volume-foreground-2 = ${colors.base08}
-bar-volume-foreground-3 = ${colors.base09}
-bar-volume-foreground-4 = ${colors.base09}
-bar-volume-foreground-5 = ${colors.base0A}
-bar-volume-foreground-6 = ${colors.base0A}
+bar-volume-foreground-0 = ${colors.my_foreground}
+bar-volume-foreground-1 = ${colors.my_foreground}
+bar-volume-foreground-2 = ${colors.my_foreground}
+bar-volume-foreground-3 = ${colors.my_foreground}
+bar-volume-foreground-4 = ${colors.my_foreground}
+bar-volume-foreground-5 = ${colors.my_foreground}
+bar-volume-foreground-6 = ${colors.my_foreground}
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.base03}
+bar-volume-empty-foreground = ${colors.my_foreground}
 
 [module/temperature]
 type = internal/temperature
@@ -210,7 +211,7 @@ label-warn-foreground = ${colors.base08}
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.base06}
+ramp-foreground = ${colors.my_foreground}
 
 [module/filesystem]
 type = internal/fs
@@ -221,7 +222,7 @@ mount-0 = /
 label-mounted-margin = 1
 label-mounted =   %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.base06}
+label-unmounted-foreground = ${colors.base08}
 
 [module/cpu]
 type = internal/cpu
@@ -229,17 +230,17 @@ interval = 0.5
 format = <label> <ramp-coreload>
 label =  %percentage%% 
 ramp-coreload-0 = ▁
-ramp-coreload-0-foreground = ${colors.base0B}
+ramp-coreload-0-foreground = ${colors.base00}
 ramp-coreload-1 = ▂
-ramp-coreload-1-foreground = ${colors.base0B}
+ramp-coreload-1-foreground = ${colors.base00}
 ramp-coreload-2 = ▃
-ramp-coreload-2-foreground = ${colors.base0A}
+ramp-coreload-2-foreground = ${colors.base00}
 ramp-coreload-3 = ▄
-ramp-coreload-3-foreground = ${colors.base0A}
+ramp-coreload-3-foreground = ${colors.base00}
 ramp-coreload-4 = ▅
-ramp-coreload-4-foreground = ${colors.base09}
+ramp-coreload-4-foreground = ${colors.base00}
 ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = ${colors.base09}
+ramp-coreload-5-foreground = ${colors.base00}
 ramp-coreload-6 = ▇
 ramp-coreload-6-foreground = ${colors.base08}
 ramp-coreload-7 = █
@@ -249,7 +250,7 @@ ramp-coreload-7-foreground = ${colors.base08}
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.base06}
+format-prefix-foreground = ${colors.base00}
 label = %gb_used%
 
 [module/wlan]
@@ -261,18 +262,18 @@ format-connected = <ramp-signal> <label-connected>
 label-connected = %essid% %local_ip%
 
 format-disconnected =""
-format-disconnected-foreground = ${colors.base08}
+format-disconnected-foreground = ${colors.my_background}
 
 ramp-signal-0 = 
-ramp-signal-0-foreground = ${colors.base07}
+ramp-signal-0-foreground = ${colors.base08}
 ramp-signal-1 = 
 ramp-signal-1-foreground = ${colors.base08}
 ramp-signal-2 = 
-ramp-signal-2-foreground = ${colors.base09}
+ramp-signal-2-foreground = ${colors.base00}
 ramp-signal-3 = 
-ramp-signal-3-foreground = ${colors.base0A}
+ramp-signal-3-foreground = ${colors.base00}
 ramp-signal-4 = 
-ramp-signal-4-foreground = ${colors.base0B}
+ramp-signal-4-foreground = ${colors.base00}
 
 [module/eth]
 type = internal/network
@@ -285,7 +286,7 @@ format-connected-prefix-foreground = ${colors.my_foreground}
 label-connected = %local_ip%
 
 format-disconnected =""
-format-disconnected-foreground = ${colors.base08}
+format-disconnected-foreground = ${colors.my_background}
 
 [module/xwindow]
 type = internal/xwindow
