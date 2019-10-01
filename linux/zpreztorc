@@ -37,9 +37,9 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'tmux' \
   'rails' \
-  'node' \
   'git' \
   'completion' \
+  'node' \
   'alias-tips' \
   'enhancd' \
   'syntax-highlighting' \
