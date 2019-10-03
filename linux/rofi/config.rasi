@@ -1,0 +1,162 @@
+//----------------------
+// Theme Settings
+//----------------------
+
+configuration {
+  font: "FuraCode Nerd Font Mono 8";
+  show-icons: true;
+}
+
+//----------------------
+// Colors
+//----------------------
+
+* {
+  nord0: #2e3440;
+  nord1: #3b4252;
+  nord2: #434c5e;
+  nord3: #4c566a;
+  nord4: #d8dee9;
+  nord5: #e5e9f0;
+  nord6: #eceff4;
+  nord7: #8fbcbb;
+  nord8: #bf616a;
+  nord9: #d08770;
+  nord10: #ebcb8b;
+  nord11: #a3be8c;
+  nord12: #88c0d0;
+  nord13: #81a1c1;
+  nord14: #b48ead;
+  nord15: #5e81ac;
+  background: @nord0;
+  foreground: @nord4;
+  selected-normal-foreground: @nord4;
+  normal-foreground: @foreground;
+  alternate-normal-background: @nord0;
+  selected-urgent-foreground: @nord4;
+  urgent-foreground: @foreground;
+  alternate-urgent-background: @nord0;
+  active-foreground: @foreground;
+  selected-active-foreground: @foreground;
+  alternate-active-background: @nord0;
+  bordercolor: @nord15;
+  alternate-normal-foreground: @foreground;
+  normal-background: @background;
+  selected-normal-background: @nord3;
+  border-color: @nord13;
+  spacing: 2;
+  separatorcolor: @blue;
+  urgent-background: @background;
+  selected-urgent-background: @nord3;
+  alternate-urgent-foreground: @urgent-foreground;
+  background-color: @background;
+  alternate-active-foreground: @active-foreground;
+  active-background: @background;
+  selected-active-background: @nord3;
+}
+
+#window {
+  background-color: @background;
+}
+
+#mainbox {
+  border: 4;
+  padding: 20;
+}
+
+#message {
+  border: 4px 4px 4px;
+  border-color: @separatorcolor;
+  padding: 20;
+}
+
+#textbox {
+  text-color: @foreground;
+}
+
+#listview {
+  fixed-height: 0;
+  padding: 5 0 0;
+  spacing: 5px;
+}
+
+#element {
+  border: 0;
+  padding: 5px;
+}
+
+#element.normal.normal {
+  background-color: @normal-background;
+  text-color: @normal-foreground;
+}
+
+#element.normal.urgent {
+  background-color: @urgent-background;
+  text-color: @urgent-foreground;
+}
+
+#element.normal.active {
+  background-color: @active-background;
+  text-color: @active-foreground;
+}
+
+#element.selected.normal {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
+}
+
+#element.selected.urgent {
+  background-color: @selected-urgent-background;
+  text-color: @selected-urgent-foreground;
+}
+
+#element.selected.active {
+  background-color: @selected-active-background;
+  text-color: @selected-active-foreground;
+}
+
+#element.alternate.normal {
+  background-color: @alternate-normal-background;
+  text-color: @alternate-normal-foreground;
+}
+
+#element.alternate.urgent {
+  background-color: @alternate-urgent-background;
+  text-color: @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+  background-color: @alternate-active-background;
+  text-color: @alternate-active-foreground;
+}
+
+#button.selected {
+  background-color: @selected-normal-background;
+  text-color: @selected-normal-foreground;
+}
+
+#inputbar {
+  spacing: 5;
+  text-color: @normal-foreground;
+  padding: 5px;
+  border: 0 0 2;
+  border-color: @separatorcolor;
+}
+
+#case-indicator {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+#entry {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+#prompt {
+  spacing: 0;
+  text-color: @normal-foreground;
+}
+
+/* vim:ft=css
+*/
