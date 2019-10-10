@@ -62,7 +62,7 @@ bindsym $mod+Return exec "~/.local/kitty.app/bin/kitty"
 bindsym $mod+Shift+q kill
 
 # lock
-bindsym $mod+z exec "i3lock -n -t -i ~/Immagini/lock.png"
+bindsym $mod+q exec "i3lock-fancy"
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -74,7 +74,9 @@ bindsym $mod+z exec "i3lock -n -t -i ~/Immagini/lock.png"
 bindsym $mod+d exec "rofi -show drun"
 bindsym $mod+x exec "rofi -show ssh"
 bindsym $mod+Tab exec "rofi -show window"
-bindsym $mod+Shift+Tab exec "~/.i3/i3_switch_workspace.sh"
+bindsym $mod+Shift+Tab exec "rofi -show ws:~/.config/rofi/scripts/rofi-i3workspace.sh"
+bindsym $mod+z exec "rofi -show power:~/.config/rofi/scripts/rofi-power.sh"
+bindsym $mod+Shift+n exec "rofi -show file:~/.config/rofi/scripts/rofi-filebrowser.sh"
 
 # change focus
 bindsym $mod+j focus left
@@ -208,6 +210,7 @@ exec_always --no-startup-id ~/.screenlayout/3monitor.sh
 # Shortcut
 bindsym $mod+n exec nautilus
 bindsym $mod+c exec google-chrome
+bindsym $mod+b exec firefox-dev
 bindsym $mod+Shift+c exec "cat .i3/colors .i3/client-properties .i3/base > .i3/config && i3-msg reload"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume

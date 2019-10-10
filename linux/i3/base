@@ -33,7 +33,7 @@ bindsym $mod+Return exec "~/.local/kitty.app/bin/kitty"
 bindsym $mod+Shift+q kill
 
 # lock
-bindsym $mod+z exec "i3lock -n -t -i ~/Immagini/lock.png"
+bindsym $mod+z exec "i3lock-fancy"
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
