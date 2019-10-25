@@ -9,12 +9,19 @@ fi
 
 ### Added by Zplugin's installer
 source "$HOME/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps}  )) && _comps[zplugin]=_zplugin
 ### End of Zplugin installer's chunk
 
 # THEME
 zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 
 # PLUGINS
+# git open url
+zplugin light paulirish/git-open
+
+# ssh-agent
+zplugin light bobsoppe/zsh-ssh-agent
 
 # autosuggestions, trigger precmd hook upon load
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
@@ -27,7 +34,7 @@ zplugin light b4b4r07/enhancd
 export ENHANCD_FILTER=fzf:fzy:peco
 
 # History substring searching
-zplugin ice wait"0b" lucid
+zplugin ice wait"0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
 zplugin light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -44,26 +51,22 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 zstyle ':completion:*:processes' command 'ps -au$USER'
 
-# zdharma/history-search-multi-word
-zstyle ":history-search-multi-word" page-size "11"
-zplugin ice wait"1" lucid
-zplugin load zdharma/history-search-multi-word
-
 # Syntax highlighting must be loaded last
 zplugin ice wait"0c" lucid atinit"zpcompinit;zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 
-# exa
-zplugin ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
-zplugin light ogham/exa
-zplugin ice wait blockf atpull'zplugin creinstall -q .'
-
+# NVM
 zplugin ice wait"1" lucid
 zplugin light lukechilds/zsh-nvm
 
-zplugin light paulirish/git-open
-zplugin light gko/ssh-connect
-zplugin light bobsoppe/zsh-ssh-agent
+# TheFuck
+zplugin ice wait"1" lucid
+zplugin light laggardkernel/zsh-thefuck
+
+# exa
+zplugin ice wait"1" lucid from"gh-r" as"program" mv"exa* -> exa"
+zplugin light ogham/exa
+zplugin ice wait blockf atpull'zplugin creinstall -q .'
 
 # History
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zhistory"
@@ -73,7 +76,7 @@ SAVEHIST=$HISTSIZE
 # Setopt
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_all_dups   # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
@@ -83,7 +86,7 @@ setopt hash_list_all          # hash everything before completion
 setopt completealiases        # complete alisases
 setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
 setopt complete_in_word       # allow completion from within a word/phrase
-setopt correct                # spelling correction for commands
+setopt nocorrect                # spelling correction for commands
 setopt list_ambiguous         # complete as much of a completion until it gets ambiguous.
 setopt nolisttypes
 setopt listpacked
@@ -108,8 +111,10 @@ source $HOME/.zsh_aliases
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS='--preview="cat {}" --preview-window=right:60%:wrap'
+export FZF_ALT_C_OPTS='--preview="ls {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---height=50% --preview="cat {}" --preview-window=right:60%:wrap
+--height=50%
 --color=fg:#e5e9f0,bg:#2e3440,hl:#81a1c1
 --color=fg+:#e5e9f0,bg+:#2e3440,hl+:#81a1c1
 --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
