@@ -64,9 +64,12 @@ zplugin ice wait"1" lucid
 zplugin light laggardkernel/zsh-thefuck
 
 # exa
-zplugin ice wait"1" lucid from"gh-r" as"program" mv"exa* -> exa"
+zplugin ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
 zplugin light ogham/exa
 zplugin ice wait blockf atpull'zplugin creinstall -q .'
+
+zplugin ice wait"2" lucid as"program" pick"bin/git-dsf"
+zplugin light zdharma/zsh-diff-so-fancy
 
 # History
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zhistory"
