@@ -68,6 +68,11 @@ zplugin ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
 zplugin light ogham/exa
 zplugin ice wait blockf atpull'zplugin creinstall -q .'
 
+# bat
+zplugin ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat"
+zplugin light sharkdp/bat
+
+# zsh diff so fancy
 zplugin ice wait"2" lucid as"program" pick"bin/git-dsf"
 zplugin light zdharma/zsh-diff-so-fancy
 
