@@ -58,6 +58,7 @@ zplugin light zdharma/fast-syntax-highlighting
 # NVM
 zplugin ice wait"1" lucid
 zplugin light lukechilds/zsh-nvm
+export NVM_AUTO_USE=true
 
 # TheFuck
 zplugin ice wait"1" lucid
