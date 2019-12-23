@@ -193,6 +193,7 @@ for_window [class="^.*"] border pixel 5
 for_window [class="(?i)gnome-calculator"] floating enable
 for_window [window_role="(?i)pop-up"] floating enable
 for_window [class="(?i)Google-chrome" title="DevTools -"] floating disable, move container to workspace 1
+for_window [class="(?i)Brave-browser" title="DevTools -"] floating disable, move container to workspace 1
 for_window [class="(?i)chromium" title="DevTools -"] floating disable, move container to workspace 1
 for_window [class="(?i)firefox" title="Strumenti di sviluppo -"] floating disable, move container to workspace 1
 for_window [class="(?i)virtualbox" title="Oracle VM VirtualBox Gestore"] floating enable, move container to workspace 2
@@ -209,7 +210,7 @@ exec_always --no-startup-id ~/.screenlayout/3monitor.sh
 # Shortcut
 bindsym $mod+n exec nautilus
 bindsym $mod+c exec google-chrome
-bindsym $mod+b exec firefox-dev
+bindsym $mod+b exec brave-browser
 bindsym $mod+Shift+c exec "cat .i3/colors .i3/client-properties .i3/base > .i3/config && i3-msg reload"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume

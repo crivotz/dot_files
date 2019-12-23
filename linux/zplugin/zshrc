@@ -77,6 +77,9 @@ zplugin light sharkdp/bat
 zplugin ice wait"2" lucid as"program" pick"bin/git-dsf"
 zplugin light zdharma/zsh-diff-so-fancy
 
+zplugin ice
+zplugin snippet /usr/share/google-cloud-sdk/completion.zsh.inc
+
 # History
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zhistory"
 HISTSIZE=290000
