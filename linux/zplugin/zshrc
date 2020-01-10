@@ -73,6 +73,34 @@ zplugin ice wait blockf atpull'zplugin creinstall -q .'
 zplugin ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat"
 zplugin light sharkdp/bat
 
+# ripgrep
+zplugin ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
+zplugin light BurntSushi/ripgrep
+
+# Neovim
+zplugin ice from"gh-r" as"program" bpick"*appimage*" mv"nvim* -> nvim" pick"nvim"
+zplugin light neovim/neovim
+
+# Ranger
+zplugin ice depth'1' as"program" pick"ranger.py"
+zplugin light ranger/ranger
+
+# Fd
+zplugin ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+zplugin light sharkdp/fd
+
+# Install fzf
+zplugin ice lucid wait'0b' from"gh-r" as"program"
+zplugin light junegunn/fzf-bin
+
+# Install `fzf` bynary and tmux helper script
+zplugin ice lucid wait'0c' as"command" pick"bin/fzf-tmux"
+zplugin light junegunn/fzf
+
+# Create and bind multiple widgets using fzf
+zplugin ice lucid wait'0c' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
+zplugin light junegunn/fzf
+
 # zsh diff so fancy
 zplugin ice wait"2" lucid as"program" pick"bin/git-dsf"
 zplugin light zdharma/zsh-diff-so-fancy
@@ -120,7 +148,6 @@ autoload colors && colors
 source $HOME/.zsh_aliases
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS='--preview="cat {}" --preview-window=right:60%:wrap'
