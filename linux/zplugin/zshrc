@@ -1,47 +1,52 @@
+#####################
+# FIRST PROMPT LINE #
+#####################
 rosso='\e[1;34m'
 NC='\e[0m'
-
 echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
-# Install zplugin if not present.
+
+#####################
+# ZPLUGIN INSTALLER #
+#####################
 if [[ ! -d ${HOME}/.zplugin ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 fi
 
-### Added by Zplugin's installer
+#####################
+# ZPLUGIN           #
+#####################
 source "$HOME/.zplugin/bin/zplugin.zsh"
 autoload -Uz _zplugin
 (( ${+_comps}  )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
 
-# THEME
+#####################
+# THEME             #
+#####################
 zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 
-# PLUGINS
-# git open url
+#####################
+# PLUGINS           #
+#####################
+# GIT-OPEN URL
 zplugin light paulirish/git-open
-
-# ssh-agent
+# SSH-AGENT
 zplugin light bobsoppe/zsh-ssh-agent
-
-# autosuggestions, trigger precmd hook upon load
+# AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 zplugin ice wait"0a" lucid atload"_zsh_autosuggest_start"
 zplugin light zsh-users/zsh-autosuggestions
-
-# cd
+# ENHANCD
 zplugin ice wait"0b" lucid
 zplugin light b4b4r07/enhancd
 export ENHANCD_FILTER=fzf:fzy:peco
-
-# History substring searching
+# HISTORY SUBSTRING SEARCHING
 zplugin ice wait"0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
 zplugin light zsh-users/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-
-# Tab completions
+# TAB COMPLETIONS
 zplugin ice wait"0b" lucid blockf
 zplugin light zsh-users/zsh-completions
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -50,74 +55,61 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 zstyle ':completion:*:processes' command 'ps -au$USER'
-
-# Syntax highlighting must be loaded last
+# FZF
+zplugin ice lucid wait'0b' from"gh-r" as"program"
+zplugin light junegunn/fzf-bin
+# FZF BYNARY AND TMUX HELPER SCRIPT
+zplugin ice lucid wait'0c' as"command" pick"bin/fzf-tmux"
+zplugin light junegunn/fzf
+# BIND MULTIPLE WIDGETS USING FZF
+zplugin ice lucid wait'0c' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
+zplugin light junegunn/fzf
+# SYNTAX HIGHLIGHTING
 zplugin ice wait"0c" lucid atinit"zpcompinit;zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
-
 # NVM
 zplugin ice wait"1" lucid
 zplugin light lukechilds/zsh-nvm
 export NVM_AUTO_USE=true
-
-# TheFuck
-zplugin ice wait"1" lucid
-zplugin light laggardkernel/zsh-thefuck
-
-# exa
+# EXA
 zplugin ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
 zplugin light ogham/exa
 zplugin ice wait blockf atpull'zplugin creinstall -q .'
-
-# bat
-zplugin ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat"
-zplugin light sharkdp/bat
-
-# ripgrep
-zplugin ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
-zplugin light BurntSushi/ripgrep
-
-# Neovim
-zplugin ice from"gh-r" as"program" bpick"*appimage*" mv"nvim* -> nvim" pick"nvim"
-zplugin light neovim/neovim
-
-# Forgit
-zplugin ice wait lucid
-zplugin load 'wfxr/forgit'
-
-# Ranger
-zplugin ice depth'1' as"program" pick"ranger.py"
-zplugin light ranger/ranger
-
-# Fd
-zplugin ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
-zplugin light sharkdp/fd
-
-# Install fzf
-zplugin ice lucid wait'0b' from"gh-r" as"program"
-zplugin light junegunn/fzf-bin
-
-# Install `fzf` bynary and tmux helper script
-zplugin ice lucid wait'0c' as"command" pick"bin/fzf-tmux"
-zplugin light junegunn/fzf
-
-# Create and bind multiple widgets using fzf
-zplugin ice lucid wait'0c' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
-zplugin light junegunn/fzf
-
-# zsh diff so fancy
+# ZSH DIFF SO FANCY
 zplugin ice wait"2" lucid as"program" pick"bin/git-dsf"
 zplugin light zdharma/zsh-diff-so-fancy
-
+# BAT
+zplugin ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat"
+zplugin light sharkdp/bat
+# RIPGREP
+zplugin ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
+zplugin light BurntSushi/ripgrep
+# NEOVIM
+zplugin ice from"gh-r" as"program" bpick"*appimage*" mv"nvim* -> nvim" pick"nvim"
+zplugin light neovim/neovim
+# FORGIT
+zplugin ice wait lucid
+zplugin load 'wfxr/forgit'
+# RANGER
+zplugin ice depth'1' as"program" pick"ranger.py"
+zplugin light ranger/ranger
+# FD
+zplugin ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
+zplugin light sharkdp/fd
+# GOOGLE-CLOUD-SDK COMPLETION
 zplugin ice
 zplugin snippet /usr/share/google-cloud-sdk/completion.zsh.inc
 
-# History
+#####################
+# HISTORY           #
+#####################
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zhistory"
 HISTSIZE=290000
 SAVEHIST=$HISTSIZE
 
-# Setopt
+#####################
+# SETOPT            #
+#####################
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups   # ignore duplicated commands history list
@@ -137,7 +129,9 @@ setopt listpacked
 setopt automenu
 setopt vi
 
-# ENV variable
+#####################
+# ENV VARIABLE      #
+#####################
 export EDITOR='vim'
 export VISUAL=$EDITOR
 export PAGER='less'
@@ -145,13 +139,19 @@ export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
 
-# Coloring
+#####################
+# COLORING          #
+#####################
 autoload colors && colors
 
-# ALIASES
+#####################
+# ALIASES           #
+#####################
 source $HOME/.zsh_aliases
 
-# FZF
+#####################
+# FZF SETTINGS      #
+#####################
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS='--preview="cat {}" --preview-window=right:60%:wrap'
@@ -163,19 +163,29 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
 --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
 
-# GO
+#####################
+# GO SETTINGS       #
+#####################
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Dev/go
 
-# FLUTTER
+#####################
+# FLUTTER SETTINGS  #
+#####################
 export PATH="$PATH:$HOME/Dev/flutter/bin"
 
-# ANDROID STUDIO
+###########################
+# ANDROID STUDIO SETTINGS #
+###########################
 export PATH="$PATH:/opt/android-studio/bin"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#####################
+# P10K SETTINGS     #
+#####################
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#####################
+# RVM VARIABLE      #
+#####################
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
