@@ -92,6 +92,9 @@ zinit light neovim/neovim
 # FORGIT
 zinit ice wait lucid
 zinit load 'wfxr/forgit'
+### Lazygit ###
+zinit ice lucid wait"0" as"program" from"gh-r" mv"lazygit* -> lazygit" atload"alias lg='lazygit'"
+zinit light 'jesseduffield/lazygit'
 # RANGER
 zinit ice depth'1' as"program" pick"ranger.py"
 zinit light ranger/ranger
@@ -140,6 +143,7 @@ export PAGER='less'
 export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
+export BAT_THEME="ansi-dark"
 
 #####################
 # COLORING          #
