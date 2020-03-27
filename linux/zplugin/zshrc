@@ -29,10 +29,11 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 #####################
 # PLUGINS           #
 #####################
-# GIT-OPEN URL
-zinit light paulirish/git-open
 # SSH-AGENT
 zinit light bobsoppe/zsh-ssh-agent
+# FZF-TAB
+zinit ice wait"1" lucid
+zinit light Aloxaf/fzf-tab
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 zinit ice wait"0a" lucid atload"_zsh_autosuggest_start"
@@ -57,6 +58,11 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:complete:*:options' sort false
+zstyle ':fzf-tab:complete:_zlua:*' query-string input
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
+zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
+zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always ${~ctxt[hpre]}$in'
 # FZF
 zinit ice lucid wait'0b' from"gh-r" as"program"
 zinit light junegunn/fzf-bin
@@ -81,7 +87,7 @@ zinit ice wait blockf atpull'zinit creinstall -q .'
 zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 zinit light zdharma/zsh-diff-so-fancy
 # BAT
-zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat"
+zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"alias cat=bat"
 zinit light sharkdp/bat
 # RIPGREP
 zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
@@ -95,6 +101,9 @@ zinit load 'wfxr/forgit'
 ### Lazygit ###
 zinit ice lucid wait"0" as"program" from"gh-r" mv"lazygit* -> lazygit" atload"alias lg='lazygit'"
 zinit light 'jesseduffield/lazygit'
+### Lazydocker ###
+zinit ice lucid wait"0" as"program" from"gh-r" mv"lazydocker* -> lazydocker" atload"alias lg='lazydocker'"
+zinit light 'jesseduffield/lazydocker'
 # RANGER
 zinit ice depth'1' as"program" pick"ranger.py"
 zinit light ranger/ranger
@@ -102,9 +111,9 @@ zinit light ranger/ranger
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 # GOOGLE-CLOUD-SDK COMPLETION
-zinit ice
-zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
-
+zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
+# TMUXINATOR
+zinit ice as"completion"; zinit snippet /home/mauro/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 #####################
 # HISTORY           #
 #####################
@@ -137,7 +146,7 @@ setopt vi
 #####################
 # ENV VARIABLE      #
 #####################
-export EDITOR='vim'
+export EDITOR='nvim'
 export VISUAL=$EDITOR
 export PAGER='less'
 export SHELL='/bin/zsh'
@@ -156,6 +165,24 @@ autoload colors && colors
 source $HOME/.zsh_aliases
 
 #####################
+# FANCY-CTRL-Z      #
+#####################
+function fg-fzf() {
+	job="$(jobs | fzf -0 -1 | sed -E 's/\[(.+)\].*/\1/')" && echo '' && fg %$job
+}
+function fancy-ctrl-z () {
+	if [[ $#BUFFER -eq 0 ]]; then
+		BUFFER=" fg-fzf"
+		zle accept-line -w
+	else
+		zle push-input -w
+		zle clear-screen -w
+	fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+#####################
 # FZF SETTINGS      #
 #####################
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
@@ -168,6 +195,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=fg+:#e5e9f0,bg+:#2e3440,hl+:#81a1c1
 --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
 --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
+
 
 #####################
 # GO SETTINGS       #
