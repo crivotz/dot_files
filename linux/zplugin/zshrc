@@ -29,8 +29,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 #####################
 # PLUGINS           #
 #####################
-# ZSH AS PACKAGE
-zinit pack for zsh
 # SSH-AGENT
 zinit light bobsoppe/zsh-ssh-agent
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
