@@ -117,6 +117,9 @@ zinit light "cli/cli"
 zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet /home/mauro/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
+# GIT-FLOW
+zinit light petervanderdoes/git-flow-completion
+
 #####################
 # HISTORY           #
 #####################
