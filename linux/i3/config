@@ -184,8 +184,6 @@ bindsym $mod+r mode "resize"
 
 gaps inner 5
 gaps outer 5
-workspace 1 gaps outer 10
-workspace 1 gaps inner 27
 smart_borders no_gaps
 
 for_window [class="^.*"] border pixel 5
@@ -202,6 +200,7 @@ for_window [class="(?i)gvim"] move container to workspace 3
 
 # Auto start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launchlistener.sh
 exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
 exec --no-startup-id nm-applet 
 exec_always --no-startup-id nitrogen --restore

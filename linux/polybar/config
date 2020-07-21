@@ -8,7 +8,7 @@
 ;=====================================================
 
 [colors]
-my_background	= #2e3440
+my_background	= #002e3440
 my_foreground	= #eceff4
 base00 = #2E3440
 base01 = #3B4252
@@ -28,12 +28,9 @@ base0E = #B48EAD
 base0F = #5E81AC
 
 [bar/bottom]
-monitor = ${env:MONITOR:eDP-1}
-bottom = false
-width = 90%
-height = 25
-offset-x = 5%
-offset-y = 10
+; monitor = ${env:MONITOR:eDP-1}
+bottom = true
+height = 20
 radius = 0
 fixed-center = true
 
@@ -53,11 +50,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Knack Nerd Font:antialias=true:size=8:weight=bold:1
-font-1 = FuraCode Nerd Font Mono:antialias=true:size=8;1
-font-2 = FontAwesome:antialias=true:size=8;1
 
-modules-left = distro-logo i3 wlan eth vpnc
-modules-center =
+modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
+modules-center = spotify previous playpause next
 modules-right = filesystem memory cpu temperature battery volume date
 
 tray-position = right
@@ -67,9 +62,10 @@ tray-offset-x = 0%
 tray-maxsize = 18
 tray-detached = false
 tray-background = ${colors.my_background}
+enable-ipc = true
 
-wm-restack = i3
-override-redirect = true
+; wm-restack = i3
+; override-redirect = true
 
 [module/i3]
 type = internal/i3
@@ -81,12 +77,13 @@ label-unfocused-foreground = ${colors.my_foreground}
 
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-background = ${colors.base0D}
+label-mode-background = ${colors.base0A}
+label-mode-foreground = ${colors.base00}
 
 label-focused = %index%
-label-focused-foreground = ${colors.my_foreground}
-label-focused-background = ${colors.base0D}
-label-focused-underline = ${colors.my_foreground}
+label-focused-foreground = ${colors.base0A}
+label-focused-background = ${colors.my_background}
+label-focused-underline = ${colors.base0A}
 label-focused-padding = 2
 
 label-unfocused = %index%
@@ -104,7 +101,7 @@ label-urgent-padding = 2
 
 [module/distro-logo]
 type = custom/text
-content-foreground = ${colors.my_foreground}
+content-foreground = ${colors.base08}
 content-padding = 1
 content =  
 
@@ -274,6 +271,19 @@ ramp-signal-3-foreground = ${colors.my_foreground}
 ramp-signal-4 = 
 ramp-signal-4-foreground = ${colors.my_foreground}
 
+[module/wlan_speed]
+type = internal/network
+interface = wlp9s0f0
+interval = 3.0
+format-connected = <label-connected>
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = #D7C4BB
+; format-connected-prefix-background = #212121
+label-connected =  %downspeed:7%  %upspeed:7%
+label-connected-foreground = ${colors.base0A}
+; label-connected-background = #212121
+label-connected-padding = 2
+
 [module/eth]
 type = internal/network
 interface = enp8s0
@@ -286,6 +296,66 @@ label-connected = %local_ip%
 
 format-disconnected =""
 format-disconnected-foreground = ${colors.my_background}
+
+[module/eth_speed]
+type = internal/network
+interface = enp8s0
+interval = 3.0
+format-connected = <label-connected>
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = #D7C4BB
+; format-connected-prefix-background = #212121
+label-connected =  %downspeed:7%  %upspeed:7%
+label-connected-foreground = ${colors.base0A}
+; label-connected-background = #212121
+label-connected-padding = 2
+
+[module/previous]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Previous song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/next]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Next song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+[module/playpause]
+type = custom/ipc
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo ""
+; Paused
+hook-2 = echo ""
+initial = 1
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = python3 ~/.config/polybar/scripts/spotify/spotify_status.py
+initial = 1
+format-padding = 4
+format-underline = ${colors.base0A}
+line-size = 1
+; [i3wm only] - Uncomment the below line to focus on Spotify when clicking on the song name (credits to https://github.com/Esya)
+click-left = i3-msg '[class="Spotify"] focus'
 
 [module/xwindow]
 type = internal/xwindow

@@ -8,5 +8,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 polybar bottom &
+#symlink spotify config
+ln -s /tmp/polybar_mqueue.$! /tmp/ipc-bottom
+./~/.config/polybar/scripts/spotify/launchlistener.sh
 
 echo "Bars launched..."
