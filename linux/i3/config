@@ -204,8 +204,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launchlistener.sh
 exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
 exec --no-startup-id nm-applet 
 exec_always --no-startup-id nitrogen --restore
-# exec_always --no-startup-id ~/.screenlayout/3monitor.sh
-exec_always --no-startup-id ~/.screenlayout/home.sh
+exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
 
 # Shortcut
 bindsym $mod+n exec nautilus
