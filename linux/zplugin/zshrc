@@ -83,9 +83,19 @@ zinit light lukechilds/zsh-nvm
 zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
 zinit light ogham/exa
 zinit ice wait blockf atpull'zinit creinstall -q .'
+# DELTA
+zinit ice lucid wait"0" as"program" from"gh-r" pick"delta*/delta"
+zinit light 'dandavison/delta'
 # BAT
 zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"alias cat=bat"
 zinit light sharkdp/bat
+# BAT-EXTRAS
+zinit ice wait"1" as"program" pick"src/batgrep.sh" lucid
+zinit ice wait"1" as"program" pick"src/batdiff.sh" lucid
+zinit light eth-p/bat-extras
+alias rg=batgrep.sh
+alias bd=batdiff.sh
+alias man=batman.sh
 # RIPGREP
 zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zinit light BurntSushi/ripgrep
@@ -114,9 +124,6 @@ zinit light "cli/cli"
 zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet /home/mauro/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
-# DELTA
-zinit ice lucid wait"0" as"program" from"gh-r" pick"delta*/delta"
-zinit light 'dandavison/delta'
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma/zsh-diff-so-fancy
@@ -155,7 +162,7 @@ setopt listpacked
 setopt automenu
 setopt vi
 
-chpwd() exa --icons -Flaigh
+chpwd() exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
 #####################
 # ENV VARIABLE      #
 #####################
@@ -165,7 +172,7 @@ export PAGER='less'
 export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
-export BAT_THEME="ansi-dark"
+export BAT_THEME="Nord"
 
 #####################
 # COLORING          #
