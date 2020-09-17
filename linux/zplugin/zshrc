@@ -118,7 +118,7 @@ zinit light ranger/ranger
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 # GH-CLI
-zinit ice lucid wait"0" as"program" from"gh-r" pick"gh*/bin/gh"
+zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/local/bin/gh"
 zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
