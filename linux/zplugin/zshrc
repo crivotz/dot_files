@@ -118,12 +118,15 @@ zinit light ranger/ranger
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 # GH-CLI
-zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/local/bin/gh"
+zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/bin/gh"
 zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet /home/mauro/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
+# BIT
+zinit ice lucid wait"0" as"program" from"gh-r" pick"bit"
+zinit light "chriswalz/bit"
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma/zsh-diff-so-fancy
