@@ -17,5 +17,5 @@ configuration {
   display-run: "λ |>";
   display-ssh: "SSH |>";
   display-window: "WIN |>";
-  theme: "~/.config/rofi/themes/winteriscoming.rasi";
 }
+@import "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

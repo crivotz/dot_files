@@ -3,22 +3,41 @@
 #
 # You can use these variables anywhere in the i3 configuration file.
 
-set $base00 #2E3440
-set $base01 #3B4252
-set $base02 #434C5E
-set $base03 #4C566A
-set $base04 #D8DEE9
-set $base05 #E5E9F0
-set $base06 #ECEFF4
-set $base07 #8FBCBB
-set $base08 #BF616A
-set $base09 #D08770
-set $base0A #EBCB8B
-set $base0B #A3BE8C
-set $base0C #88C0D0
-set $base0D #81A1C1
-set $base0E #B48EAD
-set $base0F #5e81ac
+# NORD
+# set $base00 #2E3440
+# set $base01 #3B4252
+# set $base02 #434C5E
+# set $base03 #4C566A
+# set $base04 #D8DEE9
+# set $base05 #E5E9F0
+# set $base06 #ECEFF4
+# set $base07 #8FBCBB
+# set $base08 #BF616A
+# set $base09 #D08770
+# set $base0A #EBCB8B
+# set $base0B #A3BE8C
+# set $base0C #88C0D0
+# set $base0D #81A1C1
+# set $base0E #B48EAD
+# set $base0F #5e81ac
+
+#  Gruvbox Hard
+set $base00 #1d2021
+set $base01 #3c3836
+set $base02 #504945
+set $base03 #665c54
+set $base04 #bdae93
+set $base05 #d5c4a1
+set $base06 #ebdbb2
+set $base07 #fbf1c7
+set $base08 #fb4934
+set $base09 #fe8019
+set $base0A #fabd2f
+set $base0B #b8bb26
+set $base0C #8ec07c
+set $base0D #83a598
+set $base0E #d3869b
+set $base0F #d65d0e
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
