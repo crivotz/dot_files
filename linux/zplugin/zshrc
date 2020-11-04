@@ -123,7 +123,7 @@ zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
-zinit ice as"completion"; zinit snippet /home/mauro/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
+zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # BIT
 zinit ice lucid wait"0" as"program" from"gh-r" pick"bit"
 zinit light "chriswalz/bit"
@@ -155,7 +155,7 @@ setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 setopt always_to_end          # cursor moved to the end in full completion
 setopt hash_list_all          # hash everything before completion
-setopt completealiases        # complete alisases
+# setopt completealiases        # complete alisases
 setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
 setopt complete_in_word       # allow completion from within a word/phrase
 setopt nocorrect                # spelling correction for commands
@@ -209,6 +209,7 @@ bindkey '^Z' fancy-ctrl-z
 # FZF SETTINGS      #
 #####################
 export FZF_DEFAULT_OPTS="
+--ansi
 --layout=default
 --info=inline
 --height=50%
