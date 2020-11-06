@@ -127,6 +127,8 @@ zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmu
 # BIT
 zinit ice lucid wait"0" as"program" from"gh-r" pick"bit"
 zinit light "chriswalz/bit"
+# ZSH MANYDOTS MAGIC
+zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma/zsh-diff-so-fancy
