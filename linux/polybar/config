@@ -70,9 +70,9 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Knack Nerd Font:antialias=true:size=8:weight=bold:1
+font-0 = FiraCode Nerd Font:antialias=true:size=8:weight=bold:1
 
-modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
+modules-left = distro-logo i3 wlan wlan_speed eth_lt eth_speed_lt eth eth_speed vpnc
 modules-center = spotify previous playpause next
 modules-right = filesystem memory cpu temperature battery volume date
 
@@ -92,6 +92,7 @@ enable-ipc = true
 type = internal/i3
 
 index-sort = true
+strip-wsnumbers = true
 
 label-unfocused-background = ${colors.my_background}
 label-unfocused-foreground = ${colors.my_foreground}
@@ -101,20 +102,20 @@ label-mode-padding = 2
 label-mode-background = ${colors.base0A}
 label-mode-foreground = ${colors.base00}
 
-label-focused = %index%
+label-focused = %name%
 label-focused-foreground = ${colors.base0A}
 label-focused-background = ${colors.my_background}
 label-focused-underline = ${colors.base0A}
 label-focused-padding = 2
 
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = 2
 
-label-visible = %index%
+label-visible = %name%
 label-visible-underline = ${colors.my_background}
 label-visible-padding = 4
 
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-foreground = ${colors.my_foreground}
 label-urgent-background = ${colors.my_background}
 label-urgent-underline = ${colors.base08}
@@ -124,7 +125,7 @@ label-urgent-padding = 2
 type = custom/text
 content-foreground = ${colors.base08}
 content-padding = 1
-content =  
+content =  
 
 [module/vpnc]
 type = custom/script
@@ -304,7 +305,7 @@ label-connected-foreground = ${colors.base0A}
 ; label-connected-background = #212121
 label-connected-padding = 2
 
-[module/eth]
+[module/eth_lt]
 type = internal/network
 interface = enp8s0
 interval = 3.0
@@ -317,9 +318,35 @@ label-connected = %local_ip%
 format-disconnected =""
 format-disconnected-foreground = ${colors.my_background}
 
-[module/eth_speed]
+[module/eth_speed_lt]
 type = internal/network
 interface = enp8s0
+interval = 3.0
+format-connected = <label-connected>
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = #D7C4BB
+; format-connected-prefix-background = #212121
+label-connected =  %downspeed:7%  %upspeed:7%
+label-connected-foreground = ${colors.base0A}
+; label-connected-background = #212121
+label-connected-padding = 2
+
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+; format-connected-underline = ${colors.base0B}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.my_foreground}
+label-connected = %local_ip%
+
+format-disconnected =""
+format-disconnected-foreground = ${colors.my_background}
+
+[module/eth_speed]
+type = internal/network
+interface = enp0s31f6
 interval = 3.0
 format-connected = <label-connected>
 ; format-connected-prefix = " "

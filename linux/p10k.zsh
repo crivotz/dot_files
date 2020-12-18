@@ -648,7 +648,7 @@ fi
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_debian() {
-    p10k segment -f 196 -i ''
+    p10k segment -f 196 -i ''
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.

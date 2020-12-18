@@ -168,6 +168,7 @@ setopt list_ambiguous         # complete as much of a completion until it gets a
 setopt nolisttypes
 setopt listpacked
 setopt automenu
+unsetopt BEEP
 setopt vi
 
 chpwd() exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
@@ -181,7 +182,7 @@ export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
 export BAT_THEME="gruvbox"
-export TERM="xterm-256color"
+export TERM="screen-256color"
 
 #####################
 # COLORING          #
