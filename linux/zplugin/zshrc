@@ -121,7 +121,7 @@ zinit light sharkdp/fd
 zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/bin/gh"
 zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
-zinit ice as"completion"; zinit snippet /usr/share/google-cloud-sdk/completion.zsh.inc
+zinit ice as"completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # BIT
@@ -229,9 +229,18 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 #####################
+# PATH              #
+#####################
+export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
+
+#####################
+# GOOGLE-SDK        #
+#####################
+if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+
+#####################
 # GO SETTINGS       #
 #####################
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Dev/go
 
 #####################
@@ -254,3 +263,4 @@ export PATH="$PATH:/opt/android-studio/bin"
 #####################
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
