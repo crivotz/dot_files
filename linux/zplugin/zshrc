@@ -59,7 +59,8 @@ zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
-zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always ${~ctxt[hpre]}$in'
+zstyle ":completion:*:git-checkout:*" sort false
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # FZF
 zinit ice lucid wait'0b' from"gh-r" as"program"
 zinit light junegunn/fzf
@@ -137,7 +138,9 @@ zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
 # RCLONE
 # zinit ice lucid wait"0" as"program" from"gh-r" bpick='*-linux-amd64.deb' pick"usr/bin/rclone"
 # zinit light 'rclone/rclone'
-
+# WHATSAPP CLI
+# zinit ice lucid wait"0" as"program" from"gh-r" pick"whatscli"
+# zinit light "normen/whatscli"
 #####################
 # HISTORY           #
 #####################
@@ -178,6 +181,7 @@ export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
 export BAT_THEME="gruvbox"
+export TERM="xterm-256color"
 
 #####################
 # COLORING          #
