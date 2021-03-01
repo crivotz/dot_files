@@ -77,8 +77,7 @@ font pango:FuraCode Nerd Font Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "~/.local/kitty.app/bin/kitty -e tmux new -s λ"
-bindsym $mod+Shift+Return exec "~/.local/kitty.app/bin/kitty"
+bindsym $mod+Return exec "~/.local/kitty.app/bin/kitty"
 
 # kill focused window
 bindsym $mod+Shift+q kill

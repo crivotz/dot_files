@@ -4,7 +4,6 @@
 rosso='\e[1;34m'
 NC='\e[0m'
 echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
-
 #####################
 # ZINIT             #
 #####################
@@ -62,10 +61,10 @@ zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps -
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # FZF
-zinit ice lucid wait'0b' from"gh-r" as"program"
+zinit ice lucid wait'0b' from"gh-r" as"command"
 zinit light junegunn/fzf
 # FZF BYNARY AND TMUX HELPER SCRIPT
-zinit ice lucid wait'0c' as"command" pick"bin/fzf-tmux"
+zinit ice lucid wait'0c' as"command" id-as"junegunn/fzf-tmux" pick"bin/fzf-tmux"
 zinit light junegunn/fzf
 # BIND MULTIPLE WIDGETS USING FZF
 zinit ice lucid wait'0c' multisrc"shell/{completion,key-bindings}.zsh" id-as"junegunn/fzf_completions" pick"/dev/null"
@@ -123,6 +122,9 @@ zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/bin/gh"
 zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
+# TMUX
+zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
+zinit light tmux/tmux
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # BIT
@@ -182,8 +184,9 @@ export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
 export BAT_THEME="gruvbox"
-export TERM="screen-256color"
-
+if [[ ! $(tmux ls) ]]; then 
+  tmux new -s λ
+fi
 #####################
 # COLORING          #
 #####################
