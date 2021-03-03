@@ -61,7 +61,7 @@ zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps -
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # FZF
-zinit ice lucid wait'0b' from"gh-r" as"command"
+zinit ice from"gh-r" as"command"
 zinit light junegunn/fzf
 # FZF BYNARY AND TMUX HELPER SCRIPT
 zinit ice lucid wait'0c' as"command" id-as"junegunn/fzf-tmux" pick"bin/fzf-tmux"
@@ -184,7 +184,7 @@ export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
 export BAT_THEME="gruvbox"
-if [[ ! $(tmux ls) ]]; then 
+if [[ ! $(tmux ls) ]] 2> /dev/null; then 
   tmux new -s λ
 fi
 #####################
