@@ -77,7 +77,8 @@ font pango:FuraCode Nerd Font Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "~/.local/kitty.app/bin/kitty"
+bindsym $mod+Return exec st
+bindsym $mod+Shift exec "~/.local/kitty.app/bin/kitty"
 
 # kill focused window
 bindsym $mod+Shift+q kill
