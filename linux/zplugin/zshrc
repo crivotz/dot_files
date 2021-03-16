@@ -135,6 +135,9 @@ zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
 # TREE-SITTER
 zinit ice as"program" from"gh-r" mv"tree* -> tree-sitter" pick"tree-sitter"
 zinit light tree-sitter/tree-sitter
+# XURLS
+zinit ice as"program" from"gh-r" mv"xurls* -> xurls" pick"xurls"
+zinit light mvdan/xurls
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma/zsh-diff-so-fancy
@@ -186,7 +189,7 @@ export PAGER='less'
 export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
-export BAT_THEME="gruvbox"
+export BAT_THEME="gruvbox-dark"
 if [[ ! $(tmux ls) ]] 2> /dev/null; then 
   tmux new -s λ
 fi
