@@ -138,6 +138,9 @@ zinit light tree-sitter/tree-sitter
 # XURLS
 zinit ice as"program" from"gh-r" mv"xurls* -> xurls" pick"xurls"
 zinit light mvdan/xurls
+# PRETTYPING
+zinit ice lucid wait'' as"program" pick"prettyping" atload'alias ping=prettyping'
+zinit load "denilsonsa/prettyping"
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma/zsh-diff-so-fancy
