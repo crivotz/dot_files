@@ -17,8 +17,9 @@ My dot_files for linux (i3, zinit, tmux, tmuxinator, st, kitty, polybar, ranger,
 # Credits
 - [Zinit the master of puppets](https://github.com/zdharma/zinit)
 - [WM i3-gaps](https://github.com/Airblader/i3)
-- [Rofi](https://github.com/davatorium/rofi)
+- [FZF](https://github.com/junegunn/fzf)
 - [Colorschema](https://github.com/sainnhe/gruvbox-material)
 - [GTK](https://github.com/sainnhe/gruvbox-material-gtk)
+- [Rofi](https://github.com/davatorium/rofi)
 - [Spicetify](https://github.com/khanhas/Spicetify)
 - and many more thanks 👏
