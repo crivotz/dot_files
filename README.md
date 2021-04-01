@@ -10,15 +10,15 @@ My dot_files for linux (i3, zinit, tmux, tmuxinator, st, kitty, polybar, ranger,
 ![Rofi](https://raw.githubusercontent.com/crivotz/dot_files/master/extras/screenshots/6.png)
 
 # My personal config
-[NV-IDE](https://github.com/crivotz/nv-ide) in the screenshot I am using `more_lua` branch
-[Suckless terminal](https://github.com/crivotz/st)
+- [NV-IDE](https://github.com/crivotz/nv-ide) in the screenshot I am using `more_lua` branch
+- [Suckless terminal](https://github.com/crivotz/st)
 
 
 # Credits
-[Zinit the master of puppets](https://github.com/zdharma/zinit)
-[WM i3-gaps](https://github.com/Airblader/i3)
-[Rofi](https://github.com/davatorium/rofi)
-[Colorschema](https://github.com/sainnhe/gruvbox-material)
-[GTK](https://github.com/sainnhe/gruvbox-material-gtk)
-[Spicetify](https://github.com/khanhas/Spicetify)
-and many more thanks
+- [Zinit the master of puppets](https://github.com/zdharma/zinit)
+- [WM i3-gaps](https://github.com/Airblader/i3)
+- [Rofi](https://github.com/davatorium/rofi)
+- [Colorschema](https://github.com/sainnhe/gruvbox-material)
+- [GTK](https://github.com/sainnhe/gruvbox-material-gtk)
+- [Spicetify](https://github.com/khanhas/Spicetify)
+- and many more thanks 👏
