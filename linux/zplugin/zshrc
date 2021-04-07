@@ -127,9 +127,6 @@ zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=
 zinit light tmux/tmux
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
-# BIT
-zinit ice lucid wait"0" as"program" from"gh-r" pick"bit"
-zinit light "chriswalz/bit"
 # ZSH MANYDOTS MAGIC
 zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
 # TREE-SITTER
