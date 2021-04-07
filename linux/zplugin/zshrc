@@ -80,7 +80,7 @@ export NVM_AUTO_USE=true
 zinit ice wait"1" lucid
 zinit light lukechilds/zsh-nvm
 # EXA
-zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
+zinit ice wait"2" lucid from"gh-r" as"program" mv"bin/exa* -> exa"
 zinit light ogham/exa
 zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA
