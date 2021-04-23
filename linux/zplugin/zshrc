@@ -141,6 +141,9 @@ zinit load "denilsonsa/prettyping"
 # GLOW
 zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/glow"
 zinit light charmbracelet/glow
+# CODE-MINIMAP
+zinit ice lucid wait"0" as"program" from"gh-r" bpick='*amd64.deb' pick"usr/bin/code-minimap"
+zinit light wfxr/code-minimap
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma/zsh-diff-so-fancy
