@@ -92,7 +92,7 @@ module-margin-right = 1
 
 font-0 = FiraCode Nerd Font:antialias=true:size=8:weight=bold:1
 
-modules-left = distro-logo i3 wlan wlan_speed eth_lt eth_speed_lt eth eth_speed vpnc
+modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
 modules-center = spotify previous playpause next
 modules-right = filesystem memory cpu temperature battery volume date
 
@@ -325,35 +325,9 @@ label-connected-foreground = ${colors.base0A}
 ; label-connected-background = #212121
 label-connected-padding = 2
 
-[module/eth_lt]
-type = internal/network
-interface = enp8s0
-interval = 3.0
-
-; format-connected-underline = ${colors.base0B}
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.my_foreground}
-label-connected = %local_ip%
-
-format-disconnected =""
-format-disconnected-foreground = ${colors.my_background}
-
-[module/eth_speed_lt]
-type = internal/network
-interface = enp8s0
-interval = 3.0
-format-connected = <label-connected>
-; format-connected-prefix = " "
-; format-connected-prefix-foreground = #D7C4BB
-; format-connected-prefix-background = #212121
-label-connected =  %downspeed:7%  %upspeed:7%
-label-connected-foreground = ${colors.base0A}
-; label-connected-background = #212121
-label-connected-padding = 2
-
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = enp8s0
 interval = 3.0
 
 ; format-connected-underline = ${colors.base0B}
@@ -366,7 +340,7 @@ format-disconnected-foreground = ${colors.my_background}
 
 [module/eth_speed]
 type = internal/network
-interface = enp0s31f6
+interface = enp8s0
 interval = 3.0
 format-connected = <label-connected>
 ; format-connected-prefix = " "
