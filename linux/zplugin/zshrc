@@ -86,6 +86,12 @@ zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA
 zinit ice lucid wait"0" as"program" from"gh-r" pick"delta*/delta"
 zinit light 'dandavison/delta'
+# DUST
+zinit ice wait"2" lucid from"gh-r" as"program" mv"dust*/dust -> dust" pick"dust" atload"alias du=dust"
+zinit light bootandy/dust
+# DUF
+zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/duf" atload"alias df=duf"
+zinit light muesli/duf
 # BAT
 zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"alias cat=bat"
 zinit light sharkdp/bat
