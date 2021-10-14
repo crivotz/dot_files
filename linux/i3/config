@@ -233,10 +233,10 @@ for_window [class="^.*"] border pixel 5
 # open certain windows in floating mode
 for_window [class="(?i)gnome-calculator"] floating enable
 for_window [window_role="(?i)pop-up"] floating enable
-for_window [class="(?i)Google-chrome" title="DevTools -"] floating disable, move container to workspace $ws8
-for_window [class="(?i)Brave-browser" title="DevTools -"] floating disable, move container to workspace $ws8
-for_window [class="(?i)chromium" title="DevTools -"] floating disable, move container to workspace $ws8
-for_window [class="(?i)firefox" title="Strumenti di sviluppo -"] floating disable, move container to workspace $ws8
+for_window [class="(?i)Google-chrome" title="DevTools -"] floating disable, move container to workspace $ws1
+for_window [class="(?i)Brave-browser" title="DevTools -"] floating disable, move container to workspace $ws1
+for_window [class="(?i)chromium" title="DevTools -"] floating disable, move container to workspace $ws1
+for_window [class="(?i)firefox" title="Strumenti di sviluppo -"] floating disable, move container to workspace $ws1
 for_window [class="(?i)kitty"] move container to workspace $ws2
 for_window [class="(?i)st"] move container to workspace $ws2
 for_window [class="(?i)spotify"] move container to workspace $ws9
