@@ -191,7 +191,16 @@ setopt automenu
 unsetopt BEEP
 setopt vi
 
-chpwd() exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
+chpwd() {
+  set -- "$(git rev-parse --show-toplevel)" 2>/dev/null
+  # If cd'ing into a git working copy and not within the same working copy
+  if [ -n "$1" ] && [ "$1" != "$vc_root" ]; then
+    vc_root="$1"
+    git fetch
+  fi
+  # ls inside folder after cd
+  exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
+}
 
 #####################
 # ENV VARIABLE      #
@@ -308,4 +317,3 @@ export PATH="$PATH:/opt/android-studio/bin"
 #####################
 export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
