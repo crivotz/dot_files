@@ -61,7 +61,7 @@ zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps -
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # FZF
-zinit ice from"gh-r" as"command"
+zinit ice from"gh-r" as"command" bpick"*linux_amd64*"
 zinit light junegunn/fzf
 # FZF BYNARY AND TMUX HELPER SCRIPT
 zinit ice lucid wait'0c' as"command" id-as"junegunn/fzf-tmux" pick"bin/fzf-tmux"
@@ -112,10 +112,10 @@ zinit light neovim/neovim
 zinit ice wait lucid
 zinit load 'wfxr/forgit'
 # LAZYGIT
-zinit ice lucid wait"0" as"program" from"gh-r" mv"lazygit* -> lazygit" atload"alias lg='lazygit'"
+zinit ice lucid wait"0" as"program" from"gh-r" bpick"*Linux_x86_64*" mv"lazygit* -> lazygit" atload"alias lg='lazygit'"
 zinit light 'jesseduffield/lazygit'
 # LAZYDOCKER
-zinit ice lucid wait"0" as"program" from"gh-r" mv"lazydocker* -> lazydocker" atload"alias lg='lazydocker'"
+zinit ice lucid wait"0" as"program" from"gh-r" bpick"*Linux_x86_64*" mv"lazydocker* -> lazydocker" atload"alias lg='lazydocker'"
 zinit light 'jesseduffield/lazydocker'
 # RANGER
 zinit ice depth'1' as"program" pick"ranger.py"
@@ -124,7 +124,7 @@ zinit light ranger/ranger
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 # GH-CLI
-zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/gh"
+zinit ice lucid wait"0" as"program" from"gh-r" bpick"*linux_amd64.deb" pick"usr/bin/gh"
 zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
