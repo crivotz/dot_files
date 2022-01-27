@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
-  -- font = wezterm.font("JetBrainsMono Nerd Font"),
+  font = wezterm.font("JetBrainsMono Nerd Font"),
   color_scheme = "Gruvbox-material",
   color_schemes = {
     ["Gruvbox-material"]={
@@ -27,5 +27,6 @@ return {
   },
   check_for_updates = false, -- since it's installed by zinit, let zinit manage its updates.
   font_size = 11,
+  line_height = 1.1,
   enable_tab_bar = false,
 }
