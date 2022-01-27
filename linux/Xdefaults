@@ -20,8 +20,8 @@ URxvt.externalBorder:       0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font:                 xft:FuraCode Nerd Font Mono:size=8
-URxvt*boldFont:             xft:FuraCode Nerd Font Mono:size=8:weight=bold
+URxvt*font:                 xft:JetBrains Mono:size=8
+URxvt*boldFont:             xft:JetBrains Mono:size=8:weight=bold
 
 ! Fix font space
 URxvt*letterSpace:          -1

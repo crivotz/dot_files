@@ -108,6 +108,9 @@ zinit light BurntSushi/ripgrep
 # NEOVIM
 zinit ice from"gh-r" as"program" bpick"*appimage*" ver"nightly" mv"nvim* -> nvim" pick"nvim"
 zinit light neovim/neovim
+# WEZTERM
+zinit ice from"gh-r" as"program" bpick"*appimage*" ver"nightly" mv"Wez* -> wezterm" pick"wezterm"
+zinit light wez/wezterm
 # FORGIT
 zinit ice wait lucid
 zinit load 'wfxr/forgit'
@@ -129,8 +132,9 @@ zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUX
-zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
-zinit light tmux/tmux
+# Prefer use of apt for terminfo problems
+# zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
+# zinit light tmux/tmux
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # ZSH MANYDOTS MAGIC

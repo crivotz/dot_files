@@ -3,9 +3,9 @@
 //----------------------
 
 configuration {
-  font: "FuraCode Nerd Font Mono 8";
+  font: "JetBrainsMono Nerd Font Mono 8";
   show-icons: true;
-  terminal: "kitty";
+  terminal: "st";
   combi-modi: "drun,window,run,ssh,file:~/.config/rofi/scripts/rofi-filebrowser.sh,ws:~/.config/rofi/scripts/rofi-i3workspace.sh,power:~/.config/rofi/scripts/rofi-power.sh";
   matching: "fuzzy";
   levenshtein-sort: true;
