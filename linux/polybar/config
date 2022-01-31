@@ -90,7 +90,7 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = FiraCode Nerd Font:antialias=true:size=8:weight=bold:1
+font-0 = JetBrainsMono Nerd Font:antialias=true:size=10:weight=bold:1
 
 modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
 modules-center = spotify previous playpause next

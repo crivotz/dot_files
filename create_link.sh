@@ -9,6 +9,7 @@ ln -sf ~/.dot_files/linux/screenlayout ~/.screenlayout
 ln -sf ~/.dot_files/linux/tmux.conf ~/.tmux.conf
 ln -sf ~/.dot_files/linux/Xmodmap ~/.Xmodmap
 ln -sf ~/.dot_files/linux/zplugin/zshrc ~/.zshrc
+ln -sf ~/.dot_files/linux/gh-packer ~/.gh-packer
 ln -sf ~/.dot_files/linux/extras/cava ~/.config/cava
 ln -sf ~/.dot_files/linux/compton ~/.config/compton
 ln -sf ~/.dot_files/linux/kitty ~/.config/kitty
@@ -17,6 +18,7 @@ ln -sf ~/.nv-ide ~/.config/nvim
 ln -sf ~/.dot_files/linux/polybar ~/.config/polybar
 ln -sf ~/.dot_files/linux/ranger ~/.config/ranger
 ln -sf ~/.dot_files/linux/rofi ~/.config/rofi
+ln -sf ~/.dot_files/linux/wezterm ~/.wezterm
 ln -sf ~/.v-ide ~/.vim
 ln -sf ~/.v-ide/vimrc ~/.vimrc
 mkdir ~/.tmux
