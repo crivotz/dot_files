@@ -239,6 +239,7 @@ for_window [class="(?i)chromium" title="DevTools -"] floating disable, move cont
 for_window [class="(?i)firefox" title="Strumenti di sviluppo -"] floating disable, move container to workspace $ws1
 for_window [class="(?i)kitty"] move container to workspace $ws2
 for_window [class="(?i)st"] move container to workspace $ws2
+for_window [class="(?i)wezterm"] move container to workspace $ws2
 for_window [class="(?i)spotify"] move container to workspace $ws9
 for_window [class="(?i)dbeaver"] move container to workspace $ws7
 for_window [class="(?i)telegram"] move container to workspace $ws4
