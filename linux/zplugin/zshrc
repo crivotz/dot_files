@@ -89,6 +89,10 @@ zinit light 'dandavison/delta'
 # DUST
 zinit ice wait"2" lucid from"gh-r" as"program" mv"dust*/dust -> dust" pick"dust" atload"alias du=dust"
 zinit light bootandy/dust
+# BOTTOM
+zinit ice wait"2" lucid from"gh-r" as"program" bpick='*_amd64.deb' pick"usr/bin/btm"
+
+zinit light ClementTsang/bottom
 # DUF
 zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/duf" atload"alias df=duf"
 zinit light muesli/duf
