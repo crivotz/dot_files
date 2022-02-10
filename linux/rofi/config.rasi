@@ -5,7 +5,7 @@
 configuration {
   font: "JetBrainsMono Nerd Font Mono 8";
   show-icons: true;
-  terminal: "st";
+  terminal: "wezterm";
   combi-modi: "drun,window,run,ssh,file:~/.config/rofi/scripts/rofi-filebrowser.sh,ws:~/.config/rofi/scripts/rofi-i3workspace.sh,power:~/.config/rofi/scripts/rofi-power.sh";
   matching: "fuzzy";
   levenshtein-sort: true;
