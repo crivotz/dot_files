@@ -52,9 +52,9 @@ module-margin-right = 1
 
 font-0 = JetBrainsMono Nerd Font:antialias=true:size=10:weight=bold:1
 
-modules-left = distro-logo i3 eth eth_speed vpnc
-modules-center = spotify previous playpause next
-modules-right = temperature filesystem memory cpu volume date
+modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
+modules-center = 
+modules-right = temperature filesystem memory cpu volume battery date
 
 tray-position = right
 tray-padding = 9
@@ -128,6 +128,42 @@ format-prefix-foreground = ${colors.my_foreground}
 
 label = %date% %time%
 
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ACAD
+full-at = 99
+
+format-full-background = ${colors.my_background}
+format-charging-background = ${colors.my_background}
+format-charging = <label-charging> <animation-charging>
+format-charging-underline =
+label-full =  %percentage%%
+
+format-discharging-background = ${colors.my_background}
+format-discharging =  <label-discharging> <ramp-capacity>
+format-discharging-underline = ${colors.base08}
+
+format-full-prefix-foreground = ${colors.my_background}
+format-full-underline = ${self.format-charging-underline}
+
+format-charing-background = ${colors.my_background}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.my_foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.my_foreground}
+animation-charging-framerate = 750
+
 [module/volume]
 type = internal/alsa
 format-volume = <label-volume> <bar-volume>
@@ -157,7 +193,7 @@ bar-volume-empty-foreground = ${colors.my_foreground}
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 1
 warn-temperature = 60
 
 format = <ramp> <label>
@@ -214,9 +250,44 @@ format-prefix = " "
 format-prefix-foreground = ${colors.my_foreground}
 label = %gb_used%
 
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% %local_ip%
+
+format-disconnected =""
+format-disconnected-foreground = ${colors.my_background}
+
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.base08}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.base08}
+ramp-signal-2 = 
+ramp-signal-2-foreground = ${colors.my_foreground}
+ramp-signal-3 = 
+ramp-signal-3-foreground = ${colors.my_foreground}
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.my_foreground}
+
+[module/wlan_speed]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+format-connected = <label-connected>
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = #D7C4BB
+; format-connected-prefix-background = #212121
+label-connected =  %downspeed:7%  %upspeed:7%
+label-connected-foreground = ${colors.base0A}
+; label-connected-background = #212121
+label-connected-padding = 2
+
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = eno1
 interval = 3.0
 
 ; format-connected-underline = ${colors.base0B}
@@ -229,7 +300,7 @@ format-disconnected-foreground = ${colors.my_background}
 
 [module/eth_speed]
 type = internal/network
-interface = enp0s31f6
+interface = eno1
 interval = 3.0
 format-connected = <label-connected>
 ; format-connected-prefix = " "
