@@ -1,0 +1,9 @@
+neovim
+@fsouza/prettierd
+vim-language-server
+yaml-language-server
+dockerfile-language-server-nodejs
+typescript
+typescripty-language-server
+vscode-json-languageserver
+vscode-css-languageserver-bin
