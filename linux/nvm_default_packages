@@ -5,5 +5,4 @@ yaml-language-server
 dockerfile-language-server-nodejs
 typescript
 typescripty-language-server
-vscode-json-languageserver
-vscode-css-languageserver-bin
+vscode-langservers-extracted
