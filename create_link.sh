@@ -22,5 +22,6 @@ ln -sf ~/.dot_files/linux/wezterm ~/.wezterm
 ln -sf ~/.v-ide ~/.vim
 ln -sf ~/.v-ide/vimrc ~/.vimrc
 ln -sf ~/.dot_files/linux/nvm_default_packages ~/.nvm/default-packages
+ln -sf ~/.dot_files/extras/git-summary/git-summary.sh ~/bin
 mkdir ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
