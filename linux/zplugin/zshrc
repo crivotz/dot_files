@@ -75,10 +75,6 @@ zinit light Aloxaf/fzf-tab
 # SYNTAX HIGHLIGHTING
 zinit ice wait"0c" lucid atinit"zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
-# NVM
-export NVM_AUTO_USE=true
-zinit ice wait"1" lucid
-zinit light lukechilds/zsh-nvm
 # EXA
 zinit ice wait"2" lucid from"gh-r" as"program" mv"bin/exa* -> exa"
 zinit light ogham/exa
@@ -134,10 +130,6 @@ zinit ice lucid wait"0" as"program" from"gh-r" bpick="*linux_amd64.deb" pick"usr
 zinit light "cli/cli"
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
-# TMUX
-# Prefer use of apt for terminfo problems
-# zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
-# zinit light tmux/tmux
 # TMUXINATOR
 zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
@@ -157,6 +149,19 @@ zinit light charmbracelet/glow
 # CODE-MINIMAP
 zinit ice lucid wait"0" as"program" from"gh-r" bpick='*amd64.deb' pick"usr/bin/code-minimap"
 zinit light wfxr/code-minimap
+# ASDF
+# asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+# asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+zinit ice lucid wait"0" pick"asdf.sh"
+zinit light "asdf-vm/asdf"
+# TMUX
+# Prefer use of apt for terminfo problems
+# zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
+# zinit light tmux/tmux
+# NVM
+# export NVM_AUTO_USE=true
+# zinit ice wait"1" lucid
+# zinit light lukechilds/zsh-nvm
 # ZSH DIFF SO FANCY
 # zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
 # zinit light zdharma-continuum/zsh-diff-so-fancy
@@ -318,13 +323,3 @@ export PATH="$PATH:/opt/android-studio/bin"
 # P10K SETTINGS     #
 #####################
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-#####################
-# RVM VARIABLE      #
-#####################
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
