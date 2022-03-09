@@ -19,6 +19,10 @@ ln -sf ~/.dot_files/linux/polybar ~/.config/polybar
 ln -sf ~/.dot_files/linux/ranger ~/.config/ranger
 ln -sf ~/.dot_files/linux/rofi ~/.config/rofi
 ln -sf ~/.dot_files/linux/wezterm ~/.wezterm
+ln -sf ~/.dot_files/linux/tool-versions ~/.tool-versions
+ln -sf ~/.dot_files/linux/rvm_default.gems ~/.default-gems
+ln -sf ~/.dot_files/linux/nvm_default_packages ~/.default-npm-packages
+ln -sf ~/.dot_files/linux/asdfrc ~/.asdfrc
 ln -sf ~/.v-ide ~/.vim
 ln -sf ~/.v-ide/vimrc ~/.vimrc
 ln -sf ~/.dot_files/linux/nvm_default_packages ~/.nvm/default-packages
