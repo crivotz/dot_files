@@ -126,8 +126,8 @@ zinit light ranger/ranger
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
 # GH-CLI
-zinit ice lucid wait"0" as"program" from"gh-r" bpick="*linux_amd64.deb" pick"usr/bin/gh"
-zinit light "cli/cli"
+zinit ice lucid as="command" from="gh-r" bpick="*linux_amd64.deb" atclone="./gh completion -s zsh > _gh" atpull="%atclone" mv="**/bin/gh* -> gh" pick="usr/bin/gh"
+zinit light cli/cli
 # GOOGLE-CLOUD-SDK COMPLETION
 zinit ice as"completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
@@ -143,9 +143,6 @@ zinit light mvdan/xurls
 # PRETTYPING
 zinit ice lucid wait'' as"program" pick"prettyping" atload'alias ping=prettyping'
 zinit load "denilsonsa/prettyping"
-# GLOW
-zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/glow"
-zinit light charmbracelet/glow
 # CODE-MINIMAP
 zinit ice lucid wait"0" as"program" from"gh-r" bpick='*amd64.deb' pick"usr/bin/code-minimap"
 zinit light wfxr/code-minimap
