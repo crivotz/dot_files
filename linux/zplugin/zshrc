@@ -151,6 +151,11 @@ zinit light wfxr/code-minimap
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 zinit ice lucid wait"0" pick"asdf.sh"
 zinit light "asdf-vm/asdf"
+# VSCODE-NODE-DEBUG for NVIM-DAP
+# npm install
+# npm run buil
+zinit ice lucid wait"0" nocompile nocompletions
+zinit light "microsoft/vscode-node-debug2.git"
 # TMUX
 # Prefer use of apt for terminfo problems
 # zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
