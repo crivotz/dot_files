@@ -156,6 +156,9 @@ zinit light "asdf-vm/asdf"
 # npm run buil
 zinit ice lucid wait"0" nocompile nocompletions
 zinit light "microsoft/vscode-node-debug2.git"
+# CROC
+zinit ice lucid wait"0" as"program" from"gh-r"
+zinit light schollz/croc
 # TMUX
 # Prefer use of apt for terminfo problems
 # zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
