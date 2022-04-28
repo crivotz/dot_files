@@ -8,7 +8,7 @@ ln -sf ~/.dot_files/linux/p10k.zsh ~/.p10k.zsh
 ln -sf ~/.dot_files/linux/screenlayout ~/.screenlayout
 ln -sf ~/.dot_files/linux/tmux.conf ~/.tmux.conf
 ln -sf ~/.dot_files/linux/Xmodmap ~/.Xmodmap
-ln -sf ~/.dot_files/linux/zplugin/zshrc ~/.zshrc
+ln -sf ~/.dot_files/linux/zinit/zshrc ~/.zshrc
 ln -sf ~/.dot_files/linux/gh-packer ~/.gh-packer
 ln -sf ~/.dot_files/linux/extras/cava ~/.config/cava
 ln -sf ~/.dot_files/linux/compton ~/.config/compton
