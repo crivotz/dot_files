@@ -155,6 +155,9 @@ zinit light microsoft/vscode-node-debug2.git
 # CROC
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
+# GLOW
+zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/glow"
+zinit light charmbracelet/glow
 #####################
 # HISTORY           #
 #####################
