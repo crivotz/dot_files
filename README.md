@@ -12,10 +12,11 @@ My dot_files for linux (i3, zinit, tmux, tmuxinator, st, kitty, polybar, ranger,
 # My personal config
 - [NV-IDE](https://github.com/crivotz/nv-ide) in the screenshot I am using `more_lua` branch
 - [Suckless terminal](https://github.com/crivotz/st)
+- [Wezterm](https://github.com/wez/wezterm) 
 
 
 # Credits
-- [Zinit the master of puppets](https://github.com/zdharma/zinit)
+- [Zinit the master of puppets](https://github.com/zdharma-continuum/zinit)
 - [WM i3-gaps](https://github.com/Airblader/i3)
 - [FZF](https://github.com/junegunn/fzf)
 - [Colorschema](https://github.com/sainnhe/gruvbox-material)
