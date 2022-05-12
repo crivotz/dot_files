@@ -1,0 +1,380 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+; GRUVBOX MATERIAL
+my_background	= #001d2021
+my_foreground	= #fbf1c7
+base00 = #282828
+base01 = #3c3836
+base02 = #504945
+base03 = #665c54
+base04 = #bdae93
+base05 = #d5c4a1
+base06 = #ebdbb2
+base07 = #fbf1c7
+base08 = #ea6962
+base09 = #e78a4e
+base0A = #d8a657
+base0B = #a9b665
+base0C = #89b482
+base0D = #7daea3
+base0E = #d3869b
+base0F = #ea6962
+
+[bar/bottom]
+; monitor = ${env:MONITOR:eDP-1}
+bottom = true
+height = 20
+radius = 0
+fixed-center = true
+
+background = ${colors.my_background}
+foreground =  ${colors.my_foreground}
+
+line-size = 3
+line-color = ${colors.base08}
+
+border-size = 0
+border-color = ${colors.base0D}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = JetBrainsMono Nerd Font:antialias=true:size=10:weight=bold:1
+
+modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
+modules-center = 
+modules-right = temperature filesystem memory cpu volume battery date
+
+tray-position = right
+tray-padding = 9
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.my_background}
+enable-ipc = true
+
+; wm-restack = i3
+; override-redirect = true
+
+[module/i3]
+type = internal/i3
+
+index-sort = true
+strip-wsnumbers = true
+
+label-unfocused-background = ${colors.my_background}
+label-unfocused-foreground = ${colors.my_foreground}
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.base0A}
+label-mode-foreground = ${colors.base00}
+
+label-focused = %name%
+label-focused-foreground = ${colors.base0A}
+label-focused-background = ${colors.my_background}
+label-focused-underline = ${colors.base0A}
+label-focused-padding = 2
+
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+label-visible = %name%
+label-visible-underline = ${colors.my_background}
+label-visible-padding = 4
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.my_foreground}
+label-urgent-background = ${colors.my_background}
+label-urgent-underline = ${colors.base08}
+label-urgent-padding = 2
+
+[module/distro-logo]
+type = custom/text
+content-foreground = ${colors.base08}
+content-padding = 1
+content =  
+
+[module/vpnc]
+type = custom/script
+exec = echo 
+exec-if = ls /proc/sys/net/ipv4/conf/tun0
+interval = 5
+format-foreground = ${colors.my_foreground}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d %b"
+date-alt = "%d-%m-%Y"
+
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+
+format-prefix-foreground = ${colors.my_foreground}
+
+label = %date% %time%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ACAD
+full-at = 99
+
+format-full-background = ${colors.my_background}
+format-charging-background = ${colors.my_background}
+format-charging = <label-charging> <animation-charging>
+format-charging-underline =
+label-full =  %percentage%%
+
+format-discharging-background = ${colors.my_background}
+format-discharging =  <label-discharging> <ramp-capacity>
+format-discharging-underline = ${colors.base08}
+
+format-full-prefix-foreground = ${colors.my_background}
+format-full-underline = ${self.format-charging-underline}
+
+format-charing-background = ${colors.my_background}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.my_foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.my_foreground}
+animation-charging-framerate = 750
+
+[module/volume]
+type = internal/alsa
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = 
+format-muted-foreground = ${colors.my_foreground}
+label-muted = 
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.my_foreground}
+bar-volume-foreground-1 = ${colors.my_foreground}
+bar-volume-foreground-2 = ${colors.my_foreground}
+bar-volume-foreground-3 = ${colors.my_foreground}
+bar-volume-foreground-4 = ${colors.my_foreground}
+bar-volume-foreground-5 = ${colors.my_foreground}
+bar-volume-foreground-6 = ${colors.my_foreground}
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = -
+bar-volume-fill-font = 2
+bar-volume-empty = -
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.my_foreground}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 1
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = 
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.base08}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.my_foreground}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted-margin = 1
+label-mounted =   %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.base08}
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label =  %percentage%% 
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.my_foreground}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.my_foreground}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.my_foreground}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.my_foreground}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.my_foreground}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.my_foreground}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.base08}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.base08}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.my_foreground}
+label = %gb_used%
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid% %local_ip%
+
+format-disconnected =""
+format-disconnected-foreground = ${colors.my_background}
+
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.base08}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.base08}
+ramp-signal-2 = 
+ramp-signal-2-foreground = ${colors.my_foreground}
+ramp-signal-3 = 
+ramp-signal-3-foreground = ${colors.my_foreground}
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.my_foreground}
+
+[module/wlan_speed]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+format-connected = <label-connected>
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = #D7C4BB
+; format-connected-prefix-background = #212121
+label-connected =  %downspeed:7%  %upspeed:7%
+label-connected-foreground = ${colors.base0A}
+; label-connected-background = #212121
+label-connected-padding = 2
+
+[module/eth]
+type = internal/network
+interface = eno1
+interval = 3.0
+
+; format-connected-underline = ${colors.base0B}
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.my_foreground}
+label-connected = %local_ip%
+
+format-disconnected =""
+format-disconnected-foreground = ${colors.my_background}
+
+[module/eth_speed]
+type = internal/network
+interface = eno1
+interval = 3.0
+format-connected = <label-connected>
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = #D7C4BB
+; format-connected-prefix-background = #212121
+label-connected =  %downspeed:7%  %upspeed:7%
+label-connected-foreground = ${colors.base0A}
+; label-connected-background = #212121
+label-connected-padding = 2
+
+[module/previous]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Previous song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/next]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Next song icon
+exec = echo ""
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+[module/playpause]
+type = custom/ipc
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo ""
+; Paused
+hook-2 = echo ""
+initial = 1
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = python3 ~/.config/polybar/scripts/spotify/spotify_status.py
+initial = 1
+format-padding = 4
+format-underline = ${colors.base0A}
+line-size = 1
+; [i3wm only] - Uncomment the below line to focus on Spotify when clicking on the song name (credits to https://github.com/Esya)
+click-left = i3-msg '[class="Spotify"] focus'
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+label-padding = 10
+;label-underline = ${colors.base07}
+label-foreground = ${colors.base07}
+;label-foreground = ${colors.base07}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
