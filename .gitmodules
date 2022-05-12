@@ -1,4 +1,0 @@
-[submodule "extras/git-summary"]
-  path = extras/git-summary
-  url = git@github.com:crivotz/git-summary.git
-  ignore = untracked
