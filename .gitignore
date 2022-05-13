@@ -13,4 +13,4 @@ bash_aliases
 ssh_config
 gitconfiglavoro
 gitconfig
-/linux/polybar/config
+linux/polybar/config
