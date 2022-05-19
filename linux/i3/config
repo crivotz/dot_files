@@ -249,6 +249,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/polybar/launchlistener.sh
 exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
 exec --no-startup-id nm-applet 
+exec --no-startup-id /usr/bin/syncthing serve --no-browser --logfile=default 
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
 
