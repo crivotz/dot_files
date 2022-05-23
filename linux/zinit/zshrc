@@ -189,7 +189,7 @@ unsetopt BEEP
 setopt vi
 
 chpwd() {
-  set -- "$(git rev-parse --show-toplevel)" 2>/dev/null
+  set -- "$(git rev-parse --show-toplevel 2> /dev/null)"
   # If cd'ing into a git working copy and not within the same working copy
   if [ -n "$1" ] && [ "$1" != "$vc_root" ]; then
     vc_root="$1"
