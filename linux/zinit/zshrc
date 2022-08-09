@@ -106,7 +106,7 @@ zinit light BurntSushi/ripgrep
 zinit ice from="gh-r" as="program" bpick="*linux64.deb" ver="nightly" pick="usr/bin/nvim"
 zinit light neovim/neovim
 # WEZTERM
-zinit ice from="gh-r" as="program" bpick="*appimage*" ver="nightly" mv="Wez* -> wezterm" pick="wezterm"
+zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
 zinit light wez/wezterm
 # FORGIT
 zinit ice wait lucid
