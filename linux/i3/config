@@ -95,7 +95,8 @@ font pango:JetBrains Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "~/.zinit/plugins/wez---wezterm/usr/bin/wezterm"
+# bindsym $mod+Return exec "~/.zinit/plugins/wez---wezterm/usr/bin/wezterm"
+bindsym $mod+Return exec "~/.zinit/plugins/wez---wezterm/wezterm"
 bindsym $mod+Shift+Return exec st
 
 # kill focused window
