@@ -254,8 +254,6 @@ exec --no-startup-id nm-applet
 exec --no-startup-id /usr/bin/syncthing serve --no-browser --logfile=default 
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
-exec_always --no-startup-id telegram-desktop
-exec_always --no-startup-id signal-desktop
 
 # Shortcut
 bindsym $mod+n exec nautilus
