@@ -70,6 +70,9 @@ zinit light junegunn/fzf
 # FZF-TAB
 zinit ice wait="1" lucid
 zinit light Aloxaf/fzf-tab
+# SAD
+zinit ice from="gh-r" as="command"
+zinit light ms-jpq/sad
 # SYNTAX HIGHLIGHTING
 zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
