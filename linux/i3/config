@@ -57,6 +57,24 @@ set $base0D #7daea3
 set $base0E #d3869b
 set $base0F #d8a657
 
+#  Tokyonight material
+# set $base00 #1a1b26
+# set $base01 #292e42
+# set $base02 #16161e
+# set $base03 #15161e
+# set $base04 #394b70
+# set $base05 #3b4261
+# set $base06 #a9b1d6
+# set $base07 #c0caf5
+# set $base08 #f7768e
+# set $base09 #ff9e64
+# set $base0A #e0af68
+# set $base0B #9ece6a
+# set $base0C #7dcfff
+# set $base0D #7aa2f7
+# set $base0E #9d7cd8
+# set $base0F #f7768e
+
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base0D $base0D $base00 $base0D $base0D
