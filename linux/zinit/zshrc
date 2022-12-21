@@ -143,9 +143,6 @@ zinit light mvdan/xurls
 # PRETTYPING
 zinit ice lucid wait="" as="program" pick="prettyping" atload="alias ping=prettyping"
 zinit load denilsonsa/prettyping
-# CODE-MINIMAP
-zinit ice lucid wait="0" as="program" from="gh-r" bpick='*amd64.deb' pick="usr/bin/code-minimap"
-zinit light wfxr/code-minimap
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
