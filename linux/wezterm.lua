@@ -1,7 +1,75 @@
 local wezterm = require 'wezterm';
+local act = wezterm.action
+local mod = "SHIFT|SUPER"
+
+local function font(opts)
+  return wezterm.font_with_fallback({
+    opts,
+    "Symbols Nerd Font Mono",
+  })
+end
+
+-- The filled in variant of the < symbol
+local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+
+-- The filled in variant of the > symbol
+local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  return {
+    { Text = " " .. tab.active_pane.title .. " " },
+  }
+end)
+
+local function make_mouse_binding(dir, streak, button, mods, action)
+  return {
+    event = { [dir] = { streak = streak, button = button } },
+    mods = mods,
+    action = action,
+  }
+end
 
 return {
-  font = wezterm.font("JetBrainsMono Nerd Font"),
+  -- stylua: ignore
+  mouse_bindings = {
+    make_mouse_binding("Up", 1, "Left", "NONE", wezterm.action.CompleteSelectionOrOpenLinkAtMouseCursor("ClipboardAndPrimarySelection")),
+    make_mouse_binding("Up", 1, "Left", "SHIFT", wezterm.action.CompleteSelectionOrOpenLinkAtMouseCursor("ClipboardAndPrimarySelection")),
+    make_mouse_binding("Up", 1, "Left", "ALT", wezterm.action.CompleteSelection("ClipboardAndPrimarySelection")),
+    make_mouse_binding("Up", 1, "Left", "SHIFT|ALT", wezterm.action.CompleteSelectionOrOpenLinkAtMouseCursor("ClipboardAndPrimarySelection")),
+    make_mouse_binding("Up", 2, "Left", "NONE", wezterm.action.CompleteSelection("ClipboardAndPrimarySelection")),
+    make_mouse_binding("Up", 3, "Left", "NONE", wezterm.action.CompleteSelection("ClipboardAndPrimarySelection")),
+  },
+  term = "wezterm",
+  font_size = 12,
+  font = wezterm.font("JetBrains Mono"),
+  font_rules = {
+    {
+      italic = true,
+      intensity = "Normal",
+      font = font({
+        family = "Victor Mono",
+        style = "Italic",
+      }),
+    },
+    {
+      italic = true,
+      intensity = "Half",
+      font = font({
+        family = "Victor Mono",
+        weight = "DemiBold",
+        style = "Italic",
+      }),
+    },
+    {
+      italic = true,
+      intensity = "Bold",
+      font = font({
+        family = "Victor Mono",
+        weight = "Bold",
+        style = "Italic",
+      }),
+    },
+  },
   color_scheme = "Gruvbox-material",
   color_schemes = {
     ["Gruvbox-material"]={
@@ -18,64 +86,101 @@ return {
       ansi = {"#282828", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98"},
       brights = {"#928374", "#ef938e", "#bbc585", "#e1bb7e", "#9dc2ba", "#e1acbb", "#a7c7a2", "#e2d3ba"},
     },
-    ["Tokyonight-moon"]={
-      foreground = "#c8d3f5",
-      background = "#222436",
-      cursor_bg = "#c8d3f5",
-      cursor_border = "#c8d3f5",
-      cursor_fg = "#222436",
-      selection_bg = "#3654a7",
-      selection_fg = "#c8d3f5",
-
-      ansi = {"#1b1d2b", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#c099ff", "#86e1fc", "#828bb8"},
-      brights = {"#444a73", "#ff757f", "#c3e88d", "#ffc777", "#82aaff", "#c099ff", "#86e1fc", "#c8d3f5"},
-    },  
-    ["Tokyonight-storm"]={
-      foreground = "#c0caf5",
-      background = "#24283b",
-      cursor_bg = "#c0caf5",
-      cursor_border = "#c0caf5",
-      cursor_fg = "#24283b",
-      selection_bg = "#364a82",
-      selection_fg = "#c0caf5",
-
-      ansi = {"#1d202f", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#a9b1d6"},
-      brights = {"#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5"},
-    },
-    ["Tokyonight-night"]={
-      foreground = "#c0caf5",
-      background = "#1a1b26",
-      cursor_bg = "#c0caf5",
-      cursor_border = "#c0caf5",
-      cursor_fg = "#1a1b26",
-      selection_bg = "#33467c",
-      selection_fg = "#c0caf5",
-
-      ansi = {"#15161e", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#a9b1d6"},
-      brights = {"#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5"},
-    },
-    --[[ TODO: wip ]]
-    ["Onedarkpro"]={
-      foreground = "#abb2bf",
-      background = "#282c34",
-      cursor_bg = "#abb2bf",
-      cursor_border = "#abb2bf",
-      cursor_fg = "#282c34",
-      selection_bg = "#5c6370",
-      selection_fg = "#abb2bf",
-
-      ansi = {"#282c34", "#e06c75", "#98c379", "#e5c07b", "#61afef", "#c678dd", "#89b482", "#d4be98"},
-      brights = {"#928374", "#ef938e", "#bbc585", "#e1bb7e", "#9dc2ba", "#e1acbb", "#a7c7a2", "#e2d3ba"},
-    },
-  },
-  window_padding = {
-    left = 10,
-    right = 5,
-    top = 10,
-    bottom = 5,
   },
   check_for_updates = false, -- since it's installed by zinit, let zinit manage its updates.
-  font_size = 11,
-  line_height = 1.1,
-  enable_tab_bar = false,
+  --[[ enable_tab_bar = false, ]]
+  use_fancy_tab_bar = true,
+  tab_bar_at_bottom = true,
+  hide_tab_bar_if_only_one_tab = true,
+  show_tab_index_in_tab_bar = false,
+  -- window_decorations = "NONE",
+  window_frame = {
+    -- The font used in the tab bar.
+    -- Roboto Bold is the default; this font is bundled
+    -- with wezterm.
+    -- Whatever font is selected here, it will have the
+    -- main font setting appended to it to pick up any
+    -- fallback fonts you may have used there.
+    font = font({ family = "JetBrains Mono", weight = "Bold" }),
+
+    -- The size of the font in the tab bar.
+    -- Default to 10. on Windows but 12.0 on other systems
+    font_size = 11.0,
+    --[[ line_height = 1.1, ]]
+
+    -- The overall background color of the tab bar when
+    -- the window is focused
+    active_titlebar_bg = "#282828",
+
+    -- The overall background color of the tab bar when
+    -- the window is not focused
+    inactive_titlebar_bg = "#1d2021",
+  },
+  window_padding = {
+    left = 3,
+    right = 0,
+    top = 3,
+    bottom = 0,
+  },
+  disable_default_key_bindings = true,
+  keys = {
+    { mods = mod, key = "UpArrow", action = act.ActivatePaneDirection("Up") },
+    { mods = mod, key = "DownArrow", action = act.ActivatePaneDirection("Down") },
+    { mods = mod, key = "RightArrow", action = act.ActivatePaneDirection("Right") },
+    { mods = mod, key = "LeftArrow", action = act.ActivatePaneDirection("Left") },
+    { mods = mod, key = "t", action = act.SpawnTab("CurrentPaneDomain") },
+    { mods = mod, key = "|", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { mods = mod, key = "_", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    { mods = mod, key = ">", action = act.MoveTabRelative(1) },
+    { mods = mod, key = "<", action = act.MoveTabRelative(-1) },
+    { mods = mod, key = "M", action = act.TogglePaneZoomState },
+    { mods = mod, key = "p", action = act.PaneSelect({ alphabet = "", mode = "Activate" }) },
+    { mods = mod, key = "C", action = act.CopyTo("ClipboardAndPrimarySelection") },
+    { mods = mod, key = "l", action = wezterm.action({ ActivateTabRelative = 1 }) },
+    { mods = mod, key = "h", action = wezterm.action({ ActivateTabRelative = -1 }) },
+    { key = "C", mods = "CTRL", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
+    { mods = mod, key = "d", action = wezterm.action.ShowDebugOverlay },
+  },
+  bold_brightens_ansi_colors = true,
+  window_background_opacity = 0.9,
+  cell_width = 0.9,
+  scrollback_lines = 10000,
+  hyperlink_rules = {
+    -- Linkify things that look like URLs and the host has a TLD name.
+    -- Compiled-in default. Used if you don't specify any hyperlink_rules.
+    {
+      regex = "\\b\\w+://[\\w.-]+\\.[a-z]{2,15}\\S*\\b",
+      format = "$0",
+    },
+
+    -- linkify email addresses
+    -- Compiled-in default. Used if you don't specify any hyperlink_rules.
+    {
+      regex = [[\b\w+@[\w-]+(\.[\w-]+)+\b]],
+      format = "mailto:$0",
+    },
+
+    -- file:// URI
+    -- Compiled-in default. Used if you don't specify any hyperlink_rules.
+    {
+      regex = [[\bfile://\S*\b]],
+      format = "$0",
+    },
+
+    -- Linkify things that look like URLs with numeric addresses as hosts.
+    -- E.g. http://127.0.0.1:8000 for a local development server,
+    -- or http://192.168.1.1 for the web interface of many routers.
+    {
+      regex = [[\b\w+://(?:[\d]{1,3}\.){3}[\d]{1,3}\S*\b]],
+      format = "$0",
+    },
+
+    -- Make username/project paths clickable. This implies paths like the following are for GitHub.
+    -- As long as a full URL hyperlink regex exists above this it should not match a full URL to
+    -- GitHub or GitLab / BitBucket (i.e. https://gitlab.com/user/project.git is still a whole clickable URL)
+    {
+      regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
+      format = "https://www.github.com/$1/$3",
+    },
+  },
 }
