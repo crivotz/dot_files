@@ -40,7 +40,7 @@ return {
     make_mouse_binding("Up", 3, "Left", "NONE", wezterm.action.CompleteSelection("ClipboardAndPrimarySelection")),
   },
   audible_bell = "Disabled",
-  term = "wezterm",
+  --term = "wezterm",
   font_size = 12,
   font = wezterm.font("JetBrains Mono"),
   font_rules = {

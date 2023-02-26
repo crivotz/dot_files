@@ -28,26 +28,6 @@ base0D = #7daea3
 base0E = #d3869b
 base0F = #ea6962
 
-; TOKYONIGHT MATERIAL
-; my_background	= #001d2021
-; my_foreground	= #ffffff
-; base00 = #1a1b26
-; base01 = #292e42
-; base02 = #16161e
-; base03 = #15161e
-; base04 = #394b70
-; base05 = #3b4261
-; base06 = #a9b1d6
-; base07 = #c0caf5
-; base08 = #f7768e
-; base09 = #ff9e64
-; base0A = #e0af68
-; base0B = #9ece6a
-; base0C = #7dcfff
-; base0D = #7aa2f7
-; base0E = #9d7cd8
-; base0F = #f7768e
-
 [bar/bottom]
 ; monitor = ${env:MONITOR:eDP-1}
 bottom = true
@@ -70,7 +50,8 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = JetBrainsMono Nerd Font:antialias=true:size=10:weight=bold:1
+font-0 = JetBrains Mono:antialias=true:size=10:weight=bold:1
+font-1 = Symbols Nerd Font:antialias=true:size=10:weight=bold:1
 
 modules-left = distro-logo i3 eth eth_speed vpnc
 modules-center = spotify previous playpause next
