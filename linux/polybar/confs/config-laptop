@@ -50,12 +50,12 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = JetBrains Mono:antialias=true:size=10:weight=bold:1
-font-1 = Symbols Nerd Font:antialias=true:size=10:weight=bold:1
+font-0 = JetBrains Mono:antialias=true:size=8:weight=bold:1
+font-1 = Symbols Nerd Font:antialias=true:size=8:weight=bold:1
 
-modules-left = distro-logo i3 wlan wlan_speed eth eth_speed vpnc
+modules-left = distro-logo i3 wlan eth vpnc
 modules-center = 
-modules-right = temperature filesystem memory cpu volume battery date
+modules-right = temperature filesystem memory volume battery date
 
 tray-position = right
 tray-padding = 9
@@ -119,7 +119,7 @@ format-foreground = ${colors.my_foreground}
 type = internal/date
 interval = 5
 
-date = "%d %b"
+date = "%d/%m"
 date-alt = "%d-%m-%Y"
 
 time = "%H:%M"
@@ -127,7 +127,7 @@ time-alt = "%H:%M:%S"
 
 format-prefix-foreground = ${colors.my_foreground}
 
-label = %date% %time%
+label = %time%
 
 [module/battery]
 type = internal/battery

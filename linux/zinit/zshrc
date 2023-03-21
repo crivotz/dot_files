@@ -159,6 +159,9 @@ zinit light schollz/croc
 # GLOW
 zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/glow"
 zinit light charmbracelet/glow
+# ERDTREE
+zinit ice lucid wait"0" as"program" from"gh-r"
+zinit light solidiquis/erdtree
 #####################
 # HISTORY           #
 #####################
