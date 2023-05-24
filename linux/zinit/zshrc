@@ -1,31 +1,31 @@
-#####################
-# FIRST PROMPT LINE #
-#####################
+#########################################################################
+# FIRST PROMPT LINE
+#########################################################################
 rosso='\e[1;34m'
 NC='\e[0m'
 echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
-#####################
-# ZINIT             #
-#####################
+#########################################################################
+# ZINIT
+#########################################################################
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma-continuum/zinit)…%f"
-    command mkdir -p $HOME/.zinit
-    command git clone https://github.com/zdharma-continuum/zinit $HOME/.zinit/bin && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%F" || \
-        print -P "%F{160}▓▒░ The clone has failed.%F"
+  print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma-continuum/zinit)…%f"
+  command mkdir -p $HOME/.zinit
+  command git clone https://github.com/zdharma-continuum/zinit $HOME/.zinit/bin && \
+  print -P "%F{33}▓▒░ %F{34}Installation successful.%F" || \
+  print -P "%F{160}▓▒░ The clone has failed.%F"
 fi
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit installer's chunk
-#####################
-# THEME             #
-#####################
+#########################################################################
+# THEME
+#########################################################################
 zinit ice depth=1; zinit light romkatv/powerlevel10k
-#####################
-# PLUGINS           #
-#####################
+#########################################################################
+# PLUGINS
+#########################################################################
 # SSH-AGENT
 zinit light bobsoppe/zsh-ssh-agent
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
@@ -157,21 +157,21 @@ zinit light microsoft/vscode-node-debug2.git
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
 # GLOW
-zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/glow"
+zinit ice lucid wait"0" as"program" from"gh-r" bpick='*_amd64.deb' pick"usr/bin/glow"
 zinit light charmbracelet/glow
 # ERDTREE
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light solidiquis/erdtree
-#####################
-# HISTORY           #
-#####################
+#########################################################################
+# HISTORY
+#########################################################################
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zhistory"
 HISTSIZE=290000
 SAVEHIST=$HISTSIZE
 
-#####################
-# SETOPT            #
-#####################
+#########################################################################
+# SETOPT
+#########################################################################
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups   # ignore duplicated commands history list
@@ -203,9 +203,9 @@ chpwd() {
   exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
 }
 
-#####################
-# ENV VARIABLE      #
-#####################
+#########################################################################
+# ENV VARIABLE
+#########################################################################
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export PAGER='less'
@@ -216,38 +216,38 @@ export BAT_THEME="gruvbox-dark"
 if [[ ! $(tmux ls) ]] 2> /dev/null; then 
   tmux new -s λ
 fi
-#####################
-# COLORING          #
-#####################
+#########################################################################
+# COLORING
+#########################################################################
 autoload colors && colors
 
-#####################
-# ALIASES           #
-#####################
+#########################################################################
+# ALIASES
+#########################################################################
 source $HOME/.zsh_aliases
 
-#####################
-# FANCY-CTRL-Z      #
-#####################
+#########################################################################
+# FANCY-CTRL-Z
+#########################################################################
 function fg-fzf() {
-	job="$(jobs | fzf -0 -1 | sed -E 's/\[(.+)\].*/\1/')" && echo '' && fg %$job
+  job="$(jobs | fzf -0 -1 | sed -E 's/\[(.+)\].*/\1/')" && echo '' && fg %$job
 }
 
 function fancy-ctrl-z () {
-	if [[ $#BUFFER -eq 0 ]]; then
-		BUFFER=" fg-fzf"
-		zle accept-line -w
-	else
-		zle push-input -w
-		zle clear-screen -w
-	fi
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER=" fg-fzf"
+    zle accept-line -w
+  else
+    zle push-input -w
+    zle clear-screen -w
+  fi
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-#####################
-# FZF SETTINGS      #
-#####################
+#########################################################################
+# FZF SETTINGS
+#########################################################################
 export FZF_DEFAULT_OPTS="
 --ansi
 --layout=default
@@ -266,49 +266,48 @@ export FZF_DEFAULT_OPTS="
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-#####################
-# FZF-GC-PROJECT    #
-#####################
+#########################################################################
+# FZF-GC-PROJECT
+#########################################################################
 # Thanks to sei40kr/zsh-fzf-gcloud
 
 function fzf-gcloud-config-set-project() {
-    local project="$(gcloud projects list |
-        fzf --header-lines=1 --reverse |
-        awk '{ print $1 }')"
-
-    if [[ -n "$project" ]]; then
-        gcloud config set project "$project"
-    fi
+  local project="$(gcloud projects list |
+    fzf --header-lines=1 --reverse |
+    awk '{ print $1 }')"
+  if [[ -n "$project" ]]; then
+    gcloud config set project "$project"
+  fi
 }
 zle -N fzf-gcloud-config-set-project
 bindkey '^G' fzf-gcloud-config-set-project
 
-#####################
-# PATH              #
-#####################
+#########################################################################
+# PATH
+#########################################################################
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
 
-#####################
-# GOOGLE-SDK        #
-#####################
+#########################################################################
+# GOOGLE-SDK
+#########################################################################
 if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
 
-#####################
-# GO SETTINGS       #
-#####################
+#########################################################################
+# GO SETTINGS
+#########################################################################
 export GOPATH=$HOME/Dev/go
 
-#####################
-# FLUTTER SETTINGS  #
-#####################
+#########################################################################
+# FLUTTER SETTINGS
+#########################################################################
 export PATH="$PATH:$HOME/Dev/flutter/bin"
 
-###########################
-# ANDROID STUDIO SETTINGS #
-###########################
+#########################################################################
+# ANDROID STUDIO SETTINGS
+#########################################################################
 export PATH="$PATH:/opt/android-studio/bin"
 
-#####################
-# P10K SETTINGS     #
-#####################
+#########################################################################
+# P10K SETTINGS
+#########################################################################
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
