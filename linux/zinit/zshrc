@@ -36,6 +36,9 @@ zinit light zsh-users/zsh-autosuggestions
 zinit ice wait="0b" lucid
 zinit light b4b4r07/enhancd
 export ENHANCD_FILTER=fzf:fzy:peco
+# ZOXIDE
+zinit ice wait="0" lucid from="gh-r" as="program" pick="zoxide-*/zoxide -> zoxide" cp="zoxide-*/completions/_zoxide -> _zoxide" atclone="./zoxide init zsh > init.zsh" atpull="%atclone" src="init.zsh"
+zinit light ajeetdsouza/zoxide
 # HISTORY SUBSTRING SEARCHING
 zinit ice wait="0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
 zinit light zsh-users/zsh-history-substring-search
@@ -106,7 +109,7 @@ alias man=batman.sh
 zinit ice from="gh-r" as="program" bpick="*amd64.deb" pick="usr/bin/rg"
 zinit light BurntSushi/ripgrep
 # NEOVIM
-zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="stable" pick="nvim-linux64/bin/nvim"
+zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
 zinit light neovim/neovim
 # WEZTERM
 # zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
@@ -212,7 +215,7 @@ export PAGER='less'
 export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
-export BAT_THEME="gruvbox-dark"
+# export BAT_THEME="gruvbox-dark"
 if [[ ! $(tmux ls) ]] 2> /dev/null; then 
   tmux new -s λ
 fi
@@ -257,7 +260,7 @@ export FZF_DEFAULT_OPTS="
 --preview-window=right:50%
 --preview-window=sharp
 --preview-window=cycle
---preview '([[ -f {} ]] && (bat --style=numbers --color=always --theme=gruvbox-dark --line-range :500 {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always --line-range :500 {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --prompt='λ -> '
 --pointer='|>'
 --marker='✓'
@@ -306,6 +309,11 @@ export PATH="$PATH:$HOME/Dev/flutter/bin"
 # ANDROID STUDIO SETTINGS
 #########################################################################
 export PATH="$PATH:/opt/android-studio/bin"
+#
+#########################################################################
+# MSSQL-TOOLS
+#########################################################################
+export PATH="$PATH:/opt/mssql-tools18/bin"
 
 #########################################################################
 # P10K SETTINGS

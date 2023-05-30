@@ -71,23 +71,7 @@ return {
       }),
     },
   },
-  color_scheme = "Gruvbox-material",
-  color_schemes = {
-    ["Gruvbox-material"]={
-      foreground = "#e2d3ba",
-      background = "#282828",
-      cursor_bg = "#e2d3ba",
-      cursor_fg = "#282828",
-      cursor_border = "#e2d3ba",
-      selection_bg = "#655b53",
-      selection_fg = "#e2d3ba",
-      scrollbar_thumb = "#32302f",
-      split = "#928374",
-
-      ansi = {"#282828", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98"},
-      brights = {"#928374", "#ef938e", "#bbc585", "#e1bb7e", "#9dc2ba", "#e1acbb", "#a7c7a2", "#e2d3ba"},
-    },
-  },
+  color_scheme = "tokyonight_storm",
   check_for_updates = false, -- since it's installed by zinit, let zinit manage its updates.
   --[[ enable_tab_bar = false, ]]
   use_fancy_tab_bar = true,
@@ -111,11 +95,11 @@ return {
 
     -- The overall background color of the tab bar when
     -- the window is focused
-    active_titlebar_bg = "#282828",
+    active_titlebar_bg = "#7dcfff",
 
     -- The overall background color of the tab bar when
     -- the window is not focused
-    inactive_titlebar_bg = "#1d2021",
+    inactive_titlebar_bg = "#a9b1d6",
   },
   window_padding = {
     left = 3,
@@ -143,7 +127,7 @@ return {
     { mods = mod, key = "d", action = wezterm.action.ShowDebugOverlay },
   },
   bold_brightens_ansi_colors = true,
-  window_background_opacity = 0.9,
+  window_background_opacity = 1,
   cell_width = 0.9,
   scrollback_lines = 10000,
   hyperlink_rules = {
