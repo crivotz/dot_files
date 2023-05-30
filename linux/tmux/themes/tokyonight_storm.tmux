@@ -24,7 +24,7 @@ set -g status-right-style NONE
 set -g status-left "#[fg=#24283b,bg=#bb9af7,bold] #S #[fg=#7aa2f7,bg=#24283b,nobold,nounderscore,noitalics]"
 set -g status-right "#[fg=#24283b,bg=#24283b,nobold,nounderscore,noitalics] #[fg=#7aa2f7,bg=#24283b] #{prefix_highlight} #[fg=#3b4261,bg=#24283b,nobold,nounderscore,noitalics] #[fg=#7aa2f7,bg=#3b4261] %d-%m-%Y #[fg=#7aa2f7,bg=#24283b] #[fg=#7aa2f7,bg=#3b4261] %H:%M #[fg=#7aa2f7,bg=#24283b] #[fg=#24283b,bg=#7aa2f7,bold] #h "
 
-setw -g window-status-activity-style "underscore,fg=#a9b1d6,bg=#24283b"
+setw -g window-status-activity-style "fg=#a9b1d6,bg=#24283b"
 setw -g window-status-separator ""
 setw -g window-status-style "NONE,fg=#a9b1d6,bg=#24283b"
 setw -g window-status-format "#[bg=#24283b,fg=#24283b,noitalics] #[bg=#3b4261,fg=#7aa2f7] #I |>#[bg=#3b4261,fg=#7aa2f7] #{?window_zoomed_flag,#[fg=#f7768e]|>,}#[bg=#3b4261,fg=#7aa2f7,bold]#W#[bg=#3b4261,fg=#7aa2f7,bold]#{?window_zoomed_flag,#[fg=#f7768e]<|,} #[bg=#24283b,fg=#24283b,noitalics]"
