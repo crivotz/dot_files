@@ -8,25 +8,44 @@
 ;=====================================================
 
 [colors]
-; GRUVBOX MATERIAL
-my_background	= #001d2021
-my_foreground	= #fbf1c7
-base00 = #282828
-base01 = #3c3836
-base02 = #504945
-base03 = #665c54
-base04 = #bdae93
-base05 = #d5c4a1
-base06 = #ebdbb2
-base07 = #fbf1c7
-base08 = #ea6962
-base09 = #e78a4e
-base0A = #d8a657
-base0B = #a9b665
-base0C = #89b482
-base0D = #7daea3
-base0E = #d3869b
-base0F = #ea6962
+; tokyonight_storm material
+my_background	= #001a1b26
+my_foreground	= #c0caf5
+base00 = #1a1b26
+base01 = #292e42
+base02 = #16161e
+base03 = #15161e
+base04 = #394b70
+base05 = #3b4261
+base06 = #a9b1d6
+base07 = #c0caf5
+base08 = #f7768e
+base09 = #ff9e64
+base0A = #e0af68
+base0B = #9ece6a
+base0C = #7dcfff
+base0D = #7aa2f7
+base0E = #9d7cd8
+base0F = #f7768e
+; gruvbox material
+# my_background	= #001d2021
+# my_foreground	= #fbf1c7
+# base00 = #282828
+# base01 = #3c3836
+# base02 = #504945
+# base03 = #665c54
+# base04 = #bdae93
+# base05 = #d5c4a1
+# base06 = #ebdbb2
+# base07 = #fbf1c7
+# base08 = #ea6962
+# base09 = #e78a4e
+# base0a = #d8a657
+# base0b = #a9b665
+# base0c = #89b482
+# base0d = #7daea3
+# base0e = #d3869b
+# base0f = #ea6962
 
 [bar/bottom]
 ; monitor = ${env:MONITOR:eDP-1}

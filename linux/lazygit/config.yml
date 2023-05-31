@@ -3,7 +3,7 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --24-bit-color=never
+    pager: delta --paging=never --24-bit-color=never
 customCommands:
   - key: 'I'
     command: "gh issue list"
