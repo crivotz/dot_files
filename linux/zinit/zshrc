@@ -130,6 +130,8 @@ zinit light sharkdp/fd
 # GH-CLI
 zinit ice lucid as="command" from="gh-r" bpick="*linux_amd64.deb" atclone="./gh completion -s zsh > _gh" atpull="%atclone" mv="**/bin/gh* -> gh" pick="usr/bin/gh"
 zinit light cli/cli
+# GOOGLE-CLOUD-SDK COMPLETION
+zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
 zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
@@ -296,7 +298,6 @@ export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
 # GOOGLE-SDK
 #########################################################################
 if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/opt/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/google-cloud-sdk/completion.zsh.inc'; fi
 
 #########################################################################
 # GO SETTINGS
