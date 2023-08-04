@@ -131,7 +131,7 @@ zinit light sharkdp/fd
 zinit ice lucid as="command" from="gh-r" bpick="*linux_amd64.deb" atclone="./gh completion -s zsh > _gh" atpull="%atclone" mv="**/bin/gh* -> gh" pick="usr/bin/gh"
 zinit light cli/cli
 # GOOGLE-CLOUD-SDK COMPLETION
-zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
+# zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
 zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
