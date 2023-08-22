@@ -17,3 +17,4 @@ linux/polybar/config
 linux/i3/config
 __pycache__/
 __init__.py
+state.yml

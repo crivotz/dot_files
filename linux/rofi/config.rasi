@@ -3,7 +3,7 @@
 //----------------------
 
 configuration {
-  font: "JetBrainsMono Nerd Font Mono 8";
+  font: "JetBrainsMono 10";
   show-icons: true;
   terminal: "wezterm";
   combi-modi: "drun,window,run,ssh,file:~/.config/rofi/scripts/rofi-filebrowser.sh,ws:~/.config/rofi/scripts/rofi-i3workspace.sh,power:~/.config/rofi/scripts/rofi-power.sh";
@@ -18,4 +18,4 @@ configuration {
   display-ssh: "SSH |>";
   display-window: "WIN |>";
 }
-@import "~/.config/rofi/themes/rounded-tokyo.rasi"
+@theme "/usr/share/rofi/themes/android_notification.rasi"
