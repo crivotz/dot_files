@@ -239,7 +239,8 @@ exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
 
 # Shortcut
 bindsym $mod+n exec nautilus
-bindsym $mod+c exec google-chrome
+# bindsym $mod+c exec google-chrome
+bindsym $mod+c exec brave-browser
 bindsym $mod+Shift+c exec /opt/firefox_dev/firefox
 # bindsym $mod+Shift+c exec "cat .i3/colors .i3/client-properties .i3/base > .i3/config && i3-msg reload"
 # Pulse Audio controls
@@ -253,9 +254,9 @@ bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # increase screen brightness with notification
-bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +10%; notify-send 'brightness up'"
 # decrease screen brightness with notification
-bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-; notify-send 'brightness down'"
 bindsym XF86HomePage exec google-chrome
 bindsym XF86Explorer exec nautilus
 bindsym XF86Calculator exec gnome-calculator
