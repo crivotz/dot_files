@@ -231,7 +231,7 @@ for_window [class="(?i)signal"] move container to workspace $ws4
 # Auto start
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/polybar/launchlistener.sh
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton/compton.conf"
+exec_always --no-startup-id "killall -q picom; picom --config ~/.config/picom/config"
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/bin/syncthing serve --no-browser --logfile=default 
 exec_always --no-startup-id nitrogen --restore
