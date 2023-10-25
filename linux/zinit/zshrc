@@ -79,9 +79,9 @@ zinit light ms-jpq/sad
 # SYNTAX HIGHLIGHTING
 zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
-# EXA
-zinit ice wait="2" lucid from="gh-r" as="program" mv="bin/exa* -> exa"
-zinit light ogham/exa
+# EZA
+zinit ice wait="2" lucid from="gh-r" as="program"
+zinit light eza-community/eza
 zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*amd64.deb" pick="usr/bin/delta"
@@ -203,7 +203,7 @@ chpwd() {
     git fetch
   fi
   # ls inside folder after cd
-  exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
+  eza --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
 }
 
 #########################################################################
