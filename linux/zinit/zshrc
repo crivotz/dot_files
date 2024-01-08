@@ -165,6 +165,9 @@ zinit light charmbracelet/glow
 # ERDTREE
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light solidiquis/erdtree
+# GTRASH
+zinit ice lucid wait"0" as"program" from"gh-r"
+zinit light umlx5h/gtrash
 #########################################################################
 # HISTORY
 #########################################################################
