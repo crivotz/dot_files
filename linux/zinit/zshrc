@@ -113,7 +113,7 @@ zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="n
 zinit light neovim/neovim
 # WEZTERM
 # zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
-zinit ice from="gh-r" as="program" bpick="*appimage*" mv="Wez* -> wezterm" pick="wezterm"
+zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
 zinit light wez/wezterm
 # FORGIT
 zinit ice wait lucid
