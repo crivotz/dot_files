@@ -39,13 +39,13 @@ export ENHANCD_FILTER=fzf:fzy:peco
 # ZOXIDE
 zinit ice wait="0" lucid from="gh-r" as="program" pick="zoxide-*/zoxide -> zoxide" cp="zoxide-*/completions/_zoxide -> _zoxide" atclone="./zoxide init zsh > init.zsh" atpull="%atclone" src="init.zsh"
 zinit light ajeetdsouza/zoxide
-# HISTORY SUBSTRING SEARCHING
-zinit ice wait="0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
-zinit light zsh-users/zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+# HISTORY SUBSTRING SEARCHING (use atuin)
+# zinit ice wait="0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
+# zinit light zsh-users/zsh-history-substring-search
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
+# bindkey -M vicmd 'k' history-substring-search-up
+# bindkey -M vicmd 'j' history-substring-search-down
 # TAB COMPLETIONS
 zinit ice wait="0b" lucid blockf
 zinit light zsh-users/zsh-completions
@@ -168,6 +168,9 @@ zinit light solidiquis/erdtree
 # GTRASH
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light umlx5h/gtrash
+# ATUIN
+zinit ice as"program" from"gh-r" pick="*/atuin"
+zinit light atuinsh/atuin
 #########################################################################
 # HISTORY
 #########################################################################
@@ -270,12 +273,17 @@ export FZF_DEFAULT_OPTS="
 --preview '([[ -f {} ]] && (bat --style=numbers --color=always --line-range :500 {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --prompt='λ -> '
 --pointer='|>'
---marker='✓'
---bind 'ctrl-e:execute(nvim {} < /dev/tty > /dev/tty 2>&1)' > selected
---bind 'ctrl-v:execute(code {+})'"
+--marker='✓'"
+# --bind 'ctrl-e:execute(nvim {} < /dev/tty > /dev/tty 2>&1)' > selected
+# --bind 'ctrl-v:execute(code {+})'"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+atuin-setup() {
+  ! hash atuin && return
+  # bindkey '^R' _atuin_search_widget
+  eval "$(atuin init zsh)"
+}
 #########################################################################
 # FZF-GC-PROJECT
 #########################################################################
@@ -298,6 +306,11 @@ bindkey '^G' fzf-gcloud-config-set-project
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
 
 #########################################################################
+# P10K SETTINGS
+#########################################################################
+atuin-setup
+
+#########################################################################
 # GOOGLE-SDK
 #########################################################################
 if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
@@ -316,7 +329,7 @@ export PATH="$PATH:$HOME/Dev/flutter/bin"
 # ANDROID STUDIO SETTINGS
 #########################################################################
 export PATH="$PATH:/opt/android-studio/bin"
-#
+
 #########################################################################
 # MSSQL-TOOLS
 #########################################################################
