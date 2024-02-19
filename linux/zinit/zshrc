@@ -169,7 +169,7 @@ zinit light solidiquis/erdtree
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light umlx5h/gtrash
 # ATUIN
-zinit ice as"program" from"gh-r" pick="*/atuin"
+zinit ice as"program" from"gh-r" pick="**/atuin"
 zinit light atuinsh/atuin
 #########################################################################
 # HISTORY
