@@ -171,6 +171,9 @@ zinit light umlx5h/gtrash
 # ATUIN
 zinit ice as"program" from"gh-r" pick="**/atuin"
 zinit light atuinsh/atuin
+# YAZI
+zinit ice lucid wait"0" as"program" from"gh-r" pick="*/yazi"
+zinit light sxyazi/yazi
 #########################################################################
 # HISTORY
 #########################################################################
@@ -234,6 +237,18 @@ autoload colors && colors
 # ALIASES
 #########################################################################
 source $HOME/.zsh_aliases
+
+#########################################################################
+# YAZI
+#########################################################################
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 #########################################################################
 # FANCY-CTRL-Z
