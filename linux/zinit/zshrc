@@ -242,12 +242,12 @@ source $HOME/.zsh_aliases
 # YAZI
 #########################################################################
 function ya() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 #########################################################################
@@ -294,11 +294,15 @@ export FZF_DEFAULT_OPTS="
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+#########################################################################
+# ATUIN
+#########################################################################
 atuin-setup() {
   ! hash atuin && return
   # bindkey '^R' _atuin_search_widget
   eval "$(atuin init zsh)"
 }
+atuin-setup
 #########################################################################
 # FZF-GC-PROJECT
 #########################################################################
@@ -319,11 +323,6 @@ bindkey '^G' fzf-gcloud-config-set-project
 # PATH
 #########################################################################
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
-
-#########################################################################
-# P10K SETTINGS
-#########################################################################
-atuin-setup
 
 #########################################################################
 # GOOGLE-SDK
