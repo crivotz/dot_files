@@ -17,6 +17,7 @@ ln -sf ~/.dot_files/linux/lazygit ~/.config/jesseduffield/
 ln -sf ~/.nv-ide ~/.config/nvim
 ln -sf ~/.dot_files/linux/polybar ~/.config/polybar
 ln -sf ~/.dot_files/linux/ranger ~/.config/ranger
+ln -sf ~/.dot_files/linux/yazi ~/.config/yazi
 ln -sf ~/.dot_files/linux/rofi ~/.config/rofi
 ln -sf ~/.dot_files/linux/wezterm.lua ~/.wezterm.lua
 ln -sf ~/.dot_files/linux/tool-versions ~/.tool-versions

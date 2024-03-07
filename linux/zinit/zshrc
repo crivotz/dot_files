@@ -149,7 +149,7 @@ zinit load denilsonsa/prettyping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-zinit ice lucid wait="0" pick="asdf.sh"
+zinit ice lucid wait="0" src="asdf.sh"
 zinit light asdf-vm/asdf
 # VSCODE-NODE-DEBUG for NVIM-DAP
 # npm install
