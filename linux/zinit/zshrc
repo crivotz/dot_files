@@ -179,6 +179,9 @@ zinit ice from="gh-r" as="program" bpick="*appimage*" mv="bruno* -> bruno" pick=
 zinit light usebruno/bruno
 # ZSH-VI-MODE
 zinit light jeffreytse/zsh-vi-mode
+# OVERMIND
+zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
+zinit light DarthSim/overmind
 #########################################################################
 # HISTORY
 #########################################################################
