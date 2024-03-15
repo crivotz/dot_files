@@ -133,7 +133,7 @@ zinit light cli/cli
 # GOOGLE-CLOUD-SDK COMPLETION
 # zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
-zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
+# zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
 zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
 zinit light knu/zsh-manydots-magic
