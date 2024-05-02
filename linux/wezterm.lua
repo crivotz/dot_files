@@ -71,7 +71,7 @@ return {
       }),
     },
   },
-  color_scheme = "tokyonight_storm",
+  color_scheme = "okcolors_sharp",
   check_for_updates = false, -- since it's installed by zinit, let zinit manage its updates.
   --[[ enable_tab_bar = false, ]]
   use_fancy_tab_bar = true,
