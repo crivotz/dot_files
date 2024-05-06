@@ -111,6 +111,9 @@ zinit light BurntSushi/ripgrep
 # NEOVIM
 zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
 zinit light neovim/neovim
+# NEOVIDE
+zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
+zinit light neovide/neovide
 # WEZTERM
 # zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
 zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
