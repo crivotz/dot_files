@@ -27,7 +27,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # PLUGINS
 #########################################################################
 # SSH-AGENT
-zinit light bobsoppe/zsh-ssh-agent
+# zinit light bobsoppe/zsh-ssh-agent
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
@@ -133,6 +133,9 @@ zinit light sharkdp/fd
 # GH-CLI
 zinit ice lucid as="command" from="gh-r" bpick="*linux_amd64.deb" atclone="./gh completion -s zsh > _gh" atpull="%atclone" mv="**/bin/gh* -> gh" pick="usr/bin/gh"
 zinit light cli/cli
+# 1PASSWORD COMPLETION
+zinit ice as="completion" atclone="command -v op &>/dev/null && op completion zsh > _op || true" atpull="zinit creinstall -q ."  nocompile
+zinit light zdharma-continuum/null
 # GOOGLE-CLOUD-SDK COMPLETION
 # zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
 # TMUXINATOR
