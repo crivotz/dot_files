@@ -109,7 +109,7 @@ alias man=batman.sh
 zinit ice from="gh-r" as="program" bpick="*amd64.deb" pick="usr/bin/rg"
 zinit light BurntSushi/ripgrep
 # NEOVIM
-zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="stable" pick="nvim-linux64/bin/nvim"
+zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
 zinit light neovim/neovim
 # NEOVIDE
 zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
