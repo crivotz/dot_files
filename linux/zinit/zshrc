@@ -188,6 +188,9 @@ zinit light jeffreytse/zsh-vi-mode
 # OVERMIND
 zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
 zinit light DarthSim/overmind
+# SERPL
+zinit ice lucid wait"0" as"program" from"gh-r"
+zinit light yassinebridi/serpl
 #########################################################################
 # HISTORY
 #########################################################################
