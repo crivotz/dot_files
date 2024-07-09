@@ -45,30 +45,19 @@ return {
   font = wezterm.font("JetBrains Mono"),
   font_rules = {
     {
+      intensity = "Bold",
       italic = true,
-      intensity = "Normal",
-      font = font({
-        family = "Victor Mono",
-        style = "Italic",
-      }),
+      font = wezterm.font({ family = "Maple Mono", weight = "Bold", style = "Italic" }),
     },
     {
       italic = true,
       intensity = "Half",
-      font = font({
-        family = "Victor Mono",
-        weight = "DemiBold",
-        style = "Italic",
-      }),
+      font = wezterm.font({ family = "Maple Mono", weight = "DemiBold", style = "Italic" }),
     },
     {
       italic = true,
-      intensity = "Bold",
-      font = font({
-        family = "Victor Mono",
-        weight = "Bold",
-        style = "Italic",
-      }),
+      intensity = "Normal",
+      font = wezterm.font({ family = "Maple Mono", style = "Italic" }),
     },
   },
   color_scheme = "tokyonight_night",
