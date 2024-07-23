@@ -181,8 +181,8 @@ zinit light atuinsh/atuin
 zinit ice lucid wait"0" as"program" from"gh-r" bpick="*gnu.zip" pick="*/yazi"
 zinit light sxyazi/yazi
 # BRUNO
-zinit ice from="gh-r" as="program" bpick="*appimage*" mv="bruno* -> bruno" pick="bruno"
-zinit light usebruno/bruno
+# zinit ice from="gh-r" as="program" bpick="*appimage*" mv="bruno* -> bruno" pick="bruno"
+# zinit light usebruno/bruno
 # ZSH-VI-MODE
 zinit light jeffreytse/zsh-vi-mode
 # OVERMIND
