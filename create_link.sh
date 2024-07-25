@@ -21,11 +21,11 @@ ln -sf ~/.dot_files/linux/yazi ~/.config/yazi
 ln -sf ~/.dot_files/linux/rofi ~/.config/rofi
 ln -sf ~/.dot_files/linux/wezterm.lua ~/.wezterm.lua
 ln -sf ~/.dot_files/linux/tool-versions ~/.tool-versions
-ln -sf ~/.dot_files/linux/rvm_default.gems ~/.default-gems
-ln -sf ~/.dot_files/linux/nvm_default_packages ~/.default-npm-packages
 ln -sf ~/.dot_files/linux/asdfrc ~/.asdfrc
 ln -sf ~/.v-ide ~/.vim
 ln -sf ~/.v-ide/vimrc ~/.vimrc
 ln -sf ~/.dot_files/linux/nvm_default_packages ~/.nvm/default-packages
 mkdir ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git -C ~/.tmux/plugins/tpm pull || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
