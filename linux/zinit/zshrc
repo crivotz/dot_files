@@ -166,8 +166,8 @@ zinit light microsoft/vscode-node-debug2.git
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
 # GLOW
-zinit ice lucid wait"0" as"program" from"gh-r" bpick='*_amd64.deb' pick"usr/bin/glow"
-zinit light charmbracelet/glow
+# zinit ice lucid wait"0" as"program" from"gh-r" bpick='*_amd64.deb' pick"usr/bin/glow"
+# zinit light charmbracelet/glow
 # ERDTREE
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light solidiquis/erdtree
@@ -374,7 +374,7 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 . "$HOME/.cargo/env"
 
 #########################################################################
-# P10K SETTINGS
+# YARN
 #########################################################################
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 

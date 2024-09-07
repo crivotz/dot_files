@@ -27,8 +27,8 @@ set -g status-right "#[fg=color0,bg=default,nobold,nounderscore,noitalics] #[fg=
 setw -g window-status-activity-style "fg=color11,bg=default"
 setw -g window-status-separator ""
 setw -g window-status-style "NONE,fg=color11,bg=default"
-setw -g window-status-format "#[bg=default,fg=color0,noitalics] #[bg=color8,fg=color4] #I |>#[bg=color8,fg=color4] #{?window_zoomed_flag,#[fg=color9]|>,}#[bg=color8,fg=color4,bold]#W#[bg=color8,fg=color4,bold]#{?window_zoomed_flag,#[fg=color9]<|,} #[bg=default,fg=color0,noitalics]"
-setw -g window-status-current-format "#[bg=default,fg=color0,nobold,noitalics,nounderscore] #[bg=color6,fg=color0] #I |>#[bg=color6,fg=color0,bold] #{?window_zoomed_flag,#[fg=color9]|>,}#[bg=color6,fg=color0,bold]#W#[bg=color6,fg=color0,bold]#{?window_zoomed_flag,#[fg=color9]<|,} #[bg=default,fg=color0,nobold,noitalics,nounderscore]"
+setw -g window-status-format "#[bg=default,fg=color0,noitalics] #[bg=color8,fg=color4] #I ▷#[bg=color8,fg=color4] #{?window_zoomed_flag,#[fg=color9]▷,}#[bg=color8,fg=color4,bold]#W#[bg=color8,fg=color4,bold]#{?window_zoomed_flag,#[fg=color9]◁,} #[bg=default,fg=color0,noitalics]"
+setw -g window-status-current-format "#[bg=default,fg=color0,nobold,noitalics,nounderscore] #[bg=color6,fg=color0] #I ▷#[bg=color6,fg=color0,bold] #{?window_zoomed_flag,#[fg=color9]▷,}#[bg=color6,fg=color0,bold]#W#[bg=color6,fg=color0,bold]#{?window_zoomed_flag,#[fg=color9]◁,} #[bg=default,fg=color0,nobold,noitalics,nounderscore]"
 
 # tmux-plugins/tmux-prefix-highlight support
 set -g @prefix_highlight_output_prefix "#[fg=color11]#[bg=default] #[fg=color0]#[bg=color11]"
