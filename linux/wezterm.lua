@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm';
+-- local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').moon
 local act = wezterm.action
 local mod = "SHIFT|SUPER"
 
@@ -61,6 +62,7 @@ return {
     },
   },
   color_scheme = "tokyonight_night",
+  -- colors = theme.colors(),
   check_for_updates = false, -- since it's installed by zinit, let zinit manage its updates.
   --[[ enable_tab_bar = false, ]]
   use_fancy_tab_bar = true,
