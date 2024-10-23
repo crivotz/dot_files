@@ -53,6 +53,7 @@
       aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
       php_version             # php version (https://www.php.net/)
       gcloud                  # google cloud cli account and project (https://cloud.google.com/)
+      battery                 # internal battery
       # command_execution_time  # duration of the last command
       # background_jobs         # presence of background jobs
       # direnv                  # direnv status (https://direnv.net/)
@@ -109,10 +110,8 @@
       # ip                      # ip address and bandwidth usage for a specified network interface
       # public_ip               # public IP address
       # proxy                   # system-wide http/https/ftp proxy
-      # battery                 # internal battery
       # wifi                    # wifi speed
       # example                 # example user-defined segment (see prompt_example function below)
-      battery                   # internal battery
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.

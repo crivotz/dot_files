@@ -22,7 +22,11 @@ autoload -Uz _zinit
 #########################################################################
 # THEME
 #########################################################################
+# P10K
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+# STARSHIP
+# zinit ice from"gh-r" as"command" atload'eval "$(starship init zsh)"'
+# zinit load starship/starship
 #########################################################################
 # PLUGINS
 #########################################################################
