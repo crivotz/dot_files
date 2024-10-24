@@ -9,24 +9,43 @@
 
 [colors]
 ; tokyonight_storm material
-my_background	= #001a1b26
-my_foreground	= #c0caf5
-base00 = #1a1b26
-base01 = #292e42
-base02 = #16161e
-base03 = #15161e
-base04 = #394b70
-base05 = #3b4261
-base06 = #a9b1d6
-base07 = #c0caf5
-base08 = #f7768e
-base09 = #ff9e64
-base0A = #e0af68
-base0B = #9ece6a
-base0C = #7dcfff
-base0D = #7aa2f7
-base0E = #9d7cd8
-base0F = #f7768e
+; my_background = #001a1b26
+; my_foreground = #c0caf5
+; base00 = #1a1b26
+; base01 = #292e42
+; base02 = #16161e
+; base03 = #15161e
+; base04 = #394b70
+; base05 = #3b4261
+; base06 = #a9b1d6
+; base07 = #c0caf5
+; base08 = #f7768e
+; base09 = #ff9e64
+; base0A = #e0af68
+; base0B = #9ece6a
+; base0C = #7dcfff
+; base0D = #7aa2f7
+; base0E = #9d7cd8
+; base0F = #f7768e
+# OkColors Smooth
+my_background = #0016151a
+my_foreground = #afadab
+base00 = #16151a
+base01 = #212126
+base02 = #2e2d31
+base03 = #48474a
+base04 = #565557
+base05 = #908f8e
+base06 = #e0ded8
+base07 = #afadab
+base08 = #cc2443
+base09 = #eaa679
+base0A = #d0b56a
+base0B = #79cca4
+base0C = #5ecbce
+base0D = #73c2ee
+base0E = #c7a7ea
+base0F = #ff9498
 ; GRUVBOX MATERIAL
 # my_background	= #001d2021
 # my_foreground	= #fbf1c7

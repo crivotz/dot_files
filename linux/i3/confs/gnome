@@ -22,22 +22,22 @@
 # set $base0F #d8a657
 
 #  Tokyonight storm
-set $base00 #1a1b26
-set $base01 #292e42
-set $base02 #16161e
-set $base03 #15161e
-set $base04 #394b70
-set $base05 #3b4261
-set $base06 #a9b1d6
-set $base07 #c0caf5
-set $base08 #f7768e
-set $base09 #ff9e64
-set $base0A #e0af68
-set $base0B #9ece6a
-set $base0C #7dcfff
-set $base0D #7aa2f7
-set $base0E #9d7cd8
-set $base0F #f7768e
+# set $base00 #1a1b26
+# set $base01 #292e42
+# set $base02 #16161e
+# set $base03 #15161e
+# set $base04 #394b70
+# set $base05 #3b4261
+# set $base06 #a9b1d6
+# set $base07 #c0caf5
+# set $base08 #f7768e
+# set $base09 #ff9e64
+# set $base0A #e0af68
+# set $base0B #9ece6a
+# set $base0C #7dcfff
+# set $base0D #7aa2f7
+# set $base0E #9d7cd8
+# set $base0F #f7768e
 
 # Rose-pine dawn
 # set $base           #faf4ed
@@ -90,6 +90,23 @@ set $base0F #f7768e
 # set $highlightmed   #403d52
 # set $highlighthigh  #524f67
 
+# OkColors Smooth
+set $base00 #16151a
+set $base01 #212126
+set $base02 #2e2d31
+set $base03 #48474a
+set $base04 #565557
+set $base05 #908f8e
+set $base06 #e0ded8
+set $base07 #afadab
+set $base08 #cc2443
+set $base09 #eaa679
+set $base0A #d0b56a
+set $base0B #79cca4
+set $base0C #5ecbce
+set $base0D #73c2ee
+set $base0E #c7a7ea
+set $base0F #ff9498
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
