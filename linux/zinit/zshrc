@@ -309,7 +309,7 @@ export FZF_DEFAULT_OPTS="
 --ansi
 --layout=default
 --info=inline
---color 16
+--color bg+:-1,gutter:-1
 --height=50%
 --multi
 --preview-window=right:50%
