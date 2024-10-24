@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm';
--- local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').moon
+local theme = wezterm.plugin.require('https://github.com/crivotz/okcolors-wezterm').smooth
 local act = wezterm.action
 local mod = "SHIFT|SUPER"
 
@@ -61,8 +61,8 @@ return {
       font = wezterm.font({ family = "Maple Mono", style = "Italic" }),
     },
   },
-  color_scheme = "tokyonight_night",
-  -- colors = theme.colors(),
+  -- color_scheme = "tokyonight_night",
+  colors = theme.colors(),
   check_for_updates = false, -- since it's installed by zinit, let zinit manage its updates.
   --[[ enable_tab_bar = false, ]]
   use_fancy_tab_bar = true,
