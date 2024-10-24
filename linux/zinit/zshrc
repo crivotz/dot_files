@@ -1,16 +1,37 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 #########################################################################
 # FIRST PROMPT LINE
 #########################################################################
 rosso='\e[1;34m'
 NC='\e[0m'
 echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
+#########################################################################
+# TMUX
+#########################################################################
+if [[ ! $(tmux ls) ]] 2> /dev/null; then 
+  tmux new -s λ
+fi
+#########################################################################
+# CHPWD
+#########################################################################
+chpwd() {
+  set -- "$(git rev-parse --show-toplevel 2> /dev/null)"
+  # If cd'ing into a git working copy and not within the same working copy
+  if [ -n "$1" ] && [ "$1" != "$vc_root" ]; then
+    vc_root="$1"
+    git fetch
+  fi
+  # ls inside folder after cd
+  eza --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
+}
+#########################################################################
+# P10K INSTANT PROMPT
+#########################################################################
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 #########################################################################
 # ZINIT
 #########################################################################
@@ -208,7 +229,6 @@ zinit light yassinebridi/serpl
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zhistory"
 HISTSIZE=290000
 SAVEHIST=$HISTSIZE
-
 #########################################################################
 # SETOPT
 #########################################################################
@@ -231,18 +251,6 @@ setopt listpacked
 setopt automenu
 unsetopt BEEP
 setopt vi
-
-chpwd() {
-  set -- "$(git rev-parse --show-toplevel 2> /dev/null)"
-  # If cd'ing into a git working copy and not within the same working copy
-  if [ -n "$1" ] && [ "$1" != "$vc_root" ]; then
-    vc_root="$1"
-    git fetch
-  fi
-  # ls inside folder after cd
-  eza --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
-}
-
 #########################################################################
 # ENV VARIABLE
 #########################################################################
@@ -253,24 +261,18 @@ export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
 # export BAT_THEME="gruvbox-dark"
-if [[ ! $(tmux ls) ]] 2> /dev/null; then 
-  tmux new -s λ
-fi
 #########################################################################
 # COLORING
 #########################################################################
 autoload colors && colors
-
 #########################################################################
 # ALIASES
 #########################################################################
 source $HOME/.zsh_aliases
-
 #########################################################################
 # env
 #########################################################################
 source $HOME/.nubem_env
-
 #########################################################################
 # YAZI
 #########################################################################
@@ -282,7 +284,6 @@ function ya() {
   fi
   rm -f -- "$tmp"
 }
-
 #########################################################################
 # FANCY-CTRL-Z
 #########################################################################
@@ -301,7 +302,6 @@ function fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-
 #########################################################################
 # FZF SETTINGS
 #########################################################################
@@ -323,7 +323,6 @@ export FZF_DEFAULT_OPTS="
 # --bind 'ctrl-v:execute(code {+})'"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 #########################################################################
 # ATUIN
 #########################################################################
@@ -348,48 +347,39 @@ function fzf-gcloud-config-set-project() {
 }
 zle -N fzf-gcloud-config-set-project
 bindkey '^G' fzf-gcloud-config-set-project
-
 #########################################################################
 # PATH
 #########################################################################
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
-
 #########################################################################
 # GOOGLE-SDK
 #########################################################################
 if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
-
 #########################################################################
 # GO SETTINGS
 #########################################################################
 export GOPATH=$HOME/Dev/go
-
 #########################################################################
 # FLUTTER SETTINGS
 #########################################################################
 export PATH="$PATH:$HOME/Dev/flutter/bin"
-
 #########################################################################
 # ANDROID STUDIO SETTINGS
 #########################################################################
 export PATH="$PATH:/opt/android-studio/bin"
-
 #########################################################################
 # MSSQL-TOOLS
 #########################################################################
 export PATH="$PATH:/opt/mssql-tools18/bin"
-
 #########################################################################
 # CARGO
 #########################################################################
 . "$HOME/.cargo/env"
-
 #########################################################################
 # YARN
 #########################################################################
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 #########################################################################
 # P10K SETTINGS
 #########################################################################
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
