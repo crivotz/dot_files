@@ -297,6 +297,7 @@ for_window [class="(?i)Google-chrome" title="DevTools -"] floating disable, move
 for_window [class="(?i)Brave-browser" title="DevTools -"] floating disable, move container to workspace $ws1
 for_window [class="(?i)chromium" title="DevTools -"] floating disable, move container to workspace $ws1
 for_window [class="(?i)firefox" title="Strumenti di sviluppo -"] floating disable, move container to workspace $ws1
+for_window [class="(?i)zen" title="Strumenti di sviluppo -"] floating disable, move container to workspace $ws1
 for_window [class="(?i)floorp" title="Strumenti di sviluppo -"] floating disable, move container to workspace $ws1
 for_window [class="(?i)kitty"] move container to workspace $ws2
 for_window [class="(?i)st"] move container to workspace $ws2
