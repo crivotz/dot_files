@@ -1,0 +1,27 @@
+# ROUTE PARTICOLARI
+alias route-del-default='sudo ip r del default' 
+# COMANDI ALTERNATIVI
+alias :q="exit"
+alias n="nvim"
+alias rm="gtrash put"
+alias tar-comp="_tar_comp"
+alias tar-decomp="_tar_decomp"
+alias ls='eza --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale'
+# alias cat="bat"
+# alias rm='command rm -i'
+# alias diff='bd --delta'
+alias df='df -h'  du='du -h'      cp='cp -v'   mv='mv -v'      plast="last -20"
+
+# TMUX
+alias ta='tmux attach -t'
+alias tks='tmux kill-session -t'
+alias tl='tmux list-sessions'
+alias ts='tmux new-session -s'
+alias tx='tmux new -s λ'
+alias lambda='ta λ'
+
+# SHORTCUT
+alias gsu='~/.dot_files/extras/git-summary/git-summary'
+alias gst='git status'
+alias gm='git commit -m'
+alias zf="__zoxide_zi"

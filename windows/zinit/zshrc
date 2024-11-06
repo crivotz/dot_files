@@ -3,7 +3,7 @@
 #########################################################################
 rosso='\e[1;34m'
 NC='\e[0m'
-echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
+echo -e "${rosso}WSL DEBIAN${NC} | ${rosso}ZSH${NC} ${ZSH_VERSION}"
 #########################################################################
 # TMUX
 #########################################################################
@@ -145,13 +145,6 @@ zinit light BurntSushi/ripgrep
 # NEOVIM
 zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
 zinit light neovim/neovim
-# NEOVIDE
-zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
-zinit light neovide/neovide
-# WEZTERM
-# zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
-zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
-zinit light wez/wezterm
 # FORGIT
 zinit ice wait lucid
 zinit load wfxr/forgit
@@ -170,11 +163,6 @@ zinit light cli/cli
 # 1PASSWORD COMPLETION
 zinit ice as="completion" atclone="command -v op &>/dev/null && op completion zsh > _op || true" atpull="zinit creinstall -q ."  nocompile
 zinit light zdharma-continuum/null
-# GOOGLE-CLOUD-SDK COMPLETION
-# zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
-# TMUXINATOR
-# zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
-# ZSH MANYDOTS MAGIC
 zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
 zinit light knu/zsh-manydots-magic
 # TREE-SITTER
@@ -350,27 +338,27 @@ export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
 #########################################################################
 # GOOGLE-SDK
 #########################################################################
-if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
 #########################################################################
 # GO SETTINGS
 #########################################################################
-export GOPATH=$HOME/Dev/go
+# export GOPATH=$HOME/Dev/go
 #########################################################################
 # FLUTTER SETTINGS
 #########################################################################
-export PATH="$PATH:$HOME/Dev/flutter/bin"
+# export PATH="$PATH:$HOME/Dev/flutter/bin"
 #########################################################################
 # ANDROID STUDIO SETTINGS
 #########################################################################
-export PATH="$PATH:/opt/android-studio/bin"
+# export PATH="$PATH:/opt/android-studio/bin"
 #########################################################################
 # MSSQL-TOOLS
 #########################################################################
-export PATH="$PATH:/opt/mssql-tools18/bin"
+# export PATH="$PATH:/opt/mssql-tools18/bin"
 #########################################################################
 # CARGO
 #########################################################################
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 #########################################################################
 # YARN
 #########################################################################

@@ -6,6 +6,7 @@ Thumbs.db
 
 #             Folders                #
 ######################################
+__pycache__/
 
 #              Files                 #
 ######################################
@@ -15,6 +16,5 @@ gitconfiglavoro
 gitconfig
 linux/polybar/config
 linux/i3/config
-__pycache__/
 __init__.py
 state.yml

@@ -83,7 +83,7 @@ export ENHANCD_FILTER=fzf:fzy:peco
 # ZOXIDE
 zinit ice wait="0" lucid from="gh-r" as="program" pick="zoxide-*/zoxide -> zoxide" cp="zoxide-*/completions/_zoxide -> _zoxide" atclone="./zoxide init zsh > init.zsh" atpull="%atclone" src="init.zsh"
 zinit light ajeetdsouza/zoxide
-# HISTORY SUBSTRING SEARCHING (use atuin)
+# HISTORY SUBSTRING SEARCHING
 # zinit ice wait="0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
 # zinit light zsh-users/zsh-history-substring-search
 # bindkey '^[[A' history-substring-search-up
@@ -143,15 +143,8 @@ alias man=batman.sh
 zinit ice from="gh-r" as="program" bpick="*amd64.deb" pick="usr/bin/rg"
 zinit light BurntSushi/ripgrep
 # NEOVIM
-zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
+zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="stable" pick="nvim-linux64/bin/nvim"
 zinit light neovim/neovim
-# NEOVIDE
-zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
-zinit light neovide/neovide
-# WEZTERM
-# zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
-zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
-zinit light wez/wezterm
 # FORGIT
 zinit ice wait lucid
 zinit load wfxr/forgit
@@ -164,22 +157,9 @@ zinit light jesseduffield/lazydocker
 # FD
 zinit ice as="command" from="gh-r" bpick="*amd64.deb" pick="usr/bin/fd" 
 zinit light sharkdp/fd
-# GH-CLI
-zinit ice lucid as="command" from="gh-r" bpick="*linux_amd64.deb" atclone="./gh completion -s zsh > _gh" atpull="%atclone" mv="**/bin/gh* -> gh" pick="usr/bin/gh"
-zinit light cli/cli
-# 1PASSWORD COMPLETION
-zinit ice as="completion" atclone="command -v op &>/dev/null && op completion zsh > _op || true" atpull="zinit creinstall -q ."  nocompile
-zinit light zdharma-continuum/null
-# GOOGLE-CLOUD-SDK COMPLETION
-# zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
-# TMUXINATOR
-# zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
 zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
 zinit light knu/zsh-manydots-magic
-# TREE-SITTER
-zinit ice as="program" from="gh-r" mv="tree* -> tree-sitter" pick="tree-sitter"
-zinit light tree-sitter/tree-sitter
 # XURLS
 zinit ice as="program" from="gh-r" mv="xurls* -> xurls" pick="xurls"
 zinit light mvdan/xurls
@@ -191,17 +171,9 @@ zinit load denilsonsa/prettyping
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 zinit ice lucid wait="0" src="asdf.sh"
 zinit light asdf-vm/asdf
-# VSCODE-NODE-DEBUG for NVIM-DAP
-# npm install
-# npm run buil
-zinit ice lucid wait="0" nocompile nocompletions
-zinit light microsoft/vscode-node-debug2.git
 # CROC
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
-# GLOW
-# zinit ice lucid wait"0" as"program" from"gh-r" bpick='*_amd64.deb' pick"usr/bin/glow"
-# zinit light charmbracelet/glow
 # ERDTREE
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light solidiquis/erdtree
@@ -216,9 +188,6 @@ zinit ice lucid wait"0" as"program" from"gh-r" bpick="*gnu.zip" pick="*/yazi"
 zinit light sxyazi/yazi
 # ZSH-VI-MODE
 zinit light jeffreytse/zsh-vi-mode
-# OVERMIND
-zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
-zinit light DarthSim/overmind
 #########################################################################
 # HISTORY
 #########################################################################
@@ -298,6 +267,7 @@ function fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
 #########################################################################
 # FZF SETTINGS
 #########################################################################
@@ -347,34 +317,7 @@ bindkey '^G' fzf-gcloud-config-set-project
 # PATH
 #########################################################################
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
-#########################################################################
-# GOOGLE-SDK
-#########################################################################
-if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
-#########################################################################
-# GO SETTINGS
-#########################################################################
-export GOPATH=$HOME/Dev/go
-#########################################################################
-# FLUTTER SETTINGS
-#########################################################################
-export PATH="$PATH:$HOME/Dev/flutter/bin"
-#########################################################################
-# ANDROID STUDIO SETTINGS
-#########################################################################
-export PATH="$PATH:/opt/android-studio/bin"
-#########################################################################
-# MSSQL-TOOLS
-#########################################################################
-export PATH="$PATH:/opt/mssql-tools18/bin"
-#########################################################################
-# CARGO
-#########################################################################
-. "$HOME/.cargo/env"
-#########################################################################
-# YARN
-#########################################################################
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 #########################################################################
 # P10K SETTINGS
 #########################################################################

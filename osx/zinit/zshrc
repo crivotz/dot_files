@@ -1,9 +1,9 @@
-#########################################################################
-# FIRST PROMPT LINE
-#########################################################################
+#####################
+# FIRST PROMPT LINE #
+#####################
 rosso='\e[1;34m'
 NC='\e[0m'
-echo -e "${rosso}Debian${NC}" `cat /etc/debian_version` "| ${rosso}ZSH${NC} ${ZSH_VERSION}"
+echo -e "${rosso}OSX${NC} | ${rosso}ZSH${NC} ${ZSH_VERSION}"
 #########################################################################
 # TMUX
 #########################################################################
@@ -61,7 +61,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # SSH-AGENT
 # zinit light bobsoppe/zsh-ssh-agent
 # FZF
-zinit ice from="gh-r" as="command" bpick="*linux_amd64*"
+zinit ice from="gh-r" as="command"
 zinit light junegunn/fzf
 # FZF BYNARY AND TMUX HELPER SCRIPT
 zinit ice lucid wait'0c' as="command" id-as="junegunn/fzf-tmux" pick="bin/fzf-tmux"
@@ -113,24 +113,24 @@ zinit light ms-jpq/sad
 # SYNTAX HIGHLIGHTING
 zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
-# EZA
-zinit ice wait="2" lucid from="gh-r" as="program" ver="v0.18.7"
+# EXA
+zinit ice wait="2" lucid from="gh-r" as="program" mv="bin/exa* -> exa"
 zinit light eza-community/eza
 zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA
-zinit ice lucid wait="0" as="program" from="gh-r" bpick="*amd64.deb" pick="usr/bin/delta"
+zinit ice lucid wait="0" as="program" from="gh-r" pick="delta*/delta"
 zinit light dandavison/delta
 # DUST
-zinit ice wait="2" lucid from="gh-r" as="program" bpick="*amd64.deb" pick="usr/bin/dust" atload="alias du=dust"
+zinit ice wait="2" lucid from="gh-r" as="program" atload="alias du=dust"
 zinit light bootandy/dust
 # BOTTOM
-zinit ice wait="2" lucid from="gh-r" as="program" bpick='*.deb' pick="usr/bin/btm"
+zinit ice wait="2" lucid from="gh-r" as="program"
 zinit light ClementTsang/bottom
 # DUF
-zinit ice lucid wait="0" as="program" from="gh-r" bpick='*linux_amd64.deb' pick="usr/bin/duf" atload="alias df=duf"
+zinit ice lucid wait="0" as="program" from="gh-r" atload="alias df=duf"
 zinit light muesli/duf
 # BAT
-zinit ice from="gh-r" as="program" pick="usr/bin/bat" bpick="*amd64.deb" atload="alias cat=bat"
+zinit ice from="gh-r" as="program" mv="bat* -> bat" pick="bat/bat" atload="alias cat=bat"
 zinit light sharkdp/bat
 # BAT-EXTRAS
 zinit ice lucid wait="1" as="program" pick="src/batgrep.sh"
@@ -140,32 +140,32 @@ alias rg=batgrep.sh
 alias bd=batdiff.sh
 alias man=batman.sh
 # RIPGREP
-zinit ice from="gh-r" as="program" bpick="*amd64.deb" pick="usr/bin/rg"
+zinit ice from="gh-r" as="program" mv="ripgrep* -> ripgrep" pick="ripgrep/rg"
 zinit light BurntSushi/ripgrep
 # NEOVIM
-zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
+zinit ice lucid wait from="gh-r" as="program" ver="nightly" pick"./*/*/nvim"
 zinit light neovim/neovim
-# NEOVIDE
-zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
-zinit light neovide/neovide
+# # NEOVIDE
+# zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
+# zinit light neovide/neovide
 # WEZTERM
 # zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
-zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
+zinit ice from="gh-r" as="program" bpick="*appimage*" mv="Wez* -> wezterm" pick="wezterm"
 zinit light wez/wezterm
 # FORGIT
 zinit ice wait lucid
 zinit load wfxr/forgit
 # LAZYGIT
-zinit ice lucid wait="0" as="program" from="gh-r" bpick="*Linux_x86_64*" pick="lazygit" atload="alias lg='lazygit'"
+zinit ice lucid wait="0" as="program" from="gh-r" mv="lazygit* -> lazygit" atload="alias lg='lazygit'"
 zinit light jesseduffield/lazygit
 # LAZYDOCKER
-zinit ice lucid wait="0" as="program" from="gh-r" bpick="*Linux_x86_64*" pick="lazydocker"
+zinit ice lucid wait="0" as="program" from="gh-r" mv="lazydocker* -> lazydocker" atload="alias ld='lazydocker'"
 zinit light jesseduffield/lazydocker
 # FD
-zinit ice as="command" from="gh-r" bpick="*amd64.deb" pick="usr/bin/fd" 
+zinit ice as="command" from="gh-r" mv="fd* -> fd" pick="fd/fd"
 zinit light sharkdp/fd
 # GH-CLI
-zinit ice lucid as="command" from="gh-r" bpick="*linux_amd64.deb" atclone="./gh completion -s zsh > _gh" atpull="%atclone" mv="**/bin/gh* -> gh" pick="usr/bin/gh"
+zinit ice lucid wait="0" as="program" from="gh-r" pick="gh*/bin/gh"
 zinit light cli/cli
 # 1PASSWORD COMPLETION
 zinit ice as="completion" atclone="command -v op &>/dev/null && op completion zsh > _op || true" atpull="zinit creinstall -q ."  nocompile
@@ -189,7 +189,7 @@ zinit load denilsonsa/prettyping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-zinit ice lucid wait="0" src="asdf.sh"
+zinit ice lucid wait="0" pick="asdf.sh"
 zinit light asdf-vm/asdf
 # VSCODE-NODE-DEBUG for NVIM-DAP
 # npm install
@@ -212,7 +212,7 @@ zinit light umlx5h/gtrash
 zinit ice as"program" from"gh-r" pick="**/atuin" ver="v18.2.0"
 zinit light atuinsh/atuin
 # YAZI
-zinit ice lucid wait"0" as"program" from"gh-r" bpick="*gnu.zip" pick="*/yazi"
+zinit ice lucid wait"0" as"program" from"gh-r" pick="*/yazi"
 zinit light sxyazi/yazi
 # ZSH-VI-MODE
 zinit light jeffreytse/zsh-vi-mode
@@ -265,7 +265,7 @@ autoload colors && colors
 # ALIASES
 #########################################################################
 source $HOME/.zsh_aliases
-#########################################################################
+
 # env
 #########################################################################
 source $HOME/.nubem_env
@@ -314,9 +314,9 @@ export FZF_DEFAULT_OPTS="
 --preview '([[ -f {} ]] && (bat --style=numbers --color=always --line-range :500 {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --prompt='λ -> '
 --pointer='▷'
---marker='✓'"
-# --bind 'ctrl-e:execute(nvim {} < /dev/tty > /dev/tty 2>&1)' > selected
-# --bind 'ctrl-v:execute(code {+})'"
+--marker='✓'
+--bind 'ctrl-e:execute(nvim {} < /dev/tty > /dev/tty 2>&1)' > selected
+--bind 'ctrl-v:execute(code {+})'"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #########################################################################
@@ -350,27 +350,27 @@ export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
 #########################################################################
 # GOOGLE-SDK
 #########################################################################
-if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/opt/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/google-cloud-sdk/path.zsh.inc'; fi
 #########################################################################
 # GO SETTINGS
 #########################################################################
-export GOPATH=$HOME/Dev/go
+# export GOPATH=$HOME/Dev/go
 #########################################################################
 # FLUTTER SETTINGS
 #########################################################################
-export PATH="$PATH:$HOME/Dev/flutter/bin"
+# export PATH="$PATH:$HOME/Dev/flutter/bin"
 #########################################################################
 # ANDROID STUDIO SETTINGS
 #########################################################################
-export PATH="$PATH:/opt/android-studio/bin"
+# export PATH="$PATH:/opt/android-studio/bin"
 #########################################################################
 # MSSQL-TOOLS
 #########################################################################
-export PATH="$PATH:/opt/mssql-tools18/bin"
+# export PATH="$PATH:/opt/mssql-tools18/bin"
 #########################################################################
 # CARGO
 #########################################################################
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 #########################################################################
 # YARN
 #########################################################################
