@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# PRE CONFIGURATION
+mkdir ~/.config
 # CORE
 ln -sf ~/.dot_files/core/tmux/tmux.conf ~/.tmux.conf
 ln -sf ~/.dot_files/core/gemrc ~/.gemrc
@@ -15,6 +17,6 @@ ln -sf ~/.dot_files/core/p10k.zsh ~/.p10k.zsh
 ln -sf ~/.dot_files/server/gitconfig ~/.gitconfig
 ln -sf ~/.dot_files/server/zsh_aliases ~/.zsh_aliases
 ln -sf ~/.dot_files/server/zinit/zshrc ~/.zshrc
-# CONFIGURATION
+# POST CONFIGURATION
 mkdir ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
