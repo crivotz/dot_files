@@ -6,7 +6,7 @@ ln -sf ~/.dot_files/core/gemrc ~/.gemrc
 ln -sf ~/.dot_files/core/irbrc ~/.irbrc
 ln -sf ~/.dot_files/core/tool-versions ~/.tool-versions
 ln -sf ~/.dot_files/core/asdfrc ~/.asdfrc
-ln -sf ~/.dot_files/core/default-npm-packages ~/.nvm/default-packages
+ln -sf ~/.dot_files/core/default-npm-packages ~/.default-npm-packages
 ln -sf ~/.dot_files/core/default-gems ~/.default-gems
 ln -sf ~/.dot_files/core/lazygit ~/.config/lazygit/
 ln -sf ~/.dot_files/core/yazi ~/.config/yazi
