@@ -219,6 +219,9 @@ zinit light jeffreytse/zsh-vi-mode
 # OVERMIND
 zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
 zinit light DarthSim/overmind
+# FASTFETCH
+zinit ice lucid wait"0" as"program" from"gh-r" bpick="*deb" pick="usr/bin/fastfetch" 
+zinit light fastfetch-cli/fastfetch
 #########################################################################
 # HISTORY
 #########################################################################
