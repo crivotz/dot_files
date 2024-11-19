@@ -114,7 +114,7 @@ zinit light ms-jpq/sad
 zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
 # EZA
-zinit ice wait="2" lucid from="gh-r" as="program" ver="v0.18.7"
+zinit ice wait="2" lucid from="gh-r" as="program"
 zinit light eza-community/eza
 zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA

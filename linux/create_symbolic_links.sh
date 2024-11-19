@@ -11,6 +11,7 @@ ln -sf ~/.dot_files/core/default-gems ~/.default-gems
 ln -sf ~/.dot_files/core/lazygit ~/.config/lazygit/
 ln -sf ~/.dot_files/core/yazi ~/.config/yazi
 ln -sf ~/.dot_files/core/wezterm ~/.config/wezterm
+ln -sf ~/.dot_files/core/fastfetch ~/.config/fastfetch
 ln -sf ~/.dot_files/core/eza ~/.config/eza
 ln -sf ~/.dot_files/core/p10k.zsh ~/.p10k.zsh
 ln -sf ~/.dot_files/core/wezterm/wezterm.lua ~/.wezterm.lua
