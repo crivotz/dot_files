@@ -317,8 +317,8 @@ exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
 
 # Shortcut
 bindsym $mod+n exec nautilus
-bindsym $mod+Shift+c exec google-chrome
-bindsym $mod+c exec /opt/zen/zen
+bindsym $mod+c exec google-chrome
+bindsym $mod+Shift+c exec /opt/zen/zen
 # bindsym $mod+Shift+c exec "cat .i3/colors .i3/client-properties .i3/base > .i3/config && i3-msg reload"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% # increase sound volume
