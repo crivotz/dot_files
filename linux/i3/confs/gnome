@@ -155,8 +155,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec "~/.zinit/plugins/wez---wezterm/usr/bin/wezterm"
-bindsym $mod+Return exec "~/.zinit/plugins/wez---wezterm/wezterm"
-bindsym $mod+Shift+Return exec st
+bindsym $mod+Shift+Return exec "~/.zinit/plugins/wez---wezterm/wezterm"
+bindsym $mod+Return exec "~/.local/bin/ghostty"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -302,6 +302,7 @@ for_window [class="(?i)floorp" title="Strumenti di sviluppo -"] floating disable
 for_window [class="(?i)kitty"] move container to workspace $ws2
 for_window [class="(?i)st"] move container to workspace $ws2
 for_window [class="(?i)wezterm"] move container to workspace $ws2
+for_window [class="(?i)ghostty"] move container to workspace $ws2
 for_window [class="(?i)spotify"] move container to workspace $ws9
 for_window [class="(?i)telegram"] move container to workspace $ws4
 
