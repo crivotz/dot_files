@@ -152,6 +152,10 @@ zinit light neovide/neovide
 # zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
 zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
 zinit light wez/wezterm
+# GHOSTTY
+# zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
+# zinit ice from="gh-r" as="program" bpick="*appimage*" mv="gho* -> ghostty" pick="ghostty"
+# zinit light psadi/ghostty-appimage
 # FORGIT
 zinit ice wait lucid
 zinit load wfxr/forgit

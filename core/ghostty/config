@@ -1,50 +1,72 @@
-# This is the configuration file for Ghostty.
-#
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /home/mauro/.config/ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
-
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
-# font-family = Iosevka
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
-
+# APPEARANCE
 theme = tokyonight_night
 cursor-invert-fg-bg = true
+mouse-hide-while-typing = true
+cursor-style = block
+cursor-style-blink = false
+# background-opacity = 0.75
+# background-blur-radius = 40
+
+# WINDOW CONTROLS
+confirm-close-surface = true
 window-decoration = false
 gtk-titlebar = false
 gtk-adwaita = false
-mouse-hide-while-typing = true
+window-padding-x = 2
+window-padding-y = 2
+window-padding-balance = true
+window-save-state = always
+# window-padding-x = 0
+# window-padding-y = 0
+# window-padding-balance = false
+# window-save-state = always
+
+# AUTO UPDATE SETTINGS
+# auto-update = download
+# auto-update-channel = stable
+
+# EXTRAS
+shell-integration-features = true
+copy-on-select = clipboard
+focus-follows-mouse = true
+link-url = true
+
+# custom keybindings
+keybind = ctrl+shift+r=reload_config 
+keybind = ctrl+shift+i=inspector:toggle
+keybind = ctrl+shift+f=toggle_fullscreen
+keybind = ctrl+shift+left=previous_tab
+keybind = ctrl+shift+right=next_tab
+
+# tmux-like prefix controlled keybindings
+keybind = ctrl+shift+a>x=close_surface
+keybind = ctrl+shift+a>c=new_tab 
+keybind = ctrl+shift+a>n=new_window
+keybind = ctrl+shift+a>f=toggle_fullscreen
+
+# tab navigation
+keybind = ctrl+shift+a>1=goto_tab:1
+keybind = ctrl+shift+a>2=goto_tab:2
+keybind = ctrl+shift+a>3=goto_tab:3
+keybind = ctrl+shift+a>4=goto_tab:4
+keybind = ctrl+shift+a>5=goto_tab:5
+keybind = ctrl+shift+a>6=goto_tab:6
+keybind = ctrl+shift+a>7=goto_tab:7
+keybind = ctrl+shift+a>8=goto_tab:8
+keybind = ctrl+shift+a>9=goto_tab:9
+
+# splits
+keybind = ctrl+shift+a>|=new_split:right
+keybind = ctrl+shift+a>-=new_split:down
+keybind = ctrl+shift+a>e=equalize_splits
+keybind = ctrl+shift+a>z=toggle_split_zoom
+
+# split navigation 
+keybind = ctrl+shift+a>h=goto_split:left
+keybind = ctrl+shift+a>j=goto_split:bottom
+keybind = ctrl+shift+a>k=goto_split:top
+keybind = ctrl+shift+a>l=goto_split:right
+keybind = ctrl+shift+a>left=goto_split:left
+keybind = ctrl+shift+a>down=goto_split:bottom
+keybind = ctrl+shift+a>up=goto_split:top
+keybind = ctrl+shift+a>right=goto_split:right
