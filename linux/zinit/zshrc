@@ -83,13 +83,6 @@ export ENHANCD_FILTER=fzf:fzy:peco
 # ZOXIDE
 zinit ice wait="0" lucid from="gh-r" as="program" pick="zoxide-*/zoxide -> zoxide" cp="zoxide-*/completions/_zoxide -> _zoxide" atclone="./zoxide init zsh > init.zsh" atpull="%atclone" src="init.zsh"
 zinit light ajeetdsouza/zoxide
-# HISTORY SUBSTRING SEARCHING (use atuin)
-# zinit ice wait="0b" lucid atload'bindkey "$terminfo[kcuu1]" history-substring-search-up; bindkey "$terminfo[kcud1]" history-substring-search-down'
-# zinit light zsh-users/zsh-history-substring-search
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
-# bindkey -M vicmd 'k' history-substring-search-up
-# bindkey -M vicmd 'j' history-substring-search-down
 # TAB COMPLETIONS
 zinit ice wait="0b" lucid blockf
 zinit light zsh-users/zsh-completions
@@ -120,9 +113,6 @@ zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*amd64.deb" pick="usr/bin/delta"
 zinit light dandavison/delta
-# DUST
-zinit ice wait="2" lucid from="gh-r" as="program" bpick="*amd64.deb" pick="usr/bin/dust" atload="alias du=dust"
-zinit light bootandy/dust
 # BOTTOM
 zinit ice wait="2" lucid from="gh-r" as="program" bpick='*.deb' pick="usr/bin/btm"
 zinit light ClementTsang/bottom
@@ -145,20 +135,6 @@ zinit light BurntSushi/ripgrep
 # NEOVIM
 zinit ice from="gh-r" as="program" bpick="*linux64.tar.gz" ver="nightly" pick="nvim-linux64/bin/nvim"
 zinit light neovim/neovim
-# NEOVIDE
-zinit ice from="gh-r" as="program" bpick="*appimage"  mv="neo* -> neovide" pick="neovide"
-zinit light neovide/neovide
-# WEZTERM
-# zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
-zinit ice from="gh-r" as="program" bpick="*appimage*" mv="wez* -> wezterm" pick="wezterm"
-zinit light wez/wezterm
-# GHOSTTY
-# zinit ice from="gh-r" as="program" bpick="*ebian11.deb" ver="nightly" pick="usr/bin/wezterm"
-# zinit ice from="gh-r" as="program" bpick="*appimage*" mv="gho* -> ghostty" pick="ghostty"
-# zinit light psadi/ghostty-appimage
-# FORGIT
-zinit ice wait lucid
-zinit load wfxr/forgit
 # LAZYGIT
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*Linux_x86_64*" pick="lazygit" atload="alias lg='lazygit'"
 zinit light jesseduffield/lazygit
@@ -174,19 +150,9 @@ zinit light cli/cli
 # 1PASSWORD COMPLETION
 zinit ice as="completion" atclone="command -v op &>/dev/null && op completion zsh > _op || true" atpull="zinit creinstall -q ."  nocompile
 zinit light zdharma-continuum/null
-# GOOGLE-CLOUD-SDK COMPLETION
-# zinit ice as="completion"; zinit snippet /opt/google-cloud-sdk/completion.zsh.inc
-# TMUXINATOR
-# zinit ice as="completion"; zinit snippet ~/.tmuxinator.zsh
-# ZSH MANYDOTS MAGIC
-zinit ice depth"1" wait lucid pick"manydots-magic" compile"manydots-magic"
-zinit light knu/zsh-manydots-magic
 # TREE-SITTER
 zinit ice as="program" from="gh-r" mv="tree* -> tree-sitter" pick="tree-sitter"
 zinit light tree-sitter/tree-sitter
-# XURLS
-zinit ice as="program" from="gh-r" mv="xurls* -> xurls" pick="xurls"
-zinit light mvdan/xurls
 # PRETTYPING
 zinit ice lucid wait="" as="program" pick="prettyping" atload="alias ping=prettyping"
 zinit load denilsonsa/prettyping
@@ -195,20 +161,9 @@ zinit load denilsonsa/prettyping
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 zinit ice lucid wait="0" src="asdf.sh"
 zinit light asdf-vm/asdf
-# VSCODE-NODE-DEBUG for NVIM-DAP
-# npm install
-# npm run buil
-zinit ice lucid wait="0" nocompile nocompletions
-zinit light microsoft/vscode-node-debug2.git
 # CROC
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
-# GLOW
-# zinit ice lucid wait"0" as"program" from"gh-r" bpick='*_amd64.deb' pick"usr/bin/glow"
-# zinit light charmbracelet/glow
-# ERDTREE
-zinit ice lucid wait"0" as"program" from"gh-r"
-zinit light solidiquis/erdtree
 # GTRASH
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light umlx5h/gtrash
