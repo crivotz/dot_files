@@ -13,9 +13,9 @@ configuration {
   drun-match-fields: "name,generic,exec,categories";
   sidebar-mode: false;
   combi-hide-mode-prefix: true;
-  display-drun: "λ ▷";
-  display-run: "λ ▷";
-  display-ssh: "SSH ▷";
-  display-window: "WIN ▷";
+  display-drun: "λ ❯";
+  display-run: "λ ❯";
+  display-ssh: "SSH ❯";
+  display-window: "WIN ❯";
 }
 @theme "/usr/share/rofi/themes/android_notification.rasi"

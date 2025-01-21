@@ -265,6 +265,7 @@ bindkey '^Z' fancy-ctrl-z
 #########################################################################
 export FZF_DEFAULT_OPTS="
 --ansi
+--style full
 --layout=default
 --info=inline
 --color bg+:-1,gutter:-1
@@ -275,7 +276,7 @@ export FZF_DEFAULT_OPTS="
 --preview-window=cycle
 --preview '([[ -f {} ]] && (bat --style=numbers --color=always --line-range :500 {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
 --prompt='λ -> '
---pointer='▷'
+--pointer='❯'
 --marker='✓'"
 # --bind 'ctrl-e:execute(nvim {} < /dev/tty > /dev/tty 2>&1)' > selected
 # --bind 'ctrl-v:execute(code {+})'"

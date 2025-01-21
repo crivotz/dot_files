@@ -1,8 +1,4 @@
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[▷](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = '[▷](bold red)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-vimcmd_symbol = '[◁](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-vimcmd_replace_one_symbol = '[▷](bold purple)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-vimcmd_replace_symbol = '[◁](bold purple)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-vimcmd_visual_symbol = '[◁](bold yellow)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+add_newline = false
+
+[gcloud]
+format = 'on [$symbol(\($project\))]($style) '
