@@ -54,6 +54,7 @@
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
+    my_rails
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     php_version           # php version (https://www.php.net/)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)

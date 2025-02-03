@@ -261,6 +261,27 @@ function fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 #########################################################################
+# RAILS VERSION
+#########################################################################
+function prompt_my_rails() {
+  # Check if we're in a git repository
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    # Get the root of the git repository
+    local repo_root=$(git rev-parse --show-toplevel 2>/dev/null)
+    
+    # Check if Gemfile exists in the repository root
+    if [[ -f "${repo_root}/Gemfile" ]]; then
+      # Check if Rails is installed and available
+      if command -v rails >/dev/null 2>&1; then
+        # Get Rails version using rails -v and extract only the version number
+        local rails_version=$(rails -v | cut -d' ' -f2)
+        # Nerd Font Rails icon ( )
+        p10k segment -s RAILS -f red -i "" -t "${rails_version}"
+      fi
+    fi
+  fi
+}
+#########################################################################
 # FZF SETTINGS
 #########################################################################
 export FZF_DEFAULT_OPTS="
