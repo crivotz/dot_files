@@ -159,7 +159,7 @@ zinit load denilsonsa/prettyping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-zinit ice lucid wait="0" src="asdf.sh"
+zinit ice lucid wait="0" as="program" from="gh-r"
 zinit light asdf-vm/asdf
 # CROC
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
@@ -303,6 +303,11 @@ export FZF_DEFAULT_OPTS="
 # --bind 'ctrl-v:execute(code {+})'"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#########################################################################
+# ASDF
+#########################################################################
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH=$ASDF_DATA_DIR/shims:$PATH
 #########################################################################
 # ATUIN
 #########################################################################
