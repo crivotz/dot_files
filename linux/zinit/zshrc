@@ -164,9 +164,9 @@ zinit light asdf-vm/asdf
 # CROC
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
-# GTRASH
-zinit ice lucid wait"0" as"program" from"gh-r"
-zinit light umlx5h/gtrash
+# GOMI
+zinit ice lucid wait"0" as"program" from"gh-r" atload="alias rm=gomi"
+zinit light babarot/gomi
 # ATUIN
 zinit ice as"program" from"gh-r" pick="**/atuin" ver="v18.2.0"
 zinit light atuinsh/atuin
@@ -178,9 +178,6 @@ zinit light jeffreytse/zsh-vi-mode
 # OVERMIND
 zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
 zinit light DarthSim/overmind
-# FASTFETCH
-zinit ice lucid wait"0" as"program" from"gh-r" bpick="*deb" pick="usr/bin/fastfetch" 
-zinit light fastfetch-cli/fastfetch
 #########################################################################
 # HISTORY
 #########################################################################
