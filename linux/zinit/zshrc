@@ -159,6 +159,7 @@ zinit load denilsonsa/prettyping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+# asdf plugin add zig https://github.com/asdf-community/asdf-zig
 zinit ice lucid wait="0" as="program" from="gh-r"
 zinit light asdf-vm/asdf
 # CROC
