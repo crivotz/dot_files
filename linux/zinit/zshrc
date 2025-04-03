@@ -113,9 +113,9 @@ zinit ice wait blockf atpull'zinit creinstall -q .'
 # DELTA
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*amd64.deb" pick="usr/bin/delta"
 zinit light dandavison/delta
-# BOTTOM
-zinit ice wait="2" lucid from="gh-r" as="program" bpick='*.deb' pick="usr/bin/btm"
-zinit light ClementTsang/bottom
+# BTOP
+zinit ice wait="2" lucid from="gh-r" as="program" pick="btop/bin/btop"
+zinit light aristocratos/btop
 # DUF
 zinit ice lucid wait="0" as="program" from="gh-r" bpick='*linux_amd64.deb' pick="usr/bin/duf" atload="alias df=duf"
 zinit light muesli/duf
@@ -156,6 +156,9 @@ zinit light tree-sitter/tree-sitter
 # PRETTYPING
 zinit ice lucid wait="" as="program" pick="prettyping" atload="alias ping=prettyping"
 zinit load denilsonsa/prettyping
+# GPING wait for glibc 2.39
+# zinit ice lucid wait="0" as="program" from="gh-r" atload="alias ping=gping"
+# zinit load orf/gping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -360,7 +363,7 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 #########################################################################
 # YARN
 #########################################################################
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 #########################################################################
 # P10K SETTINGS
 #########################################################################
