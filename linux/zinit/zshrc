@@ -175,7 +175,7 @@ zinit light babarot/gomi
 zinit ice as"program" from"gh-r" pick="**/atuin" ver="v18.2.0"
 zinit light atuinsh/atuin
 # YAZI
-zinit ice lucid wait"0" as"program" from"gh-r" bpick="*gnu.zip" pick="*/yazi"
+zinit ice lucid wait"0" as"program" from"gh-r" bpick="*mus*" pick="*/yazi"
 zinit light sxyazi/yazi
 # ZSH-VI-MODE
 zinit light jeffreytse/zsh-vi-mode
