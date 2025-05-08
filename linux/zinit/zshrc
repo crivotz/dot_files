@@ -139,7 +139,7 @@ zinit light neovim/neovim
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*Linux_x86_64*" pick="lazygit" atload="alias lg='lazygit'"
 zinit light jesseduffield/lazygit
 # LAZYDOCKER
-zinit ice lucid wait="0" as="program" from="gh-r" bpick="*Linux_x86_64*" pick="lazydocker"
+zinit ice lucid wait="0" as="program" from="gh-r" bpick="*Linux_x86_64*" pick="lazydocker" atload="alias ld='lazydocker'"
 zinit light jesseduffield/lazydocker
 # FD
 zinit ice as="command" from="gh-r" bpick="*amd64.deb" pick="usr/bin/fd" 
@@ -168,9 +168,6 @@ zinit light asdf-vm/asdf
 # CROC
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
-# GOMI
-zinit ice lucid wait"0" as"program" from"gh-r" atload="alias rm=gomi"
-zinit light babarot/gomi
 # ATUIN
 zinit ice as"program" from"gh-r" pick="**/atuin" ver="v18.2.0"
 zinit light atuinsh/atuin
