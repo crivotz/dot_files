@@ -74,7 +74,7 @@ zinit ice wait="1" lucid
 zinit light Aloxaf/fzf-tab
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-zinit ice wait="0a" lucid atload="_zsh_autosuggest_start"
+zinit ice wait="2" lucid atload="_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 # ENHANCD
 zinit ice wait="0b" lucid
@@ -104,7 +104,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zinit ice from="gh-r" as="command"
 zinit light ms-jpq/sad
 # SYNTAX HIGHLIGHTING
-zinit ice wait="0c" lucid atinit="zpcompinit;zpcdreplay"
+zinit ice wait="2" lucid atinit="zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
 # EZA
 zinit ice wait="2" lucid from="gh-r" as="program"

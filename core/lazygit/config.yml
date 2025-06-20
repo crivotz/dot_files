@@ -8,5 +8,5 @@ customCommands:
   - key: 'I'
     command: "gh issue list"
     context: 'global'
-    subprocess: true
     description: "Issue aperte"
+    output: terminal
