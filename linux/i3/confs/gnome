@@ -247,6 +247,10 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
+workspace 1 output DP-1-1
+workspace 2 output DP-1-2
+workspace 3 output DP-1-3
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -313,6 +317,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launchlistener.sh
 exec_always --no-startup-id "killall -q xcompmgr; xcompmgr -c &"
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/bin/syncthing serve --no-browser --logfile=default 
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
 
