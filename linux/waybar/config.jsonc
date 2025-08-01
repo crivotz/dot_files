@@ -28,6 +28,7 @@
     "battery",
     "battery#bat2",
     "custom/lock",
+    "custom/logout",
     "custom/reboot",
     "custom/power",
     "clock"
@@ -46,10 +47,7 @@
       "6": "6",
       "7": "7",
       "8": "8",
-      "9": "9",
-      "urgent": " ",
-      "focused": " ",
-      "default": " "
+      "9": "9"
     }
   },
   "sway/mode": {
@@ -87,6 +85,12 @@
   "custom/power": {
     "format": "<span color='#f7768e'>  </span>",
     "on-click": "systemctl poweroff",
+    "tooltip": true,
+    "tooltip-format": "Shutdown"
+  },
+  "custom/logout": {
+    "format": "<span color='#9d7cd8'> 󰍃 </span>",
+    "on-click": "swaymsg exit",
     "tooltip": true,
     "tooltip-format": "Shutdown"
   },
