@@ -3,7 +3,8 @@
 font pango: JetBrains Mono 12px 
 default_border pixel 4
 titlebar_border_thickness 2
-gaps inner 10
+gaps inner 5
+gaps outer 5
 #  Tokyonight storm
 set $base00 #1a1b26
 set $base01 #292e42

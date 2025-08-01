@@ -93,7 +93,7 @@
   "network": {
     "format-wifi": "<span color='#7dcfff'> 󰤨  </span>{essid} ",
     "format-ethernet": "<span color='#9ece6a'>  </span>Wired ",
-    "tooltip-format": "<span color='#f7768e'> 󰅧 <Select></span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}<span color='#9ece6a'> 󱘖 {ipaddr}/{cidr}</span>",
+    "tooltip-format": "<span color='#f7768e'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}<span color='#9ece6a'> 󱘖 </span>{ipaddr}/{cidr}",
     "format-linked": "<span color='#ff9e64'> 󱘖 </span>{ifname} (No IP) ",
     "format-disconnected": "<span color='#f7768e'>   </span>Disconnected ",
     "format-alt": "<span color='#7dcfff'> 󰤨  </span>{signalStrength}% ",
@@ -157,7 +157,7 @@
     "interval": 1,
     "format": "<span color='#7aa2f7'>   </span>{:%H:%M} ",
     "tooltip": true,
-    "tooltip-format": "{%d/%m/%Y, %A}"
+    "tooltip-format": "{:%d/%m/%Y, %A}"
   },
   "tray": {
     "icon-size": 17,
@@ -168,10 +168,10 @@
     "tooltip": true,
     "tooltip-format": "Backlight: {percent}%",
     "format-icons": [
-      "<span color='#696969'> 󰃞 </span>", // 暗 - 深灰
-      "<span color='#A9A9A9'> 󰃝 </span>", // 中 - 灰
-      "<span color='#FFFF66'> 󰃟 </span>", // 亮 - 柠檬黄
-      "<span color='#e0af68'> 󰃠 </span>" // 最亮 - 金色
+      "<span color='#696969'> 󰃞 </span>",
+      "<span color='#A9A9A9'> 󰃝 </span>",
+      "<span color='#FFFF66'> 󰃟 </span>",
+      "<span color='#e0af68'> 󰃠 </span>"
     ]
   },
   "bluetooth": {
