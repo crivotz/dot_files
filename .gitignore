@@ -15,6 +15,7 @@ ssh_config
 gitconfiglavoro
 gitconfig
 linux/polybar/config
+linux/sway/config
 linux/i3/config
 __init__.py
 state.yml
