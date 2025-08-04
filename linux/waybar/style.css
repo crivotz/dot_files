@@ -25,6 +25,7 @@
 }
 
 #custom-temperature,
+#memory,
 #custom-power{
   background-color: rgba(26,27,38,0.9);
   margin-bottom: 2px;
@@ -53,7 +54,6 @@
 #battery,
 #pulseaudio,
 #backlight,
-#memory,
 #cpu{
   background-color: rgba(26,27,38,0.9);
   margin-bottom: 2px;
