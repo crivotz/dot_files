@@ -26,11 +26,12 @@
     "custom/temperature",
     "backlight",
     "battery",
-    "battery#bat2",
+    "clock",
+    "tray",
     "custom/lock",
+    "custom/logout",
     "custom/reboot",
-    "custom/power",
-    "clock"
+    "custom/power"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -46,10 +47,7 @@
       "6": "6",
       "7": "7",
       "8": "8",
-      "9": "9",
-      "urgent": " ",
-      "focused": " ",
-      "default": " "
+      "9": "9"
     }
   },
   "sway/mode": {
@@ -74,7 +72,7 @@
   },
   "custom/lock": {
     "format": "<span color='#7dcfff'>  </span>",
-    "on-click": "swaylock",
+    "on-click": "swaylock -eFfk -c 1a1b26",
     "tooltip": true,
     "tooltip-format": "Lock"
   },
@@ -87,6 +85,12 @@
   "custom/power": {
     "format": "<span color='#f7768e'>  </span>",
     "on-click": "systemctl poweroff",
+    "tooltip": true,
+    "tooltip-format": "Shutdown"
+  },
+  "custom/logout": {
+    "format": "<span color='#9d7cd8'> 󰍃 </span>",
+    "on-click": "swaymsg exit",
     "tooltip": true,
     "tooltip-format": "Shutdown"
   },
