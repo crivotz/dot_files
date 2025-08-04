@@ -1,6 +1,6 @@
 ### Variables
 # Logo key. Use Mod1 for Alt.
-font pango: JetBrains Mono 12px 
+font pango: JetBrains Mono NF 13px 
 default_border pixel 4
 titlebar_border_thickness 2
 gaps inner 5
@@ -214,7 +214,7 @@ bindsym Mod4+Ctrl+p  exec grimshot save window
 
 exec /usr/bin/syncthing serve --no-browser --logfile=default 
 exec dunst
-exec nm-applet
+exec_always nm-applet --indicator
 exec /usr/libexec/polkit-agent-helper-1
 
 #

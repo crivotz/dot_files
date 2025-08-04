@@ -26,12 +26,12 @@
     "custom/temperature",
     "backlight",
     "battery",
-    "battery#bat2",
+    "clock",
+    "tray",
     "custom/lock",
     "custom/logout",
     "custom/reboot",
-    "custom/power",
-    "clock"
+    "custom/power"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -72,7 +72,7 @@
   },
   "custom/lock": {
     "format": "<span color='#7dcfff'>  </span>",
-    "on-click": "swaylock",
+    "on-click": "swaylock -eFfk -c 1a1b26",
     "tooltip": true,
     "tooltip-format": "Lock"
   },
