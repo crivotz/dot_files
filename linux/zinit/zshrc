@@ -166,8 +166,8 @@ zinit light tree-sitter/tree-sitter
 zinit ice lucid wait="" as="program" pick="prettyping" atload="alias ping=prettyping"
 zinit load denilsonsa/prettyping
 # GPING wait for glibc 2.39
-# zinit ice lucid wait="0" as="program" from="gh-r" atload="alias ping=gping"
-# zinit load orf/gping
+zinit ice lucid wait="0" as="program" from="gh-r"
+zinit load orf/gping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git

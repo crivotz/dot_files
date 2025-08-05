@@ -11,7 +11,6 @@
   box-shadow: none;
 }
 
-#workspaces,
 #clock,
 #tray{
   /*background-color: rgba(29,31,46, 0.95);*/
@@ -92,6 +91,7 @@
   padding: 2px 6px;
   margin: 0 2px;
   border-radius: 10px;
+  background: transparent;
 }
 
 #workspaces button.focused {
@@ -102,11 +102,12 @@
 }
 
 #workspaces button {
-  background: transparent;
+  /* background: transparent; */
   border: none;
   padding: 2px 6px;
   margin: 0 2px;
   font-weight: bold;
+  background-color: rgba(26,27,38,0.9);
 }
 
 #window {
