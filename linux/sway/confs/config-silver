@@ -211,10 +211,12 @@ bindsym Mod4+p       exec grimshot save active
 bindsym Mod4+Shift+p exec grimshot save area
 bindsym Mod4+Mod1+p  exec grimshot save output
 bindsym Mod4+Ctrl+p  exec grimshot save window
+bindsym Control+Shift+Space exec /usr/bin/1password --quick-access
 
 exec /usr/bin/syncthing serve --no-browser --logfile=default 
 exec dunst
 exec nm-applet
+exec blueman
 exec /usr/libexec/polkit-agent-helper-1
 
 #
@@ -249,7 +251,7 @@ workspace 2 output DP-4
 workspace 3 output DP-5
 
 # touchpad
-input "1739:52837:VEN_06CB:00_06CB:CE65_Mouse" {
+input "1739:52837:VEN_06CB:00_06CB:CE65_Touchpad" {
   dwt enabled
   tap enabled
   natural_scroll enabled
