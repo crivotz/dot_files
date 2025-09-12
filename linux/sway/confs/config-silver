@@ -217,7 +217,7 @@ exec /usr/bin/syncthing serve --no-browser --logfile=default
 exec dunst
 exec nm-applet
 exec blueman
-exec /usr/libexec/polkit-agent-helper-1
+# exec /usr/libexec/polkit-agent-helper-1
 
 #
 # Status Bar:
