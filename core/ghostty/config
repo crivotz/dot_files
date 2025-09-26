@@ -1,2 +1,11 @@
 # APPEARANCE
 theme = TokyoNight Night
+custom-shader = ~/.config/ghostty/shaders/bloom.glsl
+custom-shader = ~/.config/ghostty/shaders/cursor_blaze_no_trail.glsl
+# WINDOW CONTROLS
+window-padding-balance = true
+# EXTRAS
+shell-integration-features = true
+copy-on-select = clipboard
+focus-follows-mouse = true
+link-url = true

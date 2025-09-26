@@ -23,4 +23,6 @@ My dot_files for linux (i3, zinit, tmux, tmuxinator, st, kitty, polybar, ranger,
 - [GTK](https://github.com/sainnhe/gruvbox-material-gtk)
 - [Rofi](https://github.com/davatorium/rofi)
 - [Spicetify](https://github.com/khanhas/Spicetify)
+- [ghostty-shader-playground](https://github.com/KroneCorylus/ghostty-shader-playground)
+- [ghostty-shaders](https://github.com/hackr-sh/ghostty-shaders)
 - and many more thanks 👏
