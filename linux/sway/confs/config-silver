@@ -1,6 +1,6 @@
 ### Variables
 # Logo key. Use Mod1 for Alt.
-font pango: JetBrains Mono 12px 
+font pango: JetBrains Mono 13px 
 default_border pixel 4
 titlebar_border_thickness 2
 gaps inner 5
