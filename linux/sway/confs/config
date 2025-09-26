@@ -211,11 +211,13 @@ bindsym Mod4+p       exec grimshot save active
 bindsym Mod4+Shift+p exec grimshot save area
 bindsym Mod4+Mod1+p  exec grimshot save output
 bindsym Mod4+Ctrl+p  exec grimshot save window
+bindsym Control+Shift+Space exec /usr/bin/1password --quick-access
 
 exec /usr/bin/syncthing serve --no-browser --logfile=default 
 exec dunst
-exec_always nm-applet --indicator
-exec /usr/libexec/polkit-agent-helper-1
+exec nm-applet
+# exec blueman
+# exec /usr/libexec/polkit-agent-helper-1
 
 #
 # Status Bar:
