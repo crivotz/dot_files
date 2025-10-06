@@ -339,6 +339,34 @@ function fzf-gcloud-config-set-project() {
 zle -N fzf-gcloud-config-set-project
 bindkey '^G' fzf-gcloud-config-set-project
 #########################################################################
+# NIGHT DAY TOGGLE
+#########################################################################
+toggle_day_night() {
+  NVIM_FILE="$HOME/.nv-ide/lua/plugins/colorschemes/tokyonight.lua"
+  NVIM_LINE=10
+  GHOSTTY_FILE="$HOME/.dot_files/core/ghostty/config"
+  GHOSTTY_LINE=2
+
+  if grep -q 'style = "day"' "$NVIM_FILE"; then
+    sed -i "${NVIM_LINE}s/style = \"day\"/style = \"night\"/" "$NVIM_FILE"
+    sed -i "${GHOSTTY_LINE}s/TokyoNight Day/TokyoNight Night/" "$GHOSTTY_FILE"
+    echo "Switched to night style/theme."
+  elif grep -q 'style = "night"' "$NVIM_FILE"; then
+    sed -i "${NVIM_LINE}s/style = \"night\"/style = \"day\"/" "$NVIM_FILE"
+    sed -i "${GHOSTTY_LINE}s/TokyoNight Night/TokyoNight Day/" "$GHOSTTY_FILE"
+    echo "Switched to day style/theme."
+  else
+    echo "No 'style = \"day\"' or 'style = \"night\"' found on line $NVIM_LINE of $NVIM_FILE."
+    return 1
+  fi
+
+  if command -v ghostty >/dev/null 2>&1; then
+    pkill -SIGUSR2 ghostty
+  else
+    echo "Ghostty reload command not found. Please reload manually."
+  fi
+}
+#########################################################################
 # PATH
 #########################################################################
 export PATH=$PATH:/usr/local/go/bin:~/.local/bin:~/bin
