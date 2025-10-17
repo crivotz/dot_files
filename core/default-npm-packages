@@ -6,3 +6,4 @@ dockerfile-language-server-nodejs
 typescript
 typescript-language-server
 vscode-langservers-extracted
+@github/copilot
