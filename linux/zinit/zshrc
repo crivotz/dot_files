@@ -345,21 +345,21 @@ bindkey '^G' fzf-gcloud-config-set-project
 # NIGHT DAY TOGGLE
 #########################################################################
 toggle_day_night() {
-  NVIM_FILE="$HOME/.nv-ide/lua/plugins/colorschemes/tokyonight.lua"
-  NVIM_LINE=10
+  LAZY_FILE="$HOME/.nv-ide/lua/config/lazy.lua"
+  IMPORT_LINE=$(grep -n 'import = "plugins.colorschemes.' "$LAZY_FILE" | cut -d: -f1)
   GHOSTTY_FILE="$HOME/.dot_files/core/ghostty/config"
   GHOSTTY_LINE=2
 
-  if grep -q 'style = "day"' "$NVIM_FILE"; then
-    sed -i "${NVIM_LINE}s/style = \"day\"/style = \"night\"/" "$NVIM_FILE"
-    sed -i "${GHOSTTY_LINE}s/TokyoNight Day/TokyoNight Night/" "$GHOSTTY_FILE"
-    echo "Switched to night style/theme."
-  elif grep -q 'style = "night"' "$NVIM_FILE"; then
-    sed -i "${NVIM_LINE}s/style = \"night\"/style = \"day\"/" "$NVIM_FILE"
-    sed -i "${GHOSTTY_LINE}s/TokyoNight Night/TokyoNight Day/" "$GHOSTTY_FILE"
-    echo "Switched to day style/theme."
+  if grep -q 'import = "plugins.colorschemes.tokyonight"' "$LAZY_FILE"; then
+    sed -i "${IMPORT_LINE}s/import = \"plugins.colorschemes.tokyonight\"/import = \"plugins.colorschemes.github\"/" "$LAZY_FILE"
+    sed -i "${GHOSTTY_LINE}s/.*/theme = \"GitHub Light Default\"/" "$GHOSTTY_FILE"
+    echo "Switched import to github colorscheme and Ghostty theme to GitHub Light Default."
+  elif grep -q 'import = "plugins.colorschemes.github"' "$LAZY_FILE"; then
+    sed -i "${IMPORT_LINE}s/import = \"plugins.colorschemes.github\"/import = \"plugins.colorschemes.tokyonight\"/" "$LAZY_FILE"
+    sed -i "${GHOSTTY_LINE}s/.*/theme = \"TokyoNight Night\"/" "$GHOSTTY_FILE"
+    echo "Switched import to tokyonight colorscheme and Ghostty theme to TokyoNight Night."
   else
-    echo "No 'style = \"day\"' or 'style = \"night\"' found on line $NVIM_LINE of $NVIM_FILE."
+    echo "No colorscheme import found to toggle."
     return 1
   fi
 
