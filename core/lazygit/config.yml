@@ -1,9 +1,9 @@
 gui:
   showIcons: true
 git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never
+  pagers:
+    - pager: delta --dark --paging=never
+    - externalDiffCommand: difft --color=always
 customCommands:
   - key: 'I'
     command: "gh issue list"
