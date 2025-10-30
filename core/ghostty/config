@@ -1,5 +1,5 @@
 # APPEARANCE
-theme = "Rose Pine Moon"
+theme = "TokyoNight"
 # custom-shader = ~/.config/ghostty/shaders/bloom.glsl
 custom-shader = ~/.config/ghostty/shaders/cursor_blaze_no_trail.glsl
 # WINDOW CONTROLS
