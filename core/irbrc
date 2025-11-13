@@ -1,6 +1,6 @@
 require 'irb/completion'
 require 'rubygems'
-require 'irb/ext/save-history'
+require 'irb/ext/eval_history'
 # cool print
 require 'awesome_print'
 AwesomePrint.irb!
