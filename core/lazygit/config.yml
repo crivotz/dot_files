@@ -10,3 +10,9 @@ customCommands:
     context: 'global'
     description: "Issue aperte"
     output: terminal
+  - key: 'C'
+    command: "git diff --cached | opencode run 'Write a concise git commit message for these changes'"
+    context: 'files'
+    description: "Generate commit message with Opencode"
+    loadingText: "Generating commit message..."
+    output: terminal
