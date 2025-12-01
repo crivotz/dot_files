@@ -228,7 +228,7 @@ export PAGER='less'
 export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
 export LC_ALL='it_IT.UTF-8'
-export BAT_THEME="rose-pine"
+export BAT_THEME="tokyonight_night"
 #########################################################################
 # COLORING
 #########################################################################
