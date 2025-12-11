@@ -34,7 +34,8 @@ client.background       $base07
 # Pin shit to workspaces
 for_window [app_id="org.gnome.Calculator"] floating enable
 assign [app_id="com.mitchellh.ghostty"] 2
-assign [title="Spotify"] 1
+assign [app_id="brave-browser"] 3
+assign [class="Spotify"] 9
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="About"] floating enable
 
