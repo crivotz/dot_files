@@ -178,8 +178,10 @@ zinit light asdf-vm/asdf
 zinit ice lucid wait="0" as="program" from="gh-r" bpick="*64bit*"
 zinit light schollz/croc
 # ATUIN
-zinit ice as"program" from"gh-r" pick="**/atuin" ver="v18.2.0"
+zinit ice as"program" from"gh-r" bpick="*linux-gnu.tar.gz" pick="**/atuin" ver="v18.11.0"
 zinit light atuinsh/atuin
+zinit ice as"program" from"gh-r" bpick="*amd64.deb" pick="usr/bin/atuin-desktop"
+zinit light atuinsh/desktop
 # YAZI
 zinit ice lucid wait"0" as"program" from"gh-r" bpick="*mus*" pick="*/yazi"
 zinit light sxyazi/yazi
@@ -191,6 +193,9 @@ zinit light DarthSim/overmind
 # DIFFTASTIC
 zinit ice lucid wait"0" as"program" from"gh-r"
 zinit light Wilfred/difftastic
+# GHOSTTY
+zinit ice as"program" from"gh-r" ver="v1.2.3" bpick="*AppImage" mv="gh* -> ghostty"
+zinit light pkgforge-dev/ghostty-appimage
 #########################################################################
 # HISTORY
 #########################################################################
