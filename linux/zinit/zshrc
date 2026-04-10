@@ -109,9 +109,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# SAD
-zinit ice from="gh-r" as="command"
-zinit light ms-jpq/sad
 # SYNTAX HIGHLIGHTING
 zinit ice wait="2" lucid atinit="zpcompinit;zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -159,15 +156,9 @@ zinit light cli/cli
 # 1PASSWORD COMPLETION
 zinit ice as="completion" atclone="command -v op &>/dev/null && op completion zsh > _op || true" atpull="zinit creinstall -q ."  nocompile
 zinit light zdharma-continuum/null
-# TREE-SITTER
-zinit ice as="program" from="gh-r" mv="tree* -> tree-sitter" pick="tree-sitter"
-zinit light tree-sitter/tree-sitter
 # PRETTYPING
 zinit ice lucid wait="" as="program" pick="prettyping" atload="alias ping=prettyping"
 zinit load denilsonsa/prettyping
-# GPING wait for glibc 2.39
-zinit ice lucid wait="0" as="program" from="gh-r"
-zinit load orf/gping
 # ASDF
 # asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 # asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -180,21 +171,13 @@ zinit light schollz/croc
 # ATUIN
 zinit ice as"program" from"gh-r" bpick="*linux-gnu.tar.gz" pick="**/atuin" ver="v18.11.0"
 zinit light atuinsh/atuin
-zinit ice as"program" from"gh-r" bpick="*amd64.deb" pick="usr/bin/atuin-desktop"
-zinit light atuinsh/desktop
-# YAZI
-zinit ice lucid wait"0" as"program" from"gh-r" bpick="*mus*" pick="*/yazi"
-zinit light sxyazi/yazi
 # ZSH-VI-MODE
 zinit light jeffreytse/zsh-vi-mode
 # OVERMIND
 zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
 zinit light DarthSim/overmind
-# DIFFTASTIC
-zinit ice lucid wait"0" as"program" from"gh-r"
-zinit light Wilfred/difftastic
 # GHOSTTY
-zinit ice as"program" from"gh-r" ver="v1.2.3" bpick="*AppImage" mv="gh* -> ghostty"
+zinit ice as"program" from"gh-r" bpick="*AppImage" mv="gh* -> ghostty"
 zinit light pkgforge-dev/ghostty-appimage
 #########################################################################
 # HISTORY
