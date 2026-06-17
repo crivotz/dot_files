@@ -197,6 +197,14 @@ bindsym $mod+r mode "resize"
 #
 bindsym $mod+n exec nautilus
 bindsym $mod+c exec brave-browser
+# # Special keys to adjust volume via PulseAudio
+# bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+# bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+# bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+# bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+# # Special keys to adjust brightness via brightnessctl
+# bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+# bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
 bindsym XF86HomePage exec brave-browser
 bindsym XF86Explorer exec nautilus
@@ -208,6 +216,18 @@ bindsym Mod4+Ctrl+p  exec grimshot save window
 bindsym Control+Shift+Space exec /usr/bin/1password --quick-access
 
 exec /usr/bin/syncthing serve --no-browser --logfile=default 
+# exec dunst
+# exec nm-applet
+# exec blueman
+# exec /usr/lib/polkit-1/polkit-agent-helper-1
+
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+# bar {
+#   swaybar_command waybar
+# }
+
 # DMS Keybindings
 bindsym $mod+space exec dms ipc call spotlight toggle
 bindsym $mod+v exec dms ipc call clipboard toggle
@@ -222,6 +242,7 @@ bindsym XF86AudioMute exec dms ipc call audio mute
 # Brightness controls
 bindsym XF86MonBrightnessUp exec dms ipc call brightness increment 5
 bindsym XF86MonBrightnessDown exec dms ipc call brightness decrement 5
+
 # Keyboard
 input "type:keyboard" {
   xkb_layout it,it
@@ -234,21 +255,21 @@ input "type:keyboard" {
 set $laptop eDP-1
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
-# output DP-3 pos 0 0 res 1440x900 transform 270
-# output DP-3 bg ~/Immagini/Backgrounds/nvim-think.png fill
-# output DP-4 pos 900 0 res 1600x900
-# output DP-4 bg ~/Immagini/Backgrounds/elcap.jpg fill
-# output DP-5 pos 2500 0 res 1600x900
-# output DP-5 bg ~/Immagini/Backgrounds/elcap.jpg fill
+output DP-3 pos 0 0 res 1440x900 transform 270
+output DP-3 bg ~/Immagini/Backgrounds/nvim-think.png fill
+output DP-4 pos 900 0 res 1600x900
+output DP-4 bg ~/Immagini/Backgrounds/elcap.jpg fill
+output DP-5 pos 2500 0 res 1600x900
+output DP-5 bg ~/Immagini/Backgrounds/elcap.jpg fill
 # # output DP-6 pos 0 0 res 1920x1080
 # # output DP-6 bg ~/Immagini/Backgrounds/elcap.jpg fill
 # # output DP-3 pos 1920 0 res 1920x1080
 # # output DP-3 bg ~/Immagini/Backgrounds/nvim-think.png fill
 # output eDP-1 bg ~/Immagini/Backgrounds/nvim-think.png fill
 # workspace 1 output DP-3
-# workspace 1 output eDP-1
-# workspace 2 output DP-4
-# workspace 3 output DP-5
+workspace 1 output eDP-1
+workspace 2 output DP-4
+workspace 3 output DP-5
 
 # touchpad
 input "1739:52837:VEN_06CB:00_06CB:CE65_Touchpad" {
