@@ -177,8 +177,11 @@ zinit light jeffreytse/zsh-vi-mode
 zinit ice lucid wait"0" as"program" from"gh-r" mv="over* -> overmind" pick="overmind"
 zinit light DarthSim/overmind
 # GHOSTTY
-zinit ice as"program" from"gh-r" bpick="*AppImage" mv="gh* -> ghostty"
+zinit ice as"program" from"gh-r" ver="v1.3.1" bpick="*x86_64.AppImage" mv="gh* -> ghostty"
 zinit light pkgforge-dev/ghostty-appimage
+# NETWATCH
+zinit ice as"program" from"gh-r"
+zinit light matthart1983/netwatch
 #########################################################################
 # HISTORY
 #########################################################################
