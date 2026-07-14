@@ -1,35 +1,35 @@
 ### Variables
 # Logo key. Use Mod1 for Alt.
-# font pango: JetBrains Mono 13px 
+font pango: JetBrains Mono 13px 
 default_border pixel 4
 titlebar_border_thickness 2
 gaps inner 5
 gaps outer 5
 #  Tokyonight storm
-# set $base00 #1a1b26
-# set $base01 #292e42
-# set $base02 #16161e
-# set $base03 #15161e
-# set $base04 #394b70
-# set $base05 #3b4261
-# set $base06 #a9b1d6
-# set $base07 #c0caf5
-# set $base08 #f7768e
-# set $base09 #ff9e64
-# set $base0A #e0af68
-# set $base0B #9ece6a
-# set $base0C #7dcfff
-# set $base0D #7aa2f7
-# set $base0E #9d7cd8
-# set $base0F #f7768e
+set $base00 #1a1b26
+set $base01 #292e42
+set $base02 #16161e
+set $base03 #15161e
+set $base04 #394b70
+set $base05 #3b4261
+set $base06 #a9b1d6
+set $base07 #c0caf5
+set $base08 #f7768e
+set $base09 #ff9e64
+set $base0A #e0af68
+set $base0B #9ece6a
+set $base0C #7dcfff
+set $base0D #7aa2f7
+set $base0E #9d7cd8
+set $base0F #f7768e
 #
 # ## Window decoration
-# client.focused          $base0D $base0D $base00 $base0D $base0D
-# client.focused_inactive $base01 $base01 $base0D $base03 $base03
-# client.unfocused        $base01 $base00 $base0D $base01 $base01
-# client.urgent           $base08 $base08 $base00 $base08 $base08
-# client.placeholder      $base00 $base00 $base05 $base00 $base00
-# client.background       $base07
+client.focused          $base0D $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base0D $base03 $base03
+client.unfocused        $base01 $base00 $base0D $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 # Pin shit to workspaces
 for_window [app_id="org.gnome.Calculator"] floating enable
@@ -261,12 +261,8 @@ output DP-4 pos 900 0 res 1600x900
 output DP-4 bg ~/Immagini/Backgrounds/elcap.jpg fill
 output DP-5 pos 2500 0 res 1600x900
 output DP-5 bg ~/Immagini/Backgrounds/elcap.jpg fill
-# # output DP-6 pos 0 0 res 1920x1080
-# # output DP-6 bg ~/Immagini/Backgrounds/elcap.jpg fill
-# # output DP-3 pos 1920 0 res 1920x1080
-# # output DP-3 bg ~/Immagini/Backgrounds/nvim-think.png fill
-# output eDP-1 bg ~/Immagini/Backgrounds/nvim-think.png fill
-# workspace 1 output DP-3
+output eDP-1 bg ~/Immagini/Backgrounds/nvim-think.png fill
+workspace 1 output DP-3
 workspace 1 output eDP-1
 workspace 2 output DP-4
 workspace 3 output DP-5

@@ -15,6 +15,7 @@ ln -sf ~/.dot_files/core/yazi ~/.config/yazi
 # ln -sf ~/.dot_files/core/fastfetch ~/.config/fastfetch
 ln -sf ~/.dot_files/core/eza ~/.config/eza
 ln -sf ~/.dot_files/core/p10k.zsh ~/.p10k.zsh
+ln -sf ~/.dot_files/core/claude/statusline.sh ~/.claude/statusline.sh
 # ln -sf ~/.dot_files/core/wezterm/wezterm.lua ~/.wezterm.lua
 # OS
 ln -sf ~/.dot_files/linux/gtkrc-2.0.mine ~/.gtkrc-2.0.mine
